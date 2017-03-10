@@ -16,7 +16,7 @@ function edufade() {
     var edu = document.getElementById("container");
     var edutext = "<div id=" + "magic" + "><h1 id="+ "mainhead" + ">Education</h1><div id=" + "line" + "></div><p>Lee Magnet High School</p><p>11th grade</p><p>Cumulative GPA: 3.2</p><p>Courses: Web Design I & II, Digital Graphic and Animation</p><h1 id=" + "subhead" + ">Certificate</h1><div id=" + "line" + "></div><img id=" + "eduimg" + " src=" + "img/CIWCert.png" + " alt=" + "CIW&nbsp;Certificate" + " width=" + 350 + " height="+ "auto" +" onclick=" + "clickmod()"+"></div>";
     edu.innerHTML = edutext;
-    document.getElementById("rightfade").style.marginTop = "15%";
+    document.getElementById("rightfade").style.marginTop = "10%";
 }
 
 function workfade() {
