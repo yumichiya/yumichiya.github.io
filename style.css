@@ -1,3 +1,22 @@
+@font-face {
+    font-family: logo;
+    src: url(BebasNeue-Regular.ttf);
+}
+
+a, abbr, acronym, address, applet, article, aside, audio,
+b, big, blockquote, body, canvas, caption, center, cite,
+code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset,
+figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header,
+hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark,
+menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section,
+small, span, strike, strong, sub, summary, sup, table, tbody, td,
+tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
 body {
 	background-color: #282B30;
 }
@@ -168,4 +187,153 @@ p {
 	//position: absolute;
 	margin-left: -55px;
 	margin-top: -10px;
+}
+
+
+
+
+#main{
+	height: 100%;
+	width: 100%;
+	isolation: isolate;
+	position: relative;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"nav-bar"
+		"main-view";
+}
+
+.top-container {
+	grid-area: nav-bar;
+	height: 80px;
+	z-index: 2;
+	background-color: ;
+}
+
+.main-view {
+	grid-area: main-view;
+	width: 100%;
+	height: 100px;
+	background-color: ;
+}
+
+.navbar {
+	height: 80px;
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	font-family: 'logo';
+	font-size: 60px;
+	color: white;
+	margin-left: 24px;
+}
+
+.user {
+	background-color: #1E2124;
+	margin-right: 24px;
+	border-radius: 10px;
+	border: 0;
+}
+
+.profileimg {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	vertical-align: middle;
+	position: relative;
+	margin-right: 5px;
+}
+
+.name {
+	padding: 10px 5px;
+	position: relative;
+	padding:  4px 6px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: .5px;
+	font-size: 14px;
+}
+
+.contentSpacing {
+	padding: 0 24px;
+}
+
+h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+}
+
+.recplaygrid {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 16px;
+	grid-template-areas:
+		'topbar topbar topbar topbar'
+		'one two three four';
+}
+
+.recplay {
+	grid-area: topbar;
+}
+
+.albumimg {
+	height: 100%;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.albumone, .albumtwo, .albumthree, .albumfour {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 20px 20px 16px;
+	background-color: #1E2124;
+}
+
+.albumone {
+	grid-area: one;
+}
+
+.albumtwo {
+	grid-area: two;
+}
+
+.albumthree {
+	grid-area: three;
+}
+
+.albumfour {
+	grid-area: four;
+}
+
+.desc, .artist {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.desc {
+	color:white;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+}
+
+.artist {
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
 }
