@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = '4977f5049db14ed99184bd454c05716a'; // Your client id
 var client_secret = '2bda52b83f4b4f4a81e088ac698b612e'; // Your secret
-var redirect_uri = 'yumichiya.github.io/callback'; // Your redirect uri
+var redirect_uri = 'yumichiya.github.io'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
