@@ -18,6 +18,10 @@
 
   <body>
     <div class="container">
+      <div id="login">
+        <h1>This is an example of the Authorization Code flow</h1>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      </div>
       <div id="loggedin">
         <div id="user-profile">
         </div>
@@ -58,7 +62,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
-      (function() {
+      $(document).ready(function() {
 
         /**
          * Obtains parameters from the hash of the URL
