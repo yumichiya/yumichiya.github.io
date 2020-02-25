@@ -151,7 +151,7 @@
                 },
                 success: function(response) {
                   userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-
+                  console.log(response);
                   $('#login').hide();
                   $('#loggedin').show();
                 }
