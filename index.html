@@ -29,20 +29,68 @@
         </div>
       </div>
     </div>
+    <div class="main">
+      <div class="container">
+        <div class="top-container">
+          <header class="topnav">
+            <button class='user' type='button'>
+              <script id="user-profile-template" type="text/x-handlebars-template">
 
-    <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
-      <div class="media">
-        <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
+                <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+    
+              </script>
+            </button>
+          </header>
         </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-          </dl>
+        <div class="nav-bar">
+          <div class="logo">Avalanche</div>
+          <ul>
+              <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link-active">Home</a></div>
+              </li>
+              <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
+              </li>
+              <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
+              </li>
+          </ul>
         </div>
+        <div class="now-playing">
+            <image class="now-playing-img" src="music.png"/>
+        </div>
+        <div class="main-view" >
+          <div class="spacer"></div>
+          <section class='contentSpacing'>
+              <div class='recplaygrid'>
+                  <h2 class='recplay'>Recently played</h2>
+                  <div class='albumone'>
+                    <image class='albumimg' src='music.png'/>
+                    <div class='album'>Album</div>
+                    <div class='artist'>Artist</div>
+                  </div>
+                  <div class='albumtwo'>
+                    <image class='albumimg' src='music.png'/>
+                    <div class='album'>Album</div>
+                    <div class='artist'>Artist</div>
+                  </div>
+                  <div class='albumthree'>
+                    <image class='albumimg' src='music.png'/>
+                    <div class='album'>Album</div>
+                    <div class='artist'>Artist</div>
+                  </div>
+                  <div class='albumfour'>
+                    <image class='albumimg' src='music.png'/>
+                    <div class='album'>Album</div>
+                    <div class='artist'>Artist</div>
+                  </div>
+              </div>
+          </section>
+        </div>
+  
+  
       </div>
-    </script>
+    </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
