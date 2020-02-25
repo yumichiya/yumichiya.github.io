@@ -1,105 +1,67 @@
 <!doctype html>
-<head>
-	<title>Avalanche</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="main">
-		<div class="container">
-			<div class="top-container">
-				<header class="navbar">
-					<div class="logo">Avalanche</div>
-					<button class='user' type='button'>
-					  <div class="name">
-							<image src='doggo.png' class='profileimg'></image>
-							Doggo
-						</div>
-					</button>
-				</header>
-			</div>
-			<div class="main-view" hidden>
-				<section class='contentSpacing'>
-					  <div class='recplaygrid'>
-							  <h2 class='recplay'>Recently played</h2>
-								<div class='albumone'>
-									<image class='albumimg' src='feelspecial.jpg'/>
-									<div class='desc'>Feel Special</div>
-									<div class='artist'>Twice</div>
-								</div>
-								<div class='albumtwo'>
-									<image class='albumimg' src='shesfine.jpg'/>
-									<div class='desc'>She's Fine</div>
-									<div class='artist'>HEIZE</div>
-								</div>
-								<div class='albumthree'>
-									<image class='albumimg' src='itsokay.jpg'/>
-									<div class='desc'>It's Okay</div>
-									<div class='artist'>Kisum</div>
-								</div>
-								<div class='albumfour'>
-									<image class='albumimg' src='fourseason.jpg'/>
-									<div class='desc'>Four Seasons</div>
-									<div class='artist'>Taeyeon</div>
-								</div>
-						</div>
-				</section>
-			</div>
-			<div>
-	    <div id="login">
-	     <h1>First, log in to spotify</h1>
-	     <a href="/login">Log in</a>
-	    </div>
-	    <div id="loggedin">
-				<div id="user-profile">
+<html>
+  <head>
+    <title>Example of the Authorization Code flow with Spotify</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style type="text/css">
+      #login, #loggedin {
+        display: none;
+      }
+      .text-overflow {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="login">
+        <h1>This is an example of the Authorization Code flow</h1>
+        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+      </div>
+      <div id="loggedin">
+        <div id="user-profile">
         </div>
         <div id="oauth">
         </div>
         <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
-	    </div>
-		 </div>
+      </div>
+    </div>
 
-		 <script id="loggedin-template" type="text/x-handlebars-template">
-		    <h1>Logged in as </h1>
-		    <img id="avatar" width="200" src="" />
-		    <dl>
-		     <dt>Display name</dt><dd></dd>
-		     <dt>Username</dt><dd></dd>
-		     <dt>Email</dt><dd></dd>
-		     <dt>Spotify URI</dt><dd><a href=""></a></dd>
-		     <dt>Link</dt><dd><a href=""></a></dd>
-		     <dt>Profile Image</dt><dd></dd>
-		    </dl>
-		    <p><a href="/">Log in again</a></p>
-		 </script>
-		 <script id="user-profile-template" type="text/x-handlebars-template">
-		       <h1>Logged in as {{display_name}}</h1>
-		       <div class="media">
-		         <div class="pull-left">
-		           <img class="media-object" width="150" src="{{images.0.url}}" />
-		         </div>
-		         <div class="media-body">
-		           <dl class="dl-horizontal">
-		             <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-		             <dt>Id</dt><dd>{{id}}</dd>
-		             <dt>Email</dt><dd>{{email}}</dd>
-		             <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-		             <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-		             <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-		             <dt>Country</dt><dd>{{country}}</dd>
-		           </dl>
-		         </div>
-		       </div>
-		     </script>
-				 <script id="oauth-template" type="text/x-handlebars-template">
+    <script id="user-profile-template" type="text/x-handlebars-template">
+      <h1>Logged in as {{display_name}}</h1>
+      <div class="media">
+        <div class="pull-left">
+          <img class="media-object" width="150" src="{{images.0.url}}" />
+        </div>
+        <div class="media-body">
+          <dl class="dl-horizontal">
+            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+            <dt>Id</dt><dd>{{id}}</dd>
+            <dt>Email</dt><dd>{{email}}</dd>
+            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+            <dt>Country</dt><dd>{{country}}</dd>
+          </dl>
+        </div>
+      </div>
+    </script>
+
+    <script id="oauth-template" type="text/x-handlebars-template">
       <h2>oAuth info</h2>
       <dl class="dl-horizontal">
         <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
         <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}</dd>
       </dl>
     </script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		 <script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
       (function() {
 
         /**
@@ -175,6 +137,5 @@
         }
       })();
     </script>
-		</div>
-	</div>
-</body>
+  </body>
+</html>
