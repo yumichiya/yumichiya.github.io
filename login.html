@@ -135,7 +135,6 @@ console.log('2');
 
         }
         var redirect_uri = 'https://yumichiya.github.io/callback';
-        var code = req.query.code || null;
         $.ajax({
           method: "POST",
           url: "https://accounts.spotify.com/api/token",
