@@ -104,7 +104,7 @@ console.log('1');
         var access_token = params.access_token,
             refresh_token = params.refresh_token,
             error = params.error;
-console.log(params.error);
+
         if (error) {
           alert('There was an error during the authentication');
         } else {
@@ -121,8 +121,7 @@ console.log('2');
                   'Authorization': 'Bearer ' + access_token
                 },
                 success: function(response) {
-                  console.log(userProfilePlaceholder.innerHTML = userProfileTemplate(response));
-console.log(response);
+                  userProfilePlaceholder.innerHTML = userProfileTemplate(response);
                   $('#login').hide();
                   $('#loggedin').show();
                 }
@@ -135,12 +134,16 @@ console.log(response);
 
 
         }
+        var redirect_uri = 'https://yumichiya.github.io/callback';
+        var code = req.query.code || null;
         $.ajax({
           method: "POST",
           url: "https://accounts.spotify.com/api/token",
           data: {
             'grant_type': refresh_token,
-            "redirect_uri":  refresh_token,
+            'code':  code,
+            'redirect_uri':  redirect_uri,
+
           },
           success: function(result) {
             console.log('yes');
