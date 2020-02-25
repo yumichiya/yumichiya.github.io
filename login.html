@@ -18,7 +18,7 @@
 
   <body>
     <div class="container">
-      
+
       <div id="loggedin">
         <div id="user-profile">
         </div>
@@ -59,6 +59,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
+
       $(document).ready(function() {
 
         /**
@@ -117,22 +118,9 @@
               $('#loggedin').hide();
           }
 
-          document.getElementById('obtain-new-token').addEventListener('click', function() {
-            $.ajax({
-              url: '/refresh_token',
-              data: {
-                'refresh_token': refresh_token
-              }
-            }).done(function(data) {
-              access_token = data.access_token;
-              oauthPlaceholder.innerHTML = oauthTemplate({
-                access_token: access_token,
-                refresh_token: refresh_token
-              });
-            });
-          }, false);
+
         }
-      })();
+      });
     </script>
   </body>
 </html>
