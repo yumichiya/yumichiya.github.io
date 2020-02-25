@@ -139,6 +139,7 @@ console.log(response);
           method: "POST",
           url: "https://accounts.spotify.com/api/token",
           data: {
+            'grant_type': refresh_token,
             "redirect_uri":  refresh_token,
           },
           success: function(result) {
