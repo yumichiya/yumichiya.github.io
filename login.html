@@ -62,22 +62,7 @@
 
       $(document).ready(function() {
 
-        $.ajax(
-  {
-    method: "POST",
-    url: "https://accounts.spotify.com/api/token",
-    data: {
-      "grant_type":    "authorization_code",
-      "code":          code,
-      "redirect_uri":  myurl,
-      "client_secret": mysecret,
-      "client_id":     myid,
-    },
-    success: function(result) {
-      console.log('yes');
-    },
-  }
-);
+
         $.ajax({
           url: '/refresh_token',
           data: {
@@ -90,7 +75,7 @@
             refresh_token: refresh_token
           });
         });
-
+        console.log(refresh_token);
 console.log('1');
         /**
          * Obtains parameters from the hash of the URL
@@ -150,7 +135,23 @@ console.log(response);
 
 
         }
+        $.ajax({
+          method: "POST",
+          url: "https://accounts.spotify.com/api/token",
+          data: {
+            "grant_type":    "authorization_code",
+            "code":          code,
+            "redirect_uri":  refresh_token,
+            "client_secret": mysecret,
+            "client_id":     myid,
+          },
+          success: function(result) {
+            console.log('yes');
+            console.log(refresh_token);
+          },
+        });
       });
+
     </script>
   </body>
 </html>
