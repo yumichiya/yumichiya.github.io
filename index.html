@@ -33,22 +33,66 @@
     </div>
     
     <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
-      <div class="media">
-        <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
-        </div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-            <dt>Id</dt><dd>{{id}}</dd>
-            <dt>Email</dt><dd>{{email}}</dd>
-            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-            <dt>Country</dt><dd>{{country}}</dd>
-            <p>Test {{display_name}}</p>
-          </dl>
+      <div class="main">
+        <div class="container">
+          <div class="top-container">
+            <header class="topnav">
+              <button class='user' type='button'>
+                <script id="user-profile-template" type="text/x-handlebars-template">
+    
+                  <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+      
+                </script>
+              </button>
+            </header>
+          </div>
+          <div class="nav-bar">
+            <div class="logo">Avalanche</div>
+            <ul>
+                <li>
+                    <div class="nav-bar-items"><a class="nav-bar-link-active">Home</a></div>
+                </li>
+                <li>
+                    <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
+                </li>
+                <li>
+                    <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
+                </li>
+            </ul>
+          </div>
+          <div class="now-playing">
+              <image class="now-playing-img" src="images/music.png"/>
+          </div>
+          <div class="main-view" >
+            <div class="spacer"></div>
+            <section class='contentSpacing'>
+                <div class='recplaygrid'>
+                    <h2 class='recplay'>Recently played</h2>
+                    <div class='albumone'>
+                      <image class='albumimg' src='images/music.png'/>
+                      <div class='album'>Album</div>
+                      <div class='artist'>Artist</div>
+                    </div>
+                    <div class='albumtwo'>
+                      <image class='albumimg' src='images/music.png'/>
+                      <div class='album'>Album</div>
+                      <div class='artist'>Artist</div>
+                    </div>
+                    <div class='albumthree'>
+                      <image class='albumimg' src='images/music.png'/>
+                      <div class='album'>Album</div>
+                      <div class='artist'>Artist</div>
+                    </div>
+                    <div class='albumfour'>
+                      <image class='albumimg' src='images/music.png'/>
+                      <div class='album'>Album</div>
+                      <div class='artist'>Artist</div>
+                    </div>
+                </div>
+            </section>
+          </div>
+    
+    
         </div>
       </div>
     </script>
