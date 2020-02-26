@@ -6,3 +6,4 @@ $.ajax({
     success: function(response) {
         userProfilePlaceholder.innerHTML = userProfileTemplate(response);
     }
+});
