@@ -1,8 +1,8 @@
 (function() {
     
     function login(callback) {
-        var CLIENT_ID = '4977f5049db14ed99184bd454c05716a';
-        var REDIRECT_URI = 'https://yumichiya.github.io/';
+        var CLIENT_ID = '6b284830006843e7ae7b170725715aed';
+        var REDIRECT_URI = 'http://jmperezperez.com/spotify-oauth-jsfiddle-proxy/';
         function getLoginURL(scopes) {
             return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
               '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
