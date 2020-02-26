@@ -2,7 +2,7 @@
     
     function login(callback) {
         var CLIENT_ID = '4977f5049db14ed99184bd454c05716a';
-        var REDIRECT_URI = 'https://yumichiya.github.io/';
+        var REDIRECT_URI = 'https://yumichiya.github.io';
         function getLoginURL(scopes) {
             return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
               '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
@@ -54,7 +54,6 @@
                     console.log(response);
                     loginButton.style.display = 'none';
                     resultsPlaceholder.innerHTML = template(response);
-                    loggedin.style.display = 'block';
                 });
             });
     });
