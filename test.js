@@ -26,10 +26,6 @@
             }
         }, false);
         
-        var w = window.open(url,
-                            'Spotify',
-                            'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left
-                           );
         
     }
 
@@ -51,8 +47,7 @@
     
     loginButton.addEventListener('click', function() {
         login(function(accessToken) {
-            getUserData(accessToken)
-                .then(function(response) {
+            getUserData(accessToken).then(function(response) {
                     console.log('yes');
                     loginButton.style.display = 'none';
                     resultsPlaceholder.innerHTML = template(response);
