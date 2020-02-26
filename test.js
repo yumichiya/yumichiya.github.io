@@ -48,7 +48,6 @@
     if (access_token && (state == null || state !== storedState)) {
       alert('There was an error during the authentication');
     } else {
-        console.log(statekey);
       localStorage.removeItem(stateKey);
       if (access_token) {
         $.ajax({
@@ -91,7 +90,7 @@
 })();
 
 function test() {
-    var a = document.getElementById('name').nodeValue,
+    var a = document.getElementById('name').value,
         url = 'https://yumichiya.github.io/login.html?name=' + encodeURIComponent(a);
     document.location.href = url;
 }
