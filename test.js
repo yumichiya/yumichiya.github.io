@@ -47,7 +47,7 @@
         resultsPlaceholder = document.getElementById('user-profile'),
         loginButton = document.getElementById('login-button'),
         loggedin = document.getElementById('loggedin');
-        ;
+        
     
     loginButton.addEventListener('click', function() {
         login(function(accessToken) {
