@@ -42,10 +42,10 @@
         });
     }
 
-    var templateSource = document.getElementById('result-template').innerHTML,
+    var templateSource = document.getElementById('user-profile-template').innerHTML,
         template = Handlebars.compile(templateSource),
-        resultsPlaceholder = document.getElementById('result'),
-        loginButton = document.getElementById('btn-login');
+        resultsPlaceholder = document.getElementById('user-profile'),
+        loginButton = document.getElementById('login-button');
     
     loginButton.addEventListener('click', function() {
         login(function(accessToken) {
