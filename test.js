@@ -1,7 +1,7 @@
 (function() {
     function login(callback) {
         var client_id = '4977f5049db14ed99184bd454c05716a';
-        var redirect_uri = 'https://yumichiya.github.io/';
+        var redirect_uri = 'https://yumichiya.github.io';
         function getLoginURL(scopes) {
             return 'https://accounts.spotify.com/authorize?client_id=' + client_id +
             '&redirect_uri=' + encodeURIComponent(redirect_uri) +
