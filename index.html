@@ -29,64 +29,23 @@
     </div>
     
     <script id="user-profile-template" type="text/x-handlebars-template">
-      <div class="main">
-        <div class="container">
-          <div class="top-container">
-            <header class="topnav">
-              <button class='user' type='button'>
-                <dd>{{display_name}}</dd>
-              </button>
-            </header>
-          </div>
-          <div class="nav-bar">
-            <div class="logo">Avalanche</div>
-            <ul>
-                <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link-active">Home</a></div>
-                </li>
-                <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
-                </li>
-                <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
-                </li>
-            </ul>
-          </div>
-          <div class="now-playing">
-              <image class="now-playing-img" src="images/music.png"/>
-          </div>
-          <div class="main-view" >
-            <div class="spacer"></div>
-            <section class='contentSpacing'>
-                <div class='recplaygrid'>
-                    <h2 class='recplay'>Recently played</h2>
-                    <div class='albumone'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumtwo'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumthree'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumfour'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                </div>
-            </section>
-          </div>
-    
-    
-        </div>
-      </div>
+      <dl>
+        <img src="{{images.0.url}}">
+        <dt>User Name</dt>
+        <dd>{{id}}</dd>
+        <dt>Display Name</dt>
+        <dd>{{display_name}}</dd>
+        <dt>Country</dt>
+        <dd>{{country}}</dd>
+        <dt>Followers</dt>
+        <dd>{{followers.total}}</dd>
+        <dt>Profile</dt>
+        <dd><a href="{{external_urls.spotify}}" target="_blank">{{external_urls.spotify}}</a></dd>
+        <dt>Email</dt>
+        <dd>{{email}}</dd>
+        <dt>Product</dt>
+        <dd>{{product}}</dd>
+      </dl>
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
