@@ -87,4 +87,10 @@
         window.location = url;
       }, false);
     }
-  })();
+})();
+
+function test() {
+    var a = document.getElementById('name').nodeValue,
+        url = 'https://yumichiya.github.io/login.html?name=' + encodeURIComponent(b);
+    document.location.href = url;
+}
