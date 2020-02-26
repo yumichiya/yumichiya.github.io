@@ -91,6 +91,6 @@
 
 function test() {
     var a = document.getElementById('name').nodeValue,
-        url = 'https://yumichiya.github.io/login.html?name=' + encodeURIComponent(b);
+        url = 'https://yumichiya.github.io/login.html?name=' + encodeURIComponent(a);
     document.location.href = url;
 }
