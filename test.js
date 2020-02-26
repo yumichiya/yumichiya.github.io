@@ -51,17 +51,10 @@
     loginButton.addEventListener('click', function() {
         login(function(accessToken) {
             getUserData(accessToken).then(function(response) {
-                $.ajax({
-                    url: 'https://api.spotify.com/v1/me',
-                    headers: {
-                        'Authorization': 'Bearer ' + accessToken
-                    },
-                    success: function(response) {
-                        console.log(response);
+                
+                    console.log(response);
                     loginButton.style.display = 'none';
                     resultsPlaceholder.innerHTML = template(response);
-                    }
-                    
                 });
             });
     });
