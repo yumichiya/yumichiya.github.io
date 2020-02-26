@@ -48,6 +48,7 @@
     if (access_token && (state == null || state !== storedState)) {
       alert('There was an error during the authentication');
     } else {
+        console.log(statekey);
       localStorage.removeItem(stateKey);
       if (access_token) {
         $.ajax({
@@ -75,7 +76,6 @@
         var state = generateRandomString(16);
 
         localStorage.setItem(stateKey, state);
-        console.log(localStorage.setItem(stateKey, state));
         var scope = 'user-read-private user-read-email';
 
         var url = 'https://accounts.spotify.com/authorize';
