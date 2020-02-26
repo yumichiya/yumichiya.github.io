@@ -53,6 +53,7 @@
         login(function(accessToken) {
             getUserData(accessToken)
                 .then(function(response) {
+                    console.log('yes');
                     loginButton.style.display = 'none';
                     resultsPlaceholder.innerHTML = template(response);
                     loggedin.style.display = 'block';
