@@ -17,7 +17,7 @@
                 <button id="login-button" class="login-btn">Log in with Spotify</button>
               </div>
               <div id="loggedin">
-                <div id="user-profile" class="name"></div>
+                <div id="user-profile"></div>
               </div>
             </header>
           </div>
@@ -72,7 +72,7 @@
 
     <script id="user-profile-template" type="text/x-handlebars-template">
       <img class="profileimg" src="{{images.0.url}}" />
-      <dd>{{display_name}}</dd>
+      <div class='name'>{{display_name}}</div>
     </script>
 
     <script id="oauth-template" type="text/x-handlebars-template">
