@@ -73,13 +73,14 @@
   </form>
   <div id="results"></div>
 </div>
-<script id="results-template" type="text/x-handlebars-template">
-  {{#each albums.items}}
-  <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
-  {{/each}}
-</script>
     <div id="oauth">
     </div>
+
+    <script id="results-template" type="text/x-handlebars-template">
+      {{#each albums.items}}
+      <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+      {{/each}}
+    </script>
 
     <script id="user-profile-template" type="text/x-handlebars-template">
       <img class="profileimg" src="{{images.0.url}}" />
@@ -96,5 +97,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src='test.js'></script>
+    <script src='album.js'></script>
   </body>
 </html>
