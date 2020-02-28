@@ -148,6 +148,17 @@ p {
 	font-size: 14px;
 }
 
+.login-btn, #user-profile {
+	float: right;
+	margin: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: #7663F2;
+	border: 0px;
+	color: white;
+	font-family:  Arial, Helvetica, sans-serif;
+}
+
 .spacer {
   height: 60px;
 }
@@ -220,15 +231,4 @@ h2 {
 	color: #999999;
 	font-size: 14px;
 	letter-spacing: 0.4px;
-}
-
-.login-btn {
-	float: right;
-	margin: 20px;
-	padding: 10px;
-	border-radius: 10px;
-	background-color: #7663F2;
-	border: 0px;
-	color: white;
-	font-family:  Arial, Helvetica, sans-serif;
 }
