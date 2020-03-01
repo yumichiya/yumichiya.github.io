@@ -20,6 +20,12 @@ tfoot, th, thead, time, tr, tt, u, ul, var, video {
 body {
 	background-color: #282B30;
 }
+
+.login-btn, #user-profile, h2, .album-title, .artist, .nav-bar-items {
+	font-family: 'Montserrat';
+	color: white;
+}
+
 p {
 	color: #8167D6;
 	font-size: 50px;
@@ -86,7 +92,6 @@ p {
   font-weight: bold;
   color: white;
   letter-spacing: 0.5px;
-  font-family: 'Montserrat';
   align-items: center;
 }
 
@@ -122,7 +127,6 @@ p {
 .logo {
 	font-family: 'logo';
 	font-size: 60px;
-	color: white;
 	text-align: center;
 }
 
@@ -159,9 +163,8 @@ p {
 	border-radius: 10px;
 	background-color: #7663F2;
 	border: 0px;
-	color: white;
-	font-family: 'Montserrat';
 	align-items: center;
+	cursor: pointer;
 }
 
 .spacer {
@@ -171,10 +174,7 @@ p {
 	padding: 0 24px;
 }
 
-h2 {
-	font-family: 'Montserrat';
-	color: white;
-}
+
 
 /* -------------------------------------*/
 /*.recplaygrid {
@@ -257,18 +257,17 @@ h2 {
 
 .album-title, .artist {
 	display: block;
-	font-family: 'Montserrat';
 }
 
 .album-title {
-	color:white;
 	font-weight: bold;
 	letter-spacing: 0.5px;
 	margin-bottom: 2px;
+	font-size: 14px;
 }
 
 .artist {
 	color: #999999;
-	font-size: 14px;
+	font-size: 12px;
 	letter-spacing: 0.4px;
 }
