@@ -35,9 +35,9 @@
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
-    var newReleasesSource = document.getElementById('featured-template').innerHTML,
+    var newReleasesSource = document.getElementById('new-releases-template').innerHTML,
         newReleasesTemplate = Handlebars.compile(newReleasesSource),
-        newReleasesPlaceholder = document.getElementById('featured');
+        newReleasesPlaceholder = document.getElementById('new-releases');
 
     var params = getHashParams();
 
@@ -96,17 +96,5 @@
         window.location = url;
       }, false);
     }
-
-    document.getElementById('login-button').addEventListener('click', function() {
-        $.ajax({
-            url: 'https://api.spotify.com/v1/browse/featured-playlists',
-            headers: {
-              'Authorization': 'Bearer ' + access_token
-            },
-            success: function(response) {
-              console.log('working');
-            }
-        });
-    }, false);
 
 })();
