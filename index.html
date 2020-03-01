@@ -92,13 +92,13 @@
     </script>
 
     <script id="new-releases-template" type="text/x-handlebars-template">
-      {{#limit albums.items limit="4"}}
+      {{#each (limit albums.items 4)}}
       <div class='album'>
         <img src="{{images.0.url}}" data-album-id="{{id}}" class="albumimg"/>
         <div data-album-id="{{id}}" class='album-title'>{{name}}</div>
         <div data-artists-id="{{id}}" class='artist'>{{artists}}</div>
       </div>
-    {{/limit}}
+    {{/each}}
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
