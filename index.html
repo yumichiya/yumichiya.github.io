@@ -64,6 +64,10 @@
                       <div class='artist'>Artist</div>
                     </div>
                 </div>
+                <div class='recplaygrid'>
+                  <h2 class='recplay'>Featured Playlists</h2>
+                  <div id='featured'></div>
+              </div>
             </section>
           </div>
     </div>
@@ -87,11 +91,8 @@
       <div class='name'>{{display_name}}</div>
     </script>
 
-    <script id="oauth-template" type="text/x-handlebars-template">
-      <h2>oAuth info</h2>
-      <dl class="dl-horizontal">
-        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-      </dl>
+    <script id="featured-template">
+
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>

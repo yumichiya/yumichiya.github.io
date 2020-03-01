@@ -39,6 +39,10 @@
         oauthTemplate = Handlebars.compile(oauthSource),
         oauthPlaceholder = document.getElementById('oauth');
 
+    var featuredSource = document.getElementById('featured-template').innerHTML,
+        FeaturedTemplate = Handlebars.compile(featuredSource),
+        FeaturedPlaceholder = document.getElementById('featured');
+
     var params = getHashParams();
 
     var access_token = params.access_token,
@@ -68,7 +72,7 @@
               'Authorization': 'Bearer ' + access_token
             },
             success: function(response) {
-              console.log('working');
+                FeaturedPlaceholder.innerHTML = FeaturedTemplate(response);
             }
         });
       } else {
