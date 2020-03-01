@@ -21,7 +21,7 @@ body {
 	background-color: #282B30;
 }
 
-.login-btn, #user-profile, h2, .album-title, .artist, .nav-bar-items {
+.login-btn, #user-profile, h2, .album-title, .artist, .nav-bar-items, .logo {
 	font-family: 'Montserrat';
 	color: white;
 }
