@@ -31,7 +31,21 @@
                     <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
                 </li>
                 <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
+                    <div class="nav-bar-items"><a class="nav-bar-link">Feed</a></div>
+                </li>
+                <div class='nav-divider'></div>
+                <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Favorites</a></div>
+                </li>
+                <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Playlists</a></div>
+                </li>
+                <div class='nav-divider'></div>
+                <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Following DJs</a></div>
+                </li>
+                <li>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Live Now</a></div>
                 </li>
             </ul>
           </div>
@@ -81,7 +95,7 @@
       {{#each albums.items}}
       <div class='album'>
         <img src="{{images.0.url}}" data-album-id="{{id}}" class="albumimg"/>
-        <div data-album-id="{{id}}" class='album-title'>{{id}}</div>
+        <div data-album-id="{{id}}" class='album-title'>{{name}}</div>
         <div class='artist'>Artist</div>
       </div>
     {{/each}}
