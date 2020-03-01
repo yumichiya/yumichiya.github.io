@@ -35,10 +35,6 @@
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
-        oauthSource = document.getElementById('oauth-template').innerHTML,
-        oauthTemplate = Handlebars.compile(oauthSource),
-        oauthPlaceholder = document.getElementById('oauth');
-
     var featuredSource = document.getElementById('featured-template').innerHTML,
         FeaturedTemplate = Handlebars.compile(featuredSource),
         FeaturedPlaceholder = document.getElementById('featured');
