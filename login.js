@@ -62,6 +62,15 @@
               $('#loggedin').show();
             }
         });
+        $.ajax({
+            url: 'https://api.spotify.com/v1/browse/featured-playlists',
+            headers: {
+              'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+              console.log('working');
+            }
+        });
       } else {
           $('#login').show();
           $('#loggedin').hide();
