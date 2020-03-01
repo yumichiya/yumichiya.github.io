@@ -243,7 +243,6 @@ h2 {
 
 .new-releases {
 	display: grid;
-	grid-template-rows: auto 1fr;
 	grid-template-columns: repeat(5,1fr);
 	grid-gap: 10px;
 }
