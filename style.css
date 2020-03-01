@@ -102,6 +102,12 @@ p {
   	border-left: 5px solid #7663F2;
 }
 
+.nav-divider {
+	border: 1px solid #7663F2;
+	width: 90%;
+	margin: auto;
+}
+
 /* Now Playing Section --------------------------------------------------------*/
 .now-playing {
   grid-area: now-playing;
