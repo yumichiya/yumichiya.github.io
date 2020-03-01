@@ -233,10 +233,31 @@ h2 {
 	letter-spacing: 0.4px;
 }
 
-/* Featured Section------------------------------------*/
+/* New Releases Section------------------------------------*/
 .cover {
     width: 300px;
     height: 300px;
     display: inline-block;
     background-size: cover;
+}
+
+.new-rel-grid {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 10px;
+}
+
+.recplaygrid {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 16px;
+	grid-template-areas:
+		'topbar topbar topbar topbar'
+		'';
+}
+
+.recplay {
+	grid-area: topbar;
 }

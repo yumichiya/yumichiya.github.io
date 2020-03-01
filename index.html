@@ -64,8 +64,8 @@
                       <div class='artist'>Artist</div>
                     </div>
                 </div>
-                <div class='recplaygrid'>
-                  <h2 class='recplay'>New Releases</h2>
+                <div class='new-rel-grid'>
+                  <h2 class='new-rel-title'>New Releases</h2>
                   <div id='new-releases'></div>
               </div>
             </section>
@@ -79,8 +79,8 @@
 
     <script id="new-releases-template" type="text/x-handlebars-template">
       {{#each albums.items}}
-      <div class='albumfour'>
-        <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+      <div class='album'>
+        <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="albumimg"></div>
         <div class='album'>Album</div>
         <div class='artist'>Artist</div>
       </div>
