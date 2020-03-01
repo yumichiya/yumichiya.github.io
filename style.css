@@ -238,7 +238,7 @@ h2 {
 #new-releases {
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
-	grid-gap: 10px;
+	grid-gap: 16px;
 }
 
 .albumimg {
@@ -253,4 +253,9 @@ h2 {
 	position: relative;
 	padding: 20px 20px 16px;
 	background-color: #1E2124;
+}
+
+.album-title, .artist {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
 }
