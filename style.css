@@ -170,6 +170,7 @@ h2 {
 	color: white;
 }
 
+/* -------------------------------------*/
 .recplaygrid {
 	display: grid;
 	grid-template-rows: auto 1fr;
@@ -230,4 +231,12 @@ h2 {
 	color: #999999;
 	font-size: 14px;
 	letter-spacing: 0.4px;
+}
+
+/* Featured Section------------------------------------*/
+.cover {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    background-size: cover;
 }
