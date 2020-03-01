@@ -171,7 +171,7 @@ h2 {
 }
 
 /* -------------------------------------*/
-.recplaygrid {
+/*.recplaygrid {
 	display: grid;
 	grid-template-rows: auto 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -183,12 +183,6 @@ h2 {
 
 .recplay {
 	grid-area: topbar;
-}
-
-.albumimg {
-	height: 100%;
-	width: 100%;
-	margin-bottom: 12px;
 }
 
 .albumone, .albumtwo, .albumthree, .albumfour {
@@ -232,7 +226,7 @@ h2 {
 	font-size: 14px;
 	letter-spacing: 0.4px;
 }
-
+*/
 /* New Releases Section------------------------------------*/
 .cover {
     width: 300px;
@@ -241,8 +235,22 @@ h2 {
     background-size: cover;
 }
 
-.new-releases {
+#new-releases {
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
 	grid-gap: 10px;
+}
+
+.albumimg {
+	height: 100%;
+	width: 100%;
+	margin-bottom: 12px;
+}
+
+.album {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 20px 20px 16px;
+	background-color: #1E2124;
 }
