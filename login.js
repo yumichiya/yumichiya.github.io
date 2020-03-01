@@ -35,9 +35,9 @@
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
-    var featuredSource = document.getElementById('featured-template').innerHTML,
-        FeaturedTemplate = Handlebars.compile(featuredSource),
-        FeaturedPlaceholder = document.getElementById('featured');
+    var newReleasesSource = document.getElementById('featured-template').innerHTML,
+        newReleasesTemplate = Handlebars.compile(newReleasesSource),
+        newReleasesPlaceholder = document.getElementById('featured');
 
     var params = getHashParams();
 
@@ -63,12 +63,12 @@
             }
         });
         $.ajax({
-            url: 'https://api.spotify.com/v1/browse/featured-playlists',
+            url: 'https://api.spotify.com/v1/browse/new-releases',
             headers: {
               'Authorization': 'Bearer ' + access_token
             },
             success: function(response) {
-                FeaturedPlaceholder.innerHTML = FeaturedTemplate(response);
+                newReleasesPlaceholder.innerHTML = newReleasesTemplate(response);
             }
         });
       } else {
