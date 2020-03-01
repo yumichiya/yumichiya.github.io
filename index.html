@@ -81,7 +81,7 @@
       {{#each albums.items}}
       <div class='album'>
         <img src="{{images.0.url}}" data-album-id="{{id}}" class="albumimg"/>
-        <div class='album-title'>Album</div>
+        <div data-album-id="{{name}}" class='album-title'></div>
         <div class='artist'>Artist</div>
       </div>
     {{/each}}
