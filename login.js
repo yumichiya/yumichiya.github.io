@@ -50,7 +50,7 @@
     } else {
       localStorage.removeItem(stateKey);
       if (access_token) {
-        $.ajax({
+        $.ajax({ //Login Call
             url: 'https://api.spotify.com/v1/me',
             headers: {
               'Authorization': 'Bearer ' + access_token
@@ -62,7 +62,8 @@
               $('#loggedin').show();
             }
         });
-        $.ajax({
+
+        $.ajax({ //New Releases Call
             url: 'https://api.spotify.com/v1/browse/new-releases',
             headers: {
               'Authorization': 'Bearer ' + access_token
@@ -71,6 +72,9 @@
                 newReleasesPlaceholder.innerHTML = newReleasesTemplate(response);
             }
         });
+
+        
+
       } else {
           $('#login').show();
           $('#loggedin').hide();
