@@ -26,6 +26,10 @@ body {
 	color: white;
 }
 
+.login-button, #user-profile {
+	font-family: 'Montserrat';
+}
+
 p {
 	color: #8167D6;
 	font-size: 50px;
