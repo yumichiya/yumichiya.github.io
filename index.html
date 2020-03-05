@@ -4,8 +4,8 @@
     <title>Avalanche</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-    <link rel='stylesheet' href='style.css'>
-    <link rel='icon' type='image/png' href='images/logo-pw.png'>
+    <link rel='stylesheet' href='style/style.css'>
+    <link rel='icon' type='image/png' href='style/logo-pw.png'>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
           </div>
           <div class="nav-bar">
             <div class="logo-section">
-              <img src="images/logo-w.png" class="logoimg">
+              <img src="style/logo-w.png" class="logoimg">
               <div class="logo">Avalanche</div>
             </div>
             <ul>
@@ -62,29 +62,6 @@
           <div class="main-view" >
             <div class="spacer"></div>
             <section class='contentSpacing'>
-                <!--<div class='recplaygrid'>
-                    <h2 class='recplay'>Recently played</h2>
-                    <div class='albumone'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumtwo'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumthree'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                    <div class='albumfour'>
-                      <image class='albumimg' src='images/music.png'/>
-                      <div class='album'>Album</div>
-                      <div class='artist'>Artist</div>
-                    </div>
-                </div>-->
                 <div class='new-rel-grid'>
                   <h2 class='new-rel-title'>New Releases</h2>
                   <div id='new-releases'></div>
@@ -105,11 +82,11 @@
         <div data-album-id="{{id}}" class='album-title'>{{name}}</div>
         <div data-album-id="{{id}}" class='artist'>{{artists}}</div>
       </div>
-    {{/each}}
+      {{/each}}
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src='login.js'></script>
+    <script src='app.js'></script>
   </body>
 </html>
