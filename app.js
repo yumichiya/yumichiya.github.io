@@ -1,4 +1,4 @@
-(function() {
+(function() { //self-invoking function 
 
     var stateKey = 'spotify_auth_state';
 
