@@ -69,6 +69,7 @@
               'Authorization': 'Bearer ' + access_token
             },
             success: function(response) {
+                console.log(response);
                 newReleasesPlaceholder.innerHTML = newReleasesTemplate(response);
             }
         });
