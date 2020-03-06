@@ -21,13 +21,15 @@ body {
 	background-color: #282B30;
 }
 
-.login-btn, #user-profile, h2, .album-title, .artist, .nav-bar-items, .logo {
+h2, .album-title, .artist-name, .nav-bar-items, .logo {
 	font-family: 'Abel';
 	color: white;
 }
 
-.login-button, #user-profile {
+.login-btn, #user-profile, .nav-bar-items {
 	font-family: 'Montserrat';
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	color:white;
 }
 
 p {

@@ -35,24 +35,17 @@
                     <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
                 </li>
                 <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Explore Feed</a></div>
+                    <div class="nav-bar-items"><a class="nav-bar-link">Browse</a></div>
                 </li>
                 <div class='nav-divider'></div>
                 <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Recently Played</a></div>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Library</a></div>
                 </li>
                 <li>
                   <div class="nav-bar-items"><a class="nav-bar-link">Favorites</a></div>
                 </li>
                 <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Playlists</a></div>
-                </li>
-                <div class='nav-divider'></div>
-                <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Following DJs</a></div>
-                </li>
-                <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Live Now</a></div>
+                  <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
                 </li>
             </ul>
           </div>
@@ -80,11 +73,10 @@
       <div class='album'>
         <img src="{{images.0.url}}" data-album-id="{{id}}" class="albumimg"/>
         <div data-album-id="{{id}}" class='album-title'>{{name}}</div>
-        <div data-album-id="{{id}}" class='artist-name'>{{artists}}</div>
+        <div data-artists-id="{{id}}" class='artist-name'>{{name}}</div>
       </div>
       {{/each}}
     </script>
-
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src='app.js'></script>
