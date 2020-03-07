@@ -7,8 +7,8 @@
      * @return Object
      */
     function getHashParams() {
-      var hashParams = {};
-      var e, r = /([^&;=]+)=?([^&;]*)/g,
+      let hashParams = {};
+      let e, r = /([^&;=]+)=?([^&;]*)/g,
           q = window.location.hash.substring(1);
       while ( e = r.exec(q)) {
          hashParams[e[1]] = decodeURIComponent(e[2]);
@@ -22,8 +22,8 @@
      * @return {string} The generated string
      */
     function generateRandomString(length) {
-      var text = '';
-      var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let text = '';
+      const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
       for (var i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -64,7 +64,7 @@
         });
 
         $.ajax({ //New Releases Call
-            url: 'https://api.spotify.com/v1/browse/new-releases',
+            url: 'https://api.spotify.com/v1/browse/new-releases?limit=5',
             headers: {
               'Authorization': 'Bearer ' + access_token
             },
