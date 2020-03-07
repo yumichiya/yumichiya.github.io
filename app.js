@@ -64,7 +64,7 @@
         });
 
         $.ajax({ //New Releases Call
-            url: 'https://api.spotify.com/v1/browse/new-releases?limit=5',
+            url: 'https://api.spotify.com/v1/browse/new-releases?limit=4',
             headers: {
               'Authorization': 'Bearer ' + access_token
             },
