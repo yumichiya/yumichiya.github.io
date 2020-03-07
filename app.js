@@ -84,7 +84,7 @@
       document.getElementById('login-button').addEventListener('click', function() {
 
         var client_id = '4977f5049db14ed99184bd454c05716a'; // Your client id
-        var redirect_uri = 'http://localhost:3000/'; // Your redirect uri
+        var redirect_uri = 'https://yumichiya.github.io/'; // Your redirect uri
 
         var state = generateRandomString(16);
 
