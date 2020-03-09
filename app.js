@@ -31,10 +31,12 @@
       return text;
     };
 
+    // user profile template
     var userProfileSource = document.getElementById('user-profile-template').innerHTML,
         userProfileTemplate = Handlebars.compile(userProfileSource),
         userProfilePlaceholder = document.getElementById('user-profile');
 
+    // new releases template
     var newReleasesSource = document.getElementById('new-releases-template').innerHTML,
         newReleasesTemplate = Handlebars.compile(newReleasesSource),
         newReleasesPlaceholder = document.getElementById('new-releases');
@@ -51,40 +53,39 @@
       localStorage.removeItem(stateKey);
       if (access_token) {
         $.ajax({ //Login Call
-            url: 'https://api.spotify.com/v1/me',
+            url: 'https://api.spotify.com/v1/me', // endpoint of user profile
             headers: {
-              'Authorization': 'Bearer ' + access_token
+              'Authorization': 'Bearer ' + access_token //user access token (auth)
             },
-            success: function(response) {
-              userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+            success: function(response) { //if successful, will display user profile
+              userProfilePlaceholder.innerHTML = userProfileTemplate(response); //displays to the inner html of the user profile template
 
-              $('#login').hide();
-              $('#loggedin').show();
+              $('#login').hide(); //hides login button 
+              $('#loggedin').show(); //displays user profile button
             }
         });
 
         $.ajax({ //New Releases Call
-            url: 'https://api.spotify.com/v1/browse/new-releases?limit=4',
+            url: 'https://api.spotify.com/v1/browse/new-releases?limit=4', // endpoint of new releases; limited to 4 new releases to display
             headers: {
-              'Authorization': 'Bearer ' + access_token
+              'Authorization': 'Bearer ' + access_token //user access token (auth)
             },
             success: function(response) {
-                console.log(response);
-                newReleasesPlaceholder.innerHTML = newReleasesTemplate(response);
+                newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
             }
         });
 
         
 
       } else {
-          $('#login').show();
-          $('#loggedin').hide();
+          $('#login').show(); //displays login button
+          $('#loggedin').hide(); //hides user profile button
       }
 
-      document.getElementById('login-button').addEventListener('click', function() {
+      document.getElementById('login-button').addEventListener('click', function() { // once user clicks button, function will activate
 
-        var client_id = '4977f5049db14ed99184bd454c05716a'; // Your client id
-        var redirect_uri = 'https://yumichiya.github.io/'; // Your redirect uri
+        var client_id = '4977f5049db14ed99184bd454c05716a'; // The app client id
+        var redirect_uri = 'https://yumichiya.github.io/'; // The app redirect uri
 
         var state = generateRandomString(16);
 
@@ -98,7 +99,7 @@
         url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
         url += '&state=' + encodeURIComponent(state);
 
-        window.location = url;
+        window.location = url; //creates the new url to login
       }, false);
     }
 
