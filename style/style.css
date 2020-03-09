@@ -21,12 +21,12 @@ body {
 	background-color: #282B30;
 }
 
-h2, .album-title, .artist-name, .nav-bar-items, .logo {
+.album-title, .artist-name, .nav-bar-items, .logo {
 	font-family: 'Abel';
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items {
+.login-btn, #user-profile, .nav-bar-items, h2 {
 	font-family: 'Montserrat';
 	/*font-family: Arial, Helvetica, sans-serif;*/
 	color:white;
@@ -260,18 +260,20 @@ p {
 .albumimg {
 	width: 100%;
 	margin-bottom: 6px;
+	border-radius: 20px 20px 0 0;
 }
 
 .album {
 	display: inline-block;
 	vertical-align: top;
 	position: relative;
-	padding: 20px 20px 16px;
 	background-color: #1E2124;
+	border-radius: 20px;
 }
 
-.album-title, .artist {
+.album-title, .artist-name {
 	display: block;
+	text-align: center;
 }
 
 .album-title {
@@ -279,10 +281,13 @@ p {
 	letter-spacing: 0.5px;
 	margin-bottom: 2px;
 	font-size: 14px;
+	padding: 0 16px;
 }
 
-.artist {
+.artist-name {
 	color: #999999;
 	font-size: 12px;
 	letter-spacing: 0.4px;
+	padding: 0 20px 16px;
 }
+
