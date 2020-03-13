@@ -6,6 +6,7 @@
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <link rel='stylesheet' href='style/style.css'>
     <link rel='icon' type='image/png' href='style/logo-pw.png'>
+    <script src='style.js'></script>
   </head>
 
   <body>
@@ -29,36 +30,59 @@
             </div>
             <ul>
                 <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link-active">Home</a></div>
+                    <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
                 </li>
                 <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Discover</a></div>
+                    <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
                 </li>
                 <li>
-                    <div class="nav-bar-items"><a class="nav-bar-link">Browse</a></div>
+                    <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
                 </li>
                 <div class='nav-divider'></div>
                 <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Library</a></div>
+                  <div class="nav-bar-items" id='library' onclick='library()'><a class="nav-bar-link">Library</a></div>
                 </li>
                 <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Favorites</a></div>
+                  <div class="nav-bar-items" id='favorites' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
                 </li>
                 <li>
-                  <div class="nav-bar-items"><a class="nav-bar-link">Following</a></div>
+                  <div class="nav-bar-items" id='following' onclick='following()'><a class="nav-bar-link">Following</a></div>
                 </li>
             </ul>
           </div>
           <div class="now-playing">
-              <img class="now-playing-img" src="">
+            <div class='now'>
+              <img class="now-playing-img" src="style/music.png">
+              <p class='np-song-name'>Song</p>
+              <p class='np-artist-name'>Artist</p>
+            </div>
           </div>
           <div class="main-view" >
             <div class="spacer"></div>
-            <section class='contentSpacing'>
-                <div class='new-rel-grid'>
-                  <h2 class='new-rel-title'>New Releases</h2>
-                  <div id='new-releases'></div>
-                </div>
+            <section id='home-content'>
+            </section>
+            <section id='discover-content'>
+              <div class='new-rel-grid'>
+                <h2 class='new-rel-title'>New Releases</h2>
+                <div id='new-releases'></div>
+              </div>
+              <br>
+              <div class='rec-grid'>
+                <h2>Recommendation</h2>
+                <div id='recommendation'></div>
+              </div>
+            </section>
+            <section id='browse-content'>
+              <div>browse</div>
+            </section>
+            <section id='library-content'>
+              <div>library</div>
+            </section>
+            <section id='favorites-content'>
+              <div>favorites</div>
+            </section>
+            <section id='following-content'>
+              <div>following</div>
             </section>
           </div>
     </div>

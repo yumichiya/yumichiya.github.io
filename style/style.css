@@ -21,12 +21,12 @@ body {
 	background-color: #282B30;
 }
 
-.album-title, .artist-name, .nav-bar-items, .logo {
+.album-title, .artist-name, .logo, .np-song-name, .np-artist-name {
 	font-family: 'Abel';
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, h2 {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2 {
 	font-family: 'Montserrat';
 	/*font-family: Arial, Helvetica, sans-serif;*/
 	color:white;
@@ -51,7 +51,7 @@ p {
 	height: 100%;
 	position: relative;
 	display: grid;
-	grid-template-rows: 1fr auto;
+	grid-template-rows: auto 1fr;
 	grid-template-columns: auto 1fr;
 	grid-template-areas:
 		"nav-bar main-view"
@@ -95,19 +95,34 @@ p {
   font-weight: bold;
   color: white;
   letter-spacing: 0.5px;
+  padding: 0 16px;
   align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav-bar-link, .nav-bar-link-active {
-  padding: 0 16px;
+.nav-bar-items:hover {
+	opacity: 1;
+	background-color: #7663F2;
+}
+
+.nav-bar-link {
   height: 40px;
   display: flex;
   align-items: center;
-}
+} 
 
-.nav-bar-link-active {
+.nav-bar-items-active {
+	font-size: 18px;
+	font-weight: bold;
+	color: white;
+	letter-spacing: 0.5px;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.3s;
 	padding: 0 11px;
-  	border-left: 5px solid #7663F2;
+	border-left: 5px solid #7663F2;
+	/*background-color: #7663F2;*/
 }
 
 .nav-divider {
@@ -136,16 +151,32 @@ p {
 
 /* Now Playing Section --------------------------------------------------------*/
 .now-playing {
-  grid-area: now-playing;
-  width: 250px;
-  background-color: #1E2124;
+	grid-area: now-playing;
+	width: 250px;
+	background-color: #1E2124;
 }
 
 .now-playing-img {
-  width: 100%;
+	display: block;
+	width: 80%;
+	margin: 10px auto;
+	border-radius: 150px;
 }
 
-/* -------------------------------------*/
+.np-artist-name, .np-song-name {
+	text-align: center;
+	padding: 5px 0;
+}
+
+.np-song-name {
+	font-size: 20px;
+}
+
+.np-artist-name {
+	font-size: 16px;
+}
+
+/* User button Section ----------------------------------------------------------*/
 
 .user {
 	background-color: #1E2124;
@@ -182,73 +213,20 @@ p {
 	cursor: pointer;
 }
 
+/* Sections ---------------------------------------------------------------------*/
 .spacer {
   height: 60px;
 }
-.contentSpacing {
+
+#home-content, #discover-content, #browse-content, #library-content, #favorites-content, #following-content {
 	padding: 0 24px;
 }
 
-
-
-/* -------------------------------------*/
-/*.recplaygrid {
-	display: grid;
-	grid-template-rows: auto 1fr;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 16px;
-	grid-template-areas:
-		'topbar topbar topbar topbar'
-		'one two three four';
+#discover-content, #browse-content, #library-content, #favorites-content, #following-content {
+	display: none;
 }
 
-.recplay {
-	grid-area: topbar;
-}
-
-.albumone, .albumtwo, .albumthree, .albumfour {
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	padding: 20px 20px 16px;
-	background-color: #1E2124;
-}
-
-.albumone {
-	grid-area: one;
-}
-
-.albumtwo {
-	grid-area: two;
-}
-
-.albumthree {
-	grid-area: three;
-}
-
-.albumfour {
-	grid-area: four;
-}
-
-.album, .artist {
-	display: block;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.album {
-	color:white;
-	font-weight: bold;
-	letter-spacing: 0.5px;
-	margin-bottom: 2px;
-}
-
-.artist {
-	color: #999999;
-	font-size: 14px;
-	letter-spacing: 0.4px;
-}
-*/
-/* New Releases Section------------------------------------*/
+/* New Releases Section ---------------------------------------------------------*/
 
 #new-releases {
 	margin-top: 20px;
