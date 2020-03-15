@@ -207,3 +207,11 @@ function following() {
         document.getElementById('favorites-content').style.display = 'none';
     }
 }
+
+$(document).ready(function() {
+    var btn = $(".button");
+    btn.click(function() {
+      btn.toggleClass("paused");
+      return false;
+    });
+  });

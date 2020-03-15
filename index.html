@@ -6,114 +6,133 @@
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
   <link rel='stylesheet' href='style/style.css'>
   <link rel='icon' type='image/png' href='style/logo-pw.png'>
-  <script src='style.js'></script>
 </head>
-
 <body>
-  <div class="containerone">
-    <div class="main">
-      <div class="container">
-        <div class="top-container">
-          <header class="topnav">
-            <div id="login">
-              <button id="login-button" class="login-btn">Log in with Spotify</button>
-            </div>
-            <div id="loggedin">
-              <div id="user-profile"></div>
-            </div>
-          </header>
-        </div>
-        <div class="nav-bar">
-          <div class="logo-section">
-            <img src="style/logo-w.png" class="logoimg">
-            <div class="logo">Avalanche</div>
+  <div class="main">
+    <div class="container">
+      <div class="top-container">
+        <header class="topnav">
+          <div id="login">
+            <button id="login-button" class="login-btn">Log in with Spotify</button>
           </div>
-          <ul>
-            <li>
-              <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
-            </li>
-            <li>
-              <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
-            </li>
-            <li>
-              <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
-                </li>
-                <div class='nav-divider'></div>
-                <li>
-                  <div class="nav-bar-items" id='library' onclick='library()'><a class="nav-bar-link">Library</a></div>
-                </li>
-                <li>
-                  <div class="nav-bar-items" id='favorites' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
-                </li>
-                <li>
-                  <div class="nav-bar-items" id='following' onclick='following()'><a class="nav-bar-link">Following</a></div>
-                </li>
-            </ul>
+          <div id="loggedin">
+            <div id="user-profile"></div>
           </div>
-          <div class="now-playing">
-            <div class='now'>
-              <img class="now-playing-img" src="style/music.png">
-              <p class='np-song-name'>Song</p>
-              <p class='np-artist-name'>Artist</p>
-            </div>
-          </div>
-          <div class="main-view" >
-            <div class="spacer"></div>
-            <section id='home-content'>
-              <!-- Peyton's workspace -->
-
-              <!-- Ethan's workspace -->
-
-              <div class='rec-play-grid'>
-                <h2 class='rec-play-title'>Recently Players</h2>
-              </div>
-            </section>
-            <section id='discover-content'>
-              <div class='new-rel-grid'>
-                <h2 class='new-rel-title'>New Releases</h2>
-                <div id='new-releases'></div>
-              </div>
-              <br>
-              <div class='rec-grid'>
-                <h2>Recommendation</h2>
-                <div id='recommendation'></div>
-              </div>
-            </section>
-            <section id='browse-content'>
-              <!-- Tracy's workspace -->
-              
-            </section>
-            <section id='library-content'>
-              <!-- Patrick's workspace -->
-            </section>
-            <section id='favorites-content'>
-              <div>favorites</div>
-            </section>
-            <section id='following-content'>
-              <!-- Nick's workspace -->
-            </section>
-          </div>
-    </div>
-</div>
-</div>
-    <script id="user-profile-template" type="text/x-handlebars-template">
-      <img class="profileimg" src="{{images.0.url}}" />
-      <div class='name'>{{display_name}}</div>
-    </script>
-
-    <script id="new-releases-template" type="text/x-handlebars-template">
-      {{#each albums.items}}
-      <div class='album'>
-        <img src="{{images.0.url}}" data-album-id="{{id}}" class="albumimg"/>
-        <div data-album-id="{{id}}" class='album-title'>{{name}}</div>
-        <div data-artists-id="{{id}}" class='artist-name'>{{artists.0.name}}</div>
+        </header>
       </div>
-      {{/each}}
-    </script>
+      <div class="nav-bar">
+        <div class="logo-section">
+          <img src="style/logo-w.png" class="logoimg">
+          <div class="logo">Avalanche</div>
+        </div>
+        <ul>
+          <li>
+            <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
+          </li>
+          <li>
+            <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
+          </li>
+          <li>
+            <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
+          </li>
+            <div class='nav-divider'></div>
+          <li>
+            <div class="nav-bar-items" id='library' onclick='library()'><a class="nav-bar-link">Library</a></div>
+          </li>
+          <li>
+            <div class="nav-bar-items" id='favorites' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
+          </li>
+          <li>
+            <div class="nav-bar-items" id='following' onclick='following()'><a class="nav-bar-link">Following</a></div>
+          </li>
+        </ul>
+      </div>
+      <div class="now-playing">
+        <div id='now-playing'></div>
+      </div>
+      <div class="main-view" >
+        <div class="spacer"></div>
+        <section id='home-content'>
+          <!-- Peyton's workspace -->
+            
+            <!-- Ethan's workspace -->
+            <div class='rec-play-grid'>
+              <h2 class='rec-play-title'>Recently Played</h2>
+              <div id='recently-played'></div>
+            </div>
+            <!-- Ethan's workspace ends here-->
+          </section>
+          <section id='discover-content'>
+          <div class='new-rel-grid'>
+            <h2 class='new-rel-title'>New Releases</h2>
+            <div id='new-releases'></div>
+          </div>
+          <br>
+          <!-- Tracy's workspace -->
+          <div class='rec-grid'>
+            <h2>Recommendation</h2>
+            <div id='recommendation'></div>
+          </div>
+          <!-- Tracy's workspace ends here-->
+        </section>
+        <section id='browse-content'>
+              
+        </section>
+        <section id='library-content'>
+          <!-- Patrick's workspace -->
 
+        </section>
+        <section id='favorites-content'>
+          <div>favorites</div>
+        </section>
+        <section id='following-content'>
+          <!-- Nick's workspace -->
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src='app.js'></script>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script id="user-profile-template" type="text/x-handlebars-template">
+    <!-- This is getting the user's profile image --> 
+    <img class="profileimg" src="{{images.0.url}}" />
+    <!-- This is getting the user's name --> 
+    <div class='name'>{{display_name}}</div>
+  </script>
+  <script id="new-releases-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div class='album'>
+      <!-- The img tag is getting the album image --> 
+      <img src="{{images.0.url}}" class="albumimg"/>
+      <!-- This div is getting the album title --> 
+      <div class='album-title'>{{name}}</div>
+      <!-- This div is getting the artist name for that album --> 
+      <div class='artist-name'>{{artists.0.name}}</div>
+    </div>
+    {{/each}}
+  </script>
+  <script id="now-playing-template" type="text/x-handlebars-template">
+    <div class='now'>
+      <img class="now-playing-img" src="{{item.album.images.0.url}}">
+      <div class='progress-bar'></div>
+      <div class='start-time'></div>
+      <div class='end-time'></div>
+      <div class='play' hidden></div>
+      <div class='pause' hidden></div>
+      <p class='np-song-name'>{{item.album.artists.0.name}}</p>
+      <p class='np-artist-name'>{{item.name}}</p>
+    </div>
+  </script>
+  <!-- Ethan's workspace -->
+
+  <!-- Tracy's workspace -->
+
+  <!-- Patrick's workspace -->
+
+  <!-- Nick's workspace -->
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script src='style.js'></script>
+  <script src='app.js'></script>
   </body>
 </html>

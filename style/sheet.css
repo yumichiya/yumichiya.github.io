@@ -62,8 +62,8 @@
 .five, .seven {
 	position: absolute;
 	height: 40px;
-   width: 100px;
-   //overflow: hidden;
+   	width: 100px;
+   	overflow: hidden;
 	margin-top: 150px;
 }
 .four {

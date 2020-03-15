@@ -39,6 +39,11 @@
   var newReleasesSource = document.getElementById('new-releases-template').innerHTML,
       newReleasesTemplate = Handlebars.compile(newReleasesSource),
       newReleasesPlaceholder = document.getElementById('new-releases');
+  
+  // now playing template
+  var nowPlayingSource = document.getElementById('now-playing-template').innerHTML,
+      nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
+      nowPlayingPlaceholder = document.getElementById('now-playing');
 
   var params = getHashParams();
 
@@ -51,7 +56,7 @@
   } else {
     localStorage.removeItem(stateKey);
     if (access_token) {
-      $.ajax({ //Login Call
+      $.ajax({ // Login Call
         url: 'https://api.spotify.com/v1/me', // endpoint of user profile
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
@@ -64,13 +69,23 @@
         }
       });
 
-      $.ajax({ //New Releases Call
-        url: 'https://api.spotify.com/v1/browse/new-releases?limit=4', // endpoint of new releases; limited to 4 new releases to display
+      $.ajax({ // New Releases Call
+        url: 'https://api.spotify.com/v1/browse/new-releases?limit=5', // endpoint of new releases; limited to 4 new releases to display
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
+        }
+      });
+
+      $.ajax({ //
+        url: 'https://api.spotify.com/v1/me/player', // Music Player Call
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response); 
         }
       });
 
@@ -86,13 +101,14 @@
       // The app client id; dont change this 
       var client_id = '4977f5049db14ed99184bd454c05716a'; 
 
-      // The app redirect uri; change to http://localhost:3000/ to test and https://yumichiya.github.io/ to deploy
+      // The app redirect uri 
+      //change to http://localhost:3000/ to test and https://yumichiya.github.io/ to deploy
       var redirect_uri = 'http://localhost:3000/'; 
 
       var state = generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = 'user-read-private user-read-email';
+      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state';
 
       var url = 'https://accounts.spotify.com/authorize';
           url += '?response_type=token';
