@@ -1,42 +1,42 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Avalanche</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-    <link rel='stylesheet' href='style/style.css'>
-    <link rel='icon' type='image/png' href='style/logo-pw.png'>
-    <script src='style.js'></script>
-  </head>
+<head>
+  <title>Avalanche</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+  <link rel='stylesheet' href='style/style.css'>
+  <link rel='icon' type='image/png' href='style/logo-pw.png'>
+  <script src='style.js'></script>
+</head>
 
-  <body>
-    <div class="containerone">
-      <div class="main">
-        <div class="container">
-          <div class="top-container">
-            <header class="topnav">
-              <div id="login">
-                <button id="login-button" class="login-btn">Log in with Spotify</button>
-              </div>
-              <div id="loggedin">
-                <div id="user-profile"></div>
-              </div>
-            </header>
-          </div>
-          <div class="nav-bar">
-            <div class="logo-section">
-              <img src="style/logo-w.png" class="logoimg">
-              <div class="logo">Avalanche</div>
+<body>
+  <div class="containerone">
+    <div class="main">
+      <div class="container">
+        <div class="top-container">
+          <header class="topnav">
+            <div id="login">
+              <button id="login-button" class="login-btn">Log in with Spotify</button>
             </div>
-            <ul>
-                <li>
-                    <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
-                </li>
-                <li>
-                    <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
-                </li>
-                <li>
-                    <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
+            <div id="loggedin">
+              <div id="user-profile"></div>
+            </div>
+          </header>
+        </div>
+        <div class="nav-bar">
+          <div class="logo-section">
+            <img src="style/logo-w.png" class="logoimg">
+            <div class="logo">Avalanche</div>
+          </div>
+          <ul>
+            <li>
+              <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
+            </li>
+            <li>
+              <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
+            </li>
+            <li>
+              <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
                 </li>
                 <div class='nav-divider'></div>
                 <li>
@@ -60,6 +60,13 @@
           <div class="main-view" >
             <div class="spacer"></div>
             <section id='home-content'>
+              <!-- Peyton's workspace -->
+
+              <!-- Ethan's workspace -->
+
+              <div class='rec-play-grid'>
+                <h2 class='rec-play-title'>Recently Players</h2>
+              </div>
             </section>
             <section id='discover-content'>
               <div class='new-rel-grid'>
@@ -73,19 +80,21 @@
               </div>
             </section>
             <section id='browse-content'>
-              <div>browse</div>
+              <!-- Tracy's workspace -->
+              
             </section>
             <section id='library-content'>
-              <div>library</div>
+              <!-- Patrick's workspace -->
             </section>
             <section id='favorites-content'>
               <div>favorites</div>
             </section>
             <section id='following-content'>
-              <div>following</div>
+              <!-- Nick's workspace -->
             </section>
           </div>
     </div>
+</div>
 </div>
     <script id="user-profile-template" type="text/x-handlebars-template">
       <img class="profileimg" src="{{images.0.url}}" />
@@ -101,6 +110,8 @@
       </div>
       {{/each}}
     </script>
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src='app.js'></script>
