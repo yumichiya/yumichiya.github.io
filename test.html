@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Spotify Web Playback SDK Quick Start Tutorial</title>
+  <title>Avalanche</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel='stylesheet' href='style/test.css'>
 </head>
 <body>
-  <h1>Spotify Web Playback SDK Quick Start Tutorial</h1>
-  <h2>Open your console log: <code>View > Developer > JavaScript Console</code></h2>
+  <div class='sky'>
+    <div>
 
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
-  <script>
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = '[My Spotify Web API access token]';
-      const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
-        getOAuthToken: cb => { cb(token); }
-      });
-
-      // Error handling
-      player.addListener('initialization_error', ({ message }) => { console.error(message); });
-      player.addListener('authentication_error', ({ message }) => { console.error(message); });
-      player.addListener('account_error', ({ message }) => { console.error(message); });
-      player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-      // Playback status updates
-      player.addListener('player_state_changed', state => { console.log(state); });
-
-      // Ready
-      player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
-      });
-
-      // Not Ready
-      player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
-      });
-
-      // Connect to the player!
-      player.connect();
-    };
-  </script>
+    </div>
+  </div>
+  <div class='login-container'>
+    <div class='title'>Avalanche</div>
+    <div class='subtitle'>Bringing Radio into the 21st Century</div>
+    <button id="login-button" class="login-btn">Log in with Spotify</button>
+  </div>
 </body>
 </html>

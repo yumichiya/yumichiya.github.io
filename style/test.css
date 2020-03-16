@@ -1,38 +1,43 @@
-html,body{
-    height: 100%;
-  }
-  body{
-    margin: 0;
-  }
-  body {
-    display: grid;
-    grid-gap: 10px;
-    height: 100%;
-    grid-template-columns:1fr;
-    grid-template-areas:
-               "nav"
-              "main"
-              "footer";
-    
-    grid-template-rows: 100px 1fr 80px;
-  }
-  nav {
-    grid-area: nav;
-  }
+body {
+  height: 100%;
+  background-image: url(mountains-2.jpg);
+  background-attachment: fixed;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  main {
-     grid-area: main;
-  }
+.login-container {
+  background-color: #1E2124;
+  border-radius: 20px;
+  padding: 100px 0;
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  z-index: 10;
+}
 
-  footer {
-      grid-area: footer;
-  }
-  nav {
-    background-color: #7E57C2;
-  }
-  main {
-    background-color: #F8BBD0;
-  }
-  footer {
-    background-color: #7E57C2;
-  }
+.login-btn, .title, .subtitle {
+	font-family: 'Montserrat';
+  color:white;
+  margin: auto;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.subtitle {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.login-btn {
+  padding: 8px;
+	border-radius: 10px;
+	background-color: #7663F2;
+	border: 0px;
+	align-items: center;
+	cursor: pointer;
+}
+
