@@ -1,0 +1,43 @@
+body {
+  height: 100%;
+  background-image: url(mountains-2.jpg);
+  background-attachment: fixed;
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-container {
+  background-color: #1E2124;
+  border-radius: 20px;
+  padding: 100px 0;
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  z-index: 10;
+}
+
+.login-btn, .title, .subtitle {
+	font-family: 'Montserrat';
+  color:white;
+  margin: auto;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.subtitle {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.login-btn {
+  padding: 8px;
+	border-radius: 10px;
+	background-color: #7663F2;
+	border: 0px;
+	align-items: center;
+	cursor: pointer;
+}
+
