@@ -103,7 +103,7 @@
 
       // The app redirect uri 
       //change to http://localhost:3000/ to test and https://yumichiya.github.io/ to deploy
-      var redirect_uri = 'https://yumichiya.github.io/'; 
+      var redirect_uri = 'http://localhost:3000/'; 
 
       var state = generateRandomString(16);
 
