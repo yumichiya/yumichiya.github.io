@@ -83,9 +83,13 @@
               
         </section>
         <section id='library-content'>
-          <!-- Patrick's workspace -->
-
+        <!-- Patrick's workspace -->
+          <div class='new-rel-grid'>
+            <h2 class='new-rel-title'>Moi Library</h2>
+            <div id='pieceOfShit'></div>
+          </div>
         </section>
+        <!-- Patrick's Workspace ends here -->
         <section id='favorites-content'>
           <div>favorites</div>
         </section>
@@ -132,7 +136,20 @@
   <!-- Tracy's workspace -->
 
   <!-- Patrick's workspace -->
-
+  <script id="pieceOfShit-template" type="text/x-handlebars-template">
+    {{#each items}}
+    <div class='library'>
+      <div class='name'>{{name}}</div>
+      <!-- The img tag is getting the album image --> 
+      <img src="{{images.0.url}}" class="pieceOfShitting"/>
+      <!-- This div is getting the album title --> 
+      <!--<div class='album-title'>{{name}}</div>-->
+      <!-- This div is getting the artist name for that album --> 
+      <!--<div class='artist-name'>{{items.0.tracks}}</div> -->
+    </div>
+    {{/each}}
+  </script>
+  <!-- Patrick's workspace ends here -->
   <!-- Nick's workspace -->
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
