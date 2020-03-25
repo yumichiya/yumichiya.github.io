@@ -8,16 +8,19 @@
   <link rel='icon' type='image/png' href='style/logo-pw.png'>
 </head>
 <body>
+  <div id="login">
+  <div class='login-container'>
+    <div class='title'>Avalanche</div>
+    <div class='subtitle'>Bringing Radio into the 21st Century</div>
+    <button id="login-button" class="login-btn">Log in with Spotify</button>
+  </div>
+  </div>
+  <div id='loggedin'>
   <div class="main">
     <div class="container">
       <div class="top-container">
         <header class="topnav">
-          <div id="login">
-            <button id="login-button" class="login-btn">Log in with Spotify</button>
-          </div>
-          <div id="loggedin">
-            <div id="user-profile"></div>
-          </div>
+          <div id="user-profile"></div>
         </header>
       </div>
       <div class="nav-bar">
@@ -61,6 +64,7 @@
             <div id='recently-played'></div>
           </div>
           <!-- Ethan's workspace ends here-->
+          <a href='test.html'>Test</a>
         </section>
         <section id='discover-content'>
         <div class='new-rel-grid'>
@@ -91,6 +95,7 @@
         </section>
       </div>
     </div>
+  </div>
   </div>
   <script id="user-profile-template" type="text/x-handlebars-template">
     <!-- This is getting the user's profile image --> 

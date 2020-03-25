@@ -66,6 +66,7 @@
 
           $('#login').hide(); //hides login button 
           $('#loggedin').show(); //displays user profile button
+          document.body.style.backgroundImage = 'none';
         }
       });
 
@@ -88,6 +89,14 @@
           nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response); 
         }
       });
+
+      //Patrick's workspace
+
+      //Ethan's workspace
+
+      //Nick's workspace
+
+      //Tracy's workspace
 
         
 

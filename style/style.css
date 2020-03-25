@@ -17,12 +17,11 @@ tfoot, th, thead, time, tr, tt, u, ul, var, video {
 	vertical-align: baseline;
 }
 
-html {
-	height: 100%;
-}
-
 body {
 	background-color: #282B30;
+}
+
+#loggedin, body, html {
 	height: 100%;
 }
 
@@ -33,7 +32,6 @@ body {
 
 .login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2 {
 	font-family: 'Montserrat';
-	/*font-family: Arial, Helvetica, sans-serif;*/
 	color:white;
 }
 
@@ -41,8 +39,6 @@ p {
 	color: #8167D6;
 	font-size: 50px;
 }
-
-
 
 .main{
 	height: 100%;
@@ -81,6 +77,58 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+/* Log in Screen Section ---------------------------------------------------------*/
+body {
+	background-image: url(mountains-2.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  
+.login-container {
+	background-color: #1E2124;
+	border-radius: 20px;
+	padding: 100px 0;
+	text-align: center;
+	width: 600px;
+	z-index: 10;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+  
+.login-btn, .title, .subtitle {
+	font-family: 'Montserrat';
+	color:white;
+	margin: auto;
+}
+  
+.title {
+	font-size: 64px;
+}
+  
+.subtitle {
+	font-size: 22px;
+	padding-bottom: 20px;
+}
+  
+.login-btn {
+	font-size: 14px;
+	padding: 16px;
+	border-radius: 10px;
+	background-color: #1e2124;
+	border: white solid 2px;
+	align-items: center;
+	cursor: pointer;
+}
+  
+.login-btn:hover {
+	background: #7663F2;
+	transition: all 0.4s ease;
 }
 
 /* Navigation Bar Section --------------------------------------------------------*/
@@ -221,7 +269,7 @@ li {
 	display: inline-block;
 }
 
-.login-btn, #user-profile {
+#user-profile {
 	float: right;
 	margin: 20px;
 	padding: 8px;
