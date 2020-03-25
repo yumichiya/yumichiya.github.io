@@ -66,6 +66,7 @@
 
           $('#login').hide(); //hides login button 
           $('#loggedin').show(); //displays user profile button
+          document.body.style.backgroundImage = 'none';
         }
       });
 
