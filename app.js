@@ -76,6 +76,7 @@
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
+          console.log(response);
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
         }
       });
