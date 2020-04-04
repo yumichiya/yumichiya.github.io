@@ -142,11 +142,15 @@
 
   <!-- Nick's workspace -->
   <script id="following-template" type = "text/x-handlebars-template">
-    {{#each albums.items}}
-    <div class = 'artistsFollowing'>
-      <img class = "artists-following-img" src = {{artists.images.0.url}} >
-      <div class = 'artist-name'> {{artists.0.names}}  </div> 
-  
+    {{#each artists.items}}
+    <div class='artists'>
+       
+      <img src="{{images.0.url}}" class="albumimg"/>
+      
+      <div class='artist-title'>{{name}}</div>
+      
+    </div>
+    {{/each}}
   
   </script>>
 
