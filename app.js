@@ -45,6 +45,10 @@
       nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
+  var followingSouce = document.getElementById('following-template').innerHTML, 
+      followingTemplate = Handlebars.compile(followingSouce),
+      followingPlaceholder = document.getElementById('following');
+
   var params = getHashParams();
 
   var access_token = params.access_token,
@@ -95,6 +99,15 @@
       //Ethan's workspace
 
       //Nick's workspace
+      $.ajax({ // following artists call
+        url: 'https://api.spotify.com/v1/me/following?type=artist', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the new releases template
+        }
+      });
 
       //Tracy's workspace
 
