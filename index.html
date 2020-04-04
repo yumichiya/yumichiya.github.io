@@ -89,10 +89,10 @@
         <section id='favorites-content'>
           <div>favorites</div>
         </section>
+        <!-- Nick's workspace -->
         <section id='following-content'>
-          <!-- Nick's workspace -->
-          <div class='new-rel-grid'>
-            <h2 class='new-rel-title'>Artists Following</h2>
+          <div class='following-grid'>
+            <h2 class='following-title'>Artists Following Right Now</h2>
             <hr>
             <div id='following'></div>
           </div>
@@ -141,6 +141,14 @@
   <!-- Patrick's workspace -->
 
   <!-- Nick's workspace -->
+  <script id="following-template" type = "text/x-handlebars-template">
+    {{#each albums.items}}
+    <div class = 'artistsFollowing'>
+      <img class = "artists-following-img" src = {{artists.images.0.url}} >
+      <div class = 'artist-name'> {{artists.0.names}}  </div> 
+  
+  
+  </script>>
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
