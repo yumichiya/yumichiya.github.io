@@ -45,8 +45,8 @@
       nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
-  var followingSouce = document.getElementById('following-template').innerHTML, 
-      followingTemplate = Handlebars.compile(followingSouce),
+  var followingSource = document.getElementById('following-template').innerHTML, 
+      followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
 
   var params = getHashParams();
@@ -100,12 +100,12 @@
 
       //Nick's workspace
       $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/following?type=artist', // endpoint 
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=5', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
-          followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the new releases template
+          followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
 
