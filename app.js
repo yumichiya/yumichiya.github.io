@@ -49,9 +49,9 @@
   //var librarySource = document.getElementById('library-template').innerHTML,
       //libraryTemplate = Handlebars.compile(librarySource),
       //libraryPlaceholder = document.getElementById('libraries');
-      var pieceOfShitSource = document.getElementById('pieceOfShit-template').innerHTML; 
-      var pieceOfShitTemplate = Handlebars.compile(pieceOfShitSource);
-      var pieceOfShitPlaceholder = document.getElementById('pieceOfShit');
+      var librarySource = document.getElementById('library-template').innerHTML; 
+      var libraryTemplate = Handlebars.compile(librarySource);
+      var libraryPlaceholder = document.getElementById('lib-playlist');
 
   var params = getHashParams();
 
@@ -84,13 +84,12 @@
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
-          console.log(response);
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
         }
       });
 
-      $.ajax({ //
-        url: 'https://api.spotify.com/v1/me/player', // Music Player Call
+      $.ajax({ // Music Player call
+        url: 'https://api.spotify.com/v1/me/player', // endpoint for player
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
@@ -100,13 +99,13 @@
       });
 
       //Patrick's workspace
-      $.ajax({ // Stalking someone's libraries
-        url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries; limited to 4 new releases to display
+      $.ajax({ // Library Playlist
+        url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
-          pieceOfShitPlaceholder.innerHTML = pieceOfShitTemplate(response); //displays to the inner html of the library template
+          libraryPlaceholder.innerHTML = libraryTemplate(response); //displays to the inner html of the library template
         }
       });
 

@@ -84,9 +84,9 @@
         </section>
         <section id='library-content'>
         <!-- Patrick's workspace -->
-          <div class='new-rel-grid'>
-            <h2 class='new-rel-title'>Moi Library</h2>
-            <div id='pieceOfShit'></div>
+          <div class='library-grid'>
+            <h2 class='library-title'>My Library</h2>
+            <div id='lib-playlist'></div>
           </div>
         </section>
         <!-- Patrick's Workspace ends here -->
@@ -136,18 +136,20 @@
   <!-- Tracy's workspace -->
 
   <!-- Patrick's workspace -->
-  <script id="pieceOfShit-template" type="text/x-handlebars-template">
+  <script id="library-template" type="text/x-handlebars-template">
+    <div id='library-playlist'>
+    {{#if items}}
     {{#each items}}
     <div class='library'>
-      <div class='name'>{{name}}</div>
       <!-- The img tag is getting the album image --> 
-      <img src="{{images.0.url}}" class="pieceOfShitting"/>
-      <!-- This div is getting the album title --> 
-      <!--<div class='album-title'>{{name}}</div>-->
-      <!-- This div is getting the artist name for that album --> 
-      <!--<div class='artist-name'>{{items.0.tracks}}</div> -->
+      <img src="{{images.0.url}}" class="playlist-img"/>
+      <div class='playlist-name'>{{name}}</div>
     </div>
     {{/each}}
+    {{else}}
+    </div>
+    <div class='none'>You public playlists will appear here.</div>
+    {{/if}}
   </script>
   <!-- Patrick's workspace ends here -->
   <!-- Nick's workspace -->

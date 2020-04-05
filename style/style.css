@@ -25,12 +25,12 @@ body {
 	height: 100%;
 }
 
-.album-title, .artist-name, .logo, .np-song-name, .np-artist-name {
+.album-title, .artist-name, .logo, .np-song-name, .np-artist-name, .playlist-name {
 	font-family: 'Abel';
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2 {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none {
 	font-family: 'Montserrat';
 	color:white;
 }
@@ -336,3 +336,41 @@ li {
 	padding: 0 20px 16px;
 }
 
+/* Library Section ---------------------------------------------------------*/
+#library-playlist {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 16px;
+}
+
+.library {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.playlist-img {
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+}
+
+.playlist-name {
+	display: block;
+	text-align: center;
+}
+
+.playlist-name {
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	font-size: 14px;
+	padding: 8px 10px 10px 10px;
+}
+
+.none {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 150px;
+}
