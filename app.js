@@ -45,6 +45,14 @@
       nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
+  // Libraries
+  //var librarySource = document.getElementById('library-template').innerHTML,
+      //libraryTemplate = Handlebars.compile(librarySource),
+      //libraryPlaceholder = document.getElementById('libraries');
+      var pieceOfShitSource = document.getElementById('pieceOfShit-template').innerHTML; 
+      var pieceOfShitTemplate = Handlebars.compile(pieceOfShitSource);
+      var pieceOfShitPlaceholder = document.getElementById('pieceOfShit');
+
   var params = getHashParams();
 
   var access_token = params.access_token,
@@ -92,6 +100,15 @@
       });
 
       //Patrick's workspace
+      $.ajax({ // Stalking someone's libraries
+        url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries; limited to 4 new releases to display
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          pieceOfShitPlaceholder.innerHTML = pieceOfShitTemplate(response); //displays to the inner html of the library template
+        }
+      });
 
       //Ethan's workspace
 
