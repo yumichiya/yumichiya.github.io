@@ -116,11 +116,12 @@
 
       //Nick's workspace
       $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=5', // endpoint 
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
+          console.log(response);
           followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
@@ -146,7 +147,7 @@
       var state = generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state';
+      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read';
 
       var url = 'https://accounts.spotify.com/authorize';
           url += '?response_type=token';

@@ -1,11 +1,11 @@
 
 function home() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(discover_id.className == 'nav-bar-items-active') {
         discover_id.classList.replace('nav-bar-items-active','nav-bar-items');
         home_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -35,12 +35,12 @@ function home() {
 }
 
 function discover() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
         discover_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -70,12 +70,12 @@ function discover() {
 }
 
 function browse() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
         browse_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -105,12 +105,12 @@ function browse() {
 }
 
 function library() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
         library_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -139,12 +139,12 @@ function library() {
 }
 
 function favorites() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
         favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -174,12 +174,12 @@ function favorites() {
 }
 
 function following() {
-    let home_id = document.getElementById('home');
-    let discover_id = document.getElementById('discover');
-    let browse_id = document.getElementById('browse');
-    let library_id = document.getElementById('library');
-    let favorites_id = document.getElementById('favorites');
-    let following_id = document.getElementById('following');
+    let home_id = document.getElementById('home-tab');
+    let discover_id = document.getElementById('discover-tab');
+    let browse_id = document.getElementById('browse-tab');
+    let library_id = document.getElementById('library-tab');
+    let favorites_id = document.getElementById('favorites-tab');
+    let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
         following_id.classList.replace('nav-bar-items','nav-bar-items-active');

@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Code mostly written by Jasmine minus the workspaces by other group members -->
 <html>
 <head>
   <title>Avalanche</title>
@@ -30,23 +31,23 @@
         </div>
         <ul>
           <li>
-            <div class="nav-bar-items-active" id='home' onclick='home()'><a class="nav-bar-link">Home</a></div>
+            <div class="nav-bar-items-active" id='home-tab' onclick='home()'><a class="nav-bar-link">Home</a></div>
           </li>
           <li>
-            <div class="nav-bar-items" id='discover' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
+            <div class="nav-bar-items" id='discover-tab' onclick='discover()'><a class="nav-bar-link">Discover</a></div>
           </li>
           <li>
-            <div class="nav-bar-items" id='browse' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
+            <div class="nav-bar-items" id='browse-tab' onclick='browse()'><a class="nav-bar-link">Browse</a></div>
           </li>
             <div class='nav-divider'></div>
           <li>
-            <div class="nav-bar-items" id='library' onclick='library()'><a class="nav-bar-link">Library</a></div>
+            <div class="nav-bar-items" id='library-tab' onclick='library()'><a class="nav-bar-link">Library</a></div>
           </li>
           <li>
-            <div class="nav-bar-items" id='favorites' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
+            <div class="nav-bar-items" id='favorites-tab' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
           </li>
           <li>
-            <div class="nav-bar-items" id='following' onclick='following()'><a class="nav-bar-link">Following</a></div>
+            <div class="nav-bar-items" id='following-tab' onclick='following()'><a class="nav-bar-link">Following</a></div>
           </li>
         </ul>
       </div>
@@ -96,8 +97,7 @@
         <!-- Nick's workspace -->
         <section id='following-content'>
           <div class='following-grid'>
-            <h2 class='following-title'>Artists Following Right Now</h2>
-            <hr>
+            <h2 class='following-title'>Following Artists</h2>
             <div id='following'></div>
           </div>
           <br>
@@ -162,12 +162,11 @@
   <!-- Nick's workspace -->
   <script id="following-template" type = "text/x-handlebars-template">
     {{#each artists.items}}
-    <div class='artists'>
-       
-      <img src="{{images.0.url}}" class="albumimg"/>
-      
-      <div class='artist-title'>{{name}}</div>
-      
+    <div class='following-artists'>
+      <img src="{{images.0.url}}" class="fol-art-img"/>
+      <div class='following-overlay'>
+        <div class='fol-art-name'>{{name}}</div>
+      </div>
     </div>
     {{/each}}
   

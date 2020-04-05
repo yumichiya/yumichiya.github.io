@@ -19,6 +19,7 @@ tfoot, th, thead, time, tr, tt, u, ul, var, video {
 
 body {
 	background-color: #282B30;
+	overflow: hidden;
 }
 
 #loggedin, body, html {
@@ -56,7 +57,7 @@ p {
 	grid-template-columns: auto 1fr;
 	grid-template-areas:
 		"nav-bar main-view"
-		"now-playing now-playing";
+		"now-playing main-view";
 }
 
 .top-container {
@@ -68,6 +69,7 @@ p {
 .main-view {
 	grid-area: main-view;
 	width: 100%;
+	overflow-y: scroll;
 }
 
 .topbar {
@@ -77,6 +79,10 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
 }
 
 /* Log in Screen Section ---------------------------------------------------------*/
@@ -345,7 +351,7 @@ li {
 }
 
 .library {
-	display: inline-block;
+	display: grid;
 	vertical-align: top;
 	position: relative;
 	background-color: #1E2124;
@@ -374,3 +380,5 @@ li {
 	text-align: center;
 	margin-top: 150px;
 }
+
+/* Following Section ---------------------------------------------------------*/
