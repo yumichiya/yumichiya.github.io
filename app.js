@@ -45,13 +45,16 @@
       nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
-  // Libraries
-  //var librarySource = document.getElementById('library-template').innerHTML,
-      //libraryTemplate = Handlebars.compile(librarySource),
-      //libraryPlaceholder = document.getElementById('libraries');
+  // Libraries template
       var librarySource = document.getElementById('library-template').innerHTML; 
       var libraryTemplate = Handlebars.compile(librarySource);
       var libraryPlaceholder = document.getElementById('lib-playlist');
+
+  // Following template
+  var followingSource = document.getElementById('following-template').innerHTML, 
+      followingTemplate = Handlebars.compile(followingSource),
+      followingPlaceholder = document.getElementById('following');
+
 
   var params = getHashParams();
 
@@ -112,6 +115,15 @@
       //Ethan's workspace
 
       //Nick's workspace
+      $.ajax({ // following artists call
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=5', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
+        }
+      });
 
       //Tracy's workspace
 
