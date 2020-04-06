@@ -382,3 +382,50 @@ li {
 }
 
 /* Following Section ---------------------------------------------------------*/
+#following {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 16px;
+
+}
+
+.following-artists {
+	margin-top: 16px;
+	display: grid;
+	position: relative;
+	border-radius: 20px;
+}
+
+.following-overlay {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 20px;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+	background-color: #1e212480;
+}
+
+.fol-art-img {
+	width: 200px;
+	height: 200px;
+	border-radius: 20px;
+}
+
+.fol-art-name {
+	display: block;
+	position: relative;
+	top: 50%;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	font-style: Montserrat;
+}
+
+.following-artists:hover, .following-overlay:hover {
+	opacity: 1;
+}
+
