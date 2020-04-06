@@ -429,3 +429,7 @@ li {
 	opacity: 1;
 }
 
+.following-artists:hover {
+	transform: scale(1.2);
+}
+
