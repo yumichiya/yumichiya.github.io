@@ -1,4 +1,4 @@
-
+/* Code written by Jasmine */
 function home() {
     let home_id = document.getElementById('home-tab');
     let discover_id = document.getElementById('discover-tab');

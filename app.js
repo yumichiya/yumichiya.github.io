@@ -1,3 +1,4 @@
+/* Code mostly written by Jasmine minus the workspaces by other group members */
 (function() { //self-invoking function 
   var stateKey = 'spotify_auth_state';
 
@@ -46,7 +47,7 @@
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
   // Libraries template
-      var librarySource = document.getElementById('library-template').innerHTML; 
+  var librarySource = document.getElementById('library-template').innerHTML; 
       var libraryTemplate = Handlebars.compile(librarySource);
       var libraryPlaceholder = document.getElementById('lib-playlist');
 
@@ -111,7 +112,8 @@
           libraryPlaceholder.innerHTML = libraryTemplate(response); //displays to the inner html of the library template
         }
       });
-
+      //Patrick's workspace ends here
+      
       //Ethan's workspace
 
       //Nick's workspace
@@ -125,6 +127,7 @@
           followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
+      //Nick's workspace ends here
 
       //Tracy's workspace
 

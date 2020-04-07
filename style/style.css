@@ -1,3 +1,4 @@
+/* Code mostly written by Jasmine minus the workspaces by other group members */
 @font-face {
     font-family: logo;
     src: url(BebasNeue-Regular.ttf);
@@ -115,7 +116,7 @@ p {
 
 /* Log in Screen Section ---------------------------------------------------------*/
 body {
-	background-image: url(mountains-2.jpg);
+	background-image: url(mountains.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -412,7 +413,7 @@ li {
 	margin-top: 150px;
 }
 
-/* Following Section ---------------------------------------------------------*/
+/* Following Section (Peyton's Workspace)---------------------------------------------------------*/
 #following {
 	margin-top: 16px;
 	display: grid;
