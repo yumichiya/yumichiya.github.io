@@ -1,3 +1,4 @@
+/* Code mostly written by Jasmine minus the workspaces by other group members */
 @font-face {
     font-family: logo;
     src: url(BebasNeue-Regular.ttf);
@@ -19,18 +20,19 @@ tfoot, th, thead, time, tr, tt, u, ul, var, video {
 
 body {
 	background-color: #282B30;
+	overflow: hidden;
 }
 
 #loggedin, body, html {
 	height: 100%;
 }
 
-.album-title, .artist-name, .logo, .np-song-name, .np-artist-name {
+.album-title, .artist-name, .logo, .np-song-name, .np-artist-name, .playlist-name {
 	font-family: 'Abel';
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2 {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none {
 	font-family: 'Montserrat';
 	color:white;
 }
@@ -56,7 +58,7 @@ p {
 	grid-template-columns: auto 1fr;
 	grid-template-areas:
 		"nav-bar main-view"
-		"now-playing now-playing";
+		"now-playing main-view";
 }
 
 .top-container {
@@ -68,6 +70,8 @@ p {
 .main-view {
 	grid-area: main-view;
 	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .topbar {
@@ -79,9 +83,40 @@ p {
 	justify-content: space-between;
 }
 
+.main-view::-webkit-scrollbar {
+	width: 8px;
+}
+
+.main-view::-webkit-scrollbar-thumb {
+	background: #ffffff;
+	border-radius: 10px;
+	width: 10px;
+}
+
+.main-view::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+.left, .right {
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 5px;
+}
+
+.right {
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+}
+  
+.left {
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+
 /* Log in Screen Section ---------------------------------------------------------*/
 body {
-	background-image: url(mountains-2.jpg);
+	background-image: url(mountains.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -297,9 +332,12 @@ li {
 
 #new-releases {
 	margin-top: 20px;
+	padding-bottom: 12px;
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
 	grid-gap: 16px;
+	/*overflow-x: scroll;
+	scroll-snap-type: x proximity;*/
 }
 
 .albumimg {
@@ -335,4 +373,97 @@ li {
 	letter-spacing: 0.4px;
 	padding: 0 20px 16px;
 }
+
+/* Library Section ---------------------------------------------------------*/
+#library-playlist {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 16px;
+}
+
+.library {
+	display: grid;
+	vertical-align: top;
+	position: relative;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.playlist-img {
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+}
+
+.playlist-name {
+	display: block;
+	text-align: center;
+}
+
+.playlist-name {
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	font-size: 14px;
+	padding: 8px 10px 10px 10px;
+}
+
+.none {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 150px;
+}
+
+/* Following Section (Peyton's Workspace)---------------------------------------------------------*/
+#following {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 16px;
+
+}
+
+.following-artists {
+	/*display: grid;*/
+	position: relative;
+	border-radius: 20px;
+}
+
+.following-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	border-radius: 20px;
+	opacity: 0;
+	transition: all 0.5s ease;
+	background-color: #1e212480;
+}
+
+.fol-art-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 20px;
+	display: block;
+}
+
+.fol-art-name {
+	display: block;
+	position: relative;
+	top: 50%;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	font-family: 'Montserrat';
+}
+
+.following-artists:hover .following-overlay {
+	opacity: 1;
+}
+
+/*.following-artists:hover {
+	transform: scale(1.2);
+}*/
 
