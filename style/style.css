@@ -32,7 +32,7 @@ body {
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none, .playback-bar__progress-time {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none, #progress-time {
 	font-family: 'Montserrat';
 	color:white;
 }

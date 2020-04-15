@@ -99,7 +99,24 @@
         },
         success: function(response) {
           nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
+          var t = Handlebars.compile($('#now-playing-template').html());
           console.log(response);
+          let progress = response.progress_ms;
+          progressDate = new Date(progress); 
+          progressminutes = progressDate.getUTCMinutes(); 
+          progressseconds = progressDate.getSeconds(); 
+  
+            timeString = progressminutes.toString().padStart(2, '0') + ':' + progressseconds.toString().padStart(2, '0'); 
+            document.getElementById('progress-time').textContent = timeString; 
+            
+            let duration = response.item.duration_ms;
+            durationDate = new Date(duration); 
+            durationminutes = durationDate.getUTCMinutes(); 
+            durationseconds = durationDate.getSeconds(); 
+    
+            timeString = durationminutes.toString().padStart(2, '0') + ':' + durationseconds.toString().padStart(2, '0'); 
+    
+            document.getElementById('duration-time').textContent = timeString;
         }
       });
       }, 1000);
@@ -134,6 +151,8 @@
       //Tracy's workspace
 
         
+
+      
 
     } else {
       $('#login').show(); //displays login button

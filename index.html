@@ -132,7 +132,8 @@
   <script id="now-playing-template" type="text/x-handlebars-template">
     <div class='now'>
       <img class="now-playing-img" src="{{item.album.images.0.url}}">
-      <div class="playback-bar__progress-time">{{progress_ms}}</div>
+      <div id="progress-time">{{progress_ms}}</div>
+      <div id="duration-time">{{item.duration_ms}}</div>
       <div class='progress-bar'></div>
       <div class='play' hidden></div>
       <div class='pause' hidden></div>
