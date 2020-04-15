@@ -56,7 +56,6 @@
       followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
 
-
   var params = getHashParams();
 
   var access_token = params.access_token,
@@ -92,15 +91,18 @@
         }
       });
 
+      setInterval(function(){
       $.ajax({ // Music Player call
-        url: 'https://api.spotify.com/v1/me/player', // endpoint for player
+        url: 'https://api.spotify.com/v1/me/player/currently-playing', // endpoint for player
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
-          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response); 
+          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
+          console.log(response);
         }
       });
+      }, 1000);
 
       //Patrick's workspace
       $.ajax({ // Library Playlist
@@ -112,6 +114,7 @@
           libraryPlaceholder.innerHTML = libraryTemplate(response); //displays to the inner html of the library template
         }
       });
+
       //Patrick's workspace ends here
       
       //Ethan's workspace
@@ -145,7 +148,7 @@
 
       // The app redirect uri 
       //change to http://localhost:3000/ to test and https://yumichiya.github.io/ to deploy
-      var redirect_uri = 'https://yumichiya.github.io/'; 
+      var redirect_uri = 'http://localhost:3000/'; 
 
       var state = generateRandomString(16);
 
@@ -164,3 +167,4 @@
   }
 
 })();
+
