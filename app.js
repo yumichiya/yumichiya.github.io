@@ -35,6 +35,7 @@
   var userProfileSource = document.getElementById('user-profile-template').innerHTML,
       userProfileTemplate = Handlebars.compile(userProfileSource),
       userProfilePlaceholder = document.getElementById('user-profile');
+      
 
   // new releases template
   var newReleasesSource = document.getElementById('new-releases-template').innerHTML,
@@ -55,7 +56,11 @@
   var followingSource = document.getElementById('following-template').innerHTML, 
       followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
-
+ 
+  // Recently Played template
+  var recplaySource = document.getElementById('recently-played-template').innerHTML;
+      recplayTemplate = Handlebars.compile(recplaySource);
+      recplayPlaceholder = document.getElementById('recently-played');
 
   var params = getHashParams();
 
@@ -115,7 +120,16 @@
       //Patrick's workspace ends here
       
       //Ethan's workspace
-
+      $.ajax({ // following artists call
+        url: 'https://api.spotify.com/v1/me/player/recently-played', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          recplayPlaceholder.innerHTML = recplayTemplate(response); //displays to the inner html of the following template
+          console.log(response);
+        }
+      });
       //Nick's workspace
       $.ajax({ // following artists call
         url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20', // endpoint 
@@ -149,7 +163,8 @@
       var state = generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read';
+      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read user-read-recently-played';
+      
 
       var url = 'https://accounts.spotify.com/authorize';
           url += '?response_type=token';
