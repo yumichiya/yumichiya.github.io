@@ -47,14 +47,17 @@
       nowPlayingPlaceholder = document.getElementById('now-playing');
 
   // Libraries template
-  var librarySource = document.getElementById('library-template').innerHTML; 
-      var libraryTemplate = Handlebars.compile(librarySource);
-      var libraryPlaceholder = document.getElementById('lib-playlist');
+  var librarySource = document.getElementById('library-template').innerHTML,
+      libraryTemplate = Handlebars.compile(librarySource),
+      libraryPlaceholder = document.getElementById('lib-playlist');
 
   // Following template
   var followingSource = document.getElementById('following-template').innerHTML, 
       followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
+  
+  
+
 
   var params = getHashParams();
 
@@ -91,6 +94,7 @@
         }
       });
 
+      // Patrick's Workspace
       setInterval(function(){
       $.ajax({ // Music Player call
         url: 'https://api.spotify.com/v1/me/player/currently-playing', // endpoint for player
@@ -100,7 +104,6 @@
         success: function(response) {
           nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
           var t = Handlebars.compile($('#now-playing-template').html());
-          console.log(response);
           let progress = response.progress_ms;
           progressDate = new Date(progress); 
           progressminutes = progressDate.getUTCMinutes(); 
@@ -121,7 +124,7 @@
       });
       }, 1000);
 
-      //Patrick's workspace
+      
       $.ajax({ // Library Playlist
         url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries
         headers: {
