@@ -100,10 +100,11 @@
         },
         success: function(response) {
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
+          console.log(response);
         }
       });
 
-      // Patrick's Workspace
+      // Patrick's Workspace ----------------------------------------------------------------
       setInterval(function(){
       $.ajax({ // Music Player call
         url: 'https://api.spotify.com/v1/me/player/currently-playing', // endpoint for player
@@ -112,7 +113,6 @@
         },
         success: function(response) {
           nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
-          var t = Handlebars.compile($('#now-playing-template').html());
           let progress = response.progress_ms;
           progressDate = new Date(progress); 
           progressminutes = progressDate.getUTCMinutes(); 
@@ -144,12 +144,12 @@
         }
       });
 
-      //Patrick's workspace ends here
+      //Patrick's workspace ends here -------------------------------------------------------
       
-      //Ethan's workspace
+      //Ethan's workspace -------------------------------------------------------------------
       //recently played
       $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/player/recently-played', // endpoint 
+        url: 'https://api.spotify.com/v1/me/player/recently-played?limit=5', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
@@ -160,7 +160,7 @@
       });
       //featured playlists
       $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/browse/featured-playlists', // endpoint 
+        url: 'https://api.spotify.com/v1/browse/featured-playlists?country=US&limit=6', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
@@ -169,7 +169,8 @@
           console.log(response);
         }
       });
-      //Nick's workspace
+      //Ethan's workspace ends here ---------------------------------------------------------
+      //Nick's workspace --------------------------------------------------------------------
       $.ajax({ // following artists call
         url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20', // endpoint 
         headers: {
@@ -179,7 +180,7 @@
           followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
-      //Nick's workspace ends here
+      //Nick's workspace ends here ----------------------------------------------------------
 
       //Tracy's workspace
 

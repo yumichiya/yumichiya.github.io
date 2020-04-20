@@ -59,13 +59,13 @@
       <div class="main-view" >
         <div class="spacer"></div>
         <section id='home-content'>
-          <!-- Peyton's workspace -->
-
-          <!-- Peyton's workspace ends here-->
           <!-- Ethan's workspace -->
-          <div class='featured-playlists-grid'>
-            <h2 class='featured-playlists-title'>Recently Played</h2>
-            <div id='featured-playlists'></div>
+          <div class='feat-dj-section'>
+            <div class='featured-playlists-grid'>
+              <h2 class='featured-playlists-title'>Featured</h2>
+              <div id='featured-playlists'></div>
+            </div>
+            <div class='dj-status-section'></div>
           </div>
 
           <div class='rec-play-grid'>
@@ -103,6 +103,10 @@
         </section>
         <!-- Nick's workspace -->
         <section id='following-content'>
+          <div class='following-dj-grid'>
+            <h2 class='following-dj-title'>Following DJ</h2>
+            <div id='following-dj'></div>
+          </div>
           <div class='following-grid'>
             <h2 class='following-title'>Following Artists</h2>
             <div id='following'></div>
@@ -147,13 +151,27 @@
   </script>
   <!-- Music Player ends here -->
   <!-- Ethan's workspace -->
-
   <script id ='recently-played-template' type="text/x-handlebars-template">
-    <div id='recently-played-playlist'></div>
+    <div id='recently-played-playlist'>
+      {{#each items}}
+      <div class='rec-play'>
+        <img src="{{track.album.images.0.url}}" class="rec-play-img"/>
+        <div class='rec-play-artist'>{{track.artists.name}}</div>
+        <div class='rec-play-name'>{{track.name}}</div>
+      </div>
+      {{/each}}
+    </div>
   </script>
 
   <script id ='featured-playlists-template' type="text/x-handlebars-template">
-    <div id='featured-playlists-playlist'></div>
+    <div id='featured-playlists-playlist'>
+      {{#each playlists.items}}
+      <div class='feat-play'>
+        <a href='{{external_urls.spotify}}'><img src="{{images.0.url}}" class="feat-play-img"/></a>
+        <div class='feat-play-desc'>{{description}}</div>
+      </div>
+      {{/each}}
+    </div>
   </script>
 
   <!-- Tracy's workspace -->
