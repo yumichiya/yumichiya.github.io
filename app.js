@@ -61,6 +61,11 @@
   var recplaySource = document.getElementById('recently-played-template').innerHTML;
       recplayTemplate = Handlebars.compile(recplaySource);
       recplayPlaceholder = document.getElementById('recently-played');
+ 
+  // Featured Playlists
+  var featplaylistsSource = document.getElementById('featured-playlists-template').innerHTML;
+      featplaylistsTemplate = Handlebars.compile(featplaylistsSource);
+      featplaylistsPlaceholder = document.getElementById('featured-playlists');
 
 
   var params = getHashParams();
@@ -142,6 +147,7 @@
       //Patrick's workspace ends here
       
       //Ethan's workspace
+      //recently played
       $.ajax({ // following artists call
         url: 'https://api.spotify.com/v1/me/player/recently-played', // endpoint 
         headers: {
@@ -149,6 +155,17 @@
         },
         success: function(response) {
           recplayPlaceholder.innerHTML = recplayTemplate(response); //displays to the inner html of the following template
+          console.log(response);
+        }
+      });
+      //featured playlists
+      $.ajax({ // following artists call
+        url: 'https://api.spotify.com/v1/browse/featured-playlists', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          featplaylistsPlaceholder.innerHTML = featplaylistsTemplate(response); //displays to the inner html of the following template
           console.log(response);
         }
       });
