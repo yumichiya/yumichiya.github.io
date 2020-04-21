@@ -1,4 +1,3 @@
-/* Code mostly written by Jasmine minus the workspaces by other group members */
 (function() { //self-invoking function 
   var stateKey = 'spotify_auth_state';
 
@@ -45,18 +44,14 @@
   var nowPlayingSource = document.getElementById('now-playing-template').innerHTML,
       nowPlayingTemplate = Handlebars.compile(nowPlayingSource),
       nowPlayingPlaceholder = document.getElementById('now-playing');
-
-  // Libraries template
-  var librarySource = document.getElementById('library-template').innerHTML; 
-      var libraryTemplate = Handlebars.compile(librarySource);
-      var libraryPlaceholder = document.getElementById('lib-playlist');
-
-  // Following template
+  // following template 
   var followingSource = document.getElementById('following-template').innerHTML, 
       followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
-
-
+  // top tracks template 
+  var topSource = document.getElementById('top-tracks-template').innerHTML,
+      topTemplate = document.getElementById(topSource),
+      topPlaceholder = document.getElementById('top-tracks');
   var params = getHashParams();
 
   var access_token = params.access_token,
@@ -92,8 +87,8 @@
         }
       });
 
-      $.ajax({ // Music Player call
-        url: 'https://api.spotify.com/v1/me/player', // endpoint for player
+      $.ajax({ //
+        url: 'https://api.spotify.com/v1/me/player', // Music Player Call
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
@@ -103,22 +98,12 @@
       });
 
       //Patrick's workspace
-      $.ajax({ // Library Playlist
-        url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries
-        headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
-        },
-        success: function(response) {
-          libraryPlaceholder.innerHTML = libraryTemplate(response); //displays to the inner html of the library template
-        }
-      });
-      //Patrick's workspace ends here
-      
+
       //Ethan's workspace
 
       //Nick's workspace
       $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20', // endpoint 
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=5', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
@@ -126,7 +111,15 @@
           followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
-      //Nick's workspace ends here
+      $.ajax({ // Top Tracks call
+        url: 'https://api.spotify.com/v1/me/top/tracks', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          topPlaceholder.innerHTML = topTemplate(response); //displays to the inner html of the following template
+        }
+      });
 
       //Tracy's workspace
 
@@ -149,7 +142,7 @@
       var state = generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read';
+      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state';
 
       var url = 'https://accounts.spotify.com/authorize';
           url += '?response_type=token';
