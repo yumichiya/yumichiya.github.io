@@ -88,6 +88,9 @@
           <div class='library-grid'>
             <h2 class='library-title'>My Library</h2>
             <div id='lib-playlist'></div>
+            
+            <h2 class='tracks-title'>Top Tracks</h2>
+            <div id = 'top-tracks'></div>
           </div>
         </section>
         <!-- Patrick's Workspace ends here -->
@@ -169,6 +172,22 @@
     </div>
     {{/each}}
   </script>
+
+
+
+  <script id="top-tracks-template" type = "text/x-handlebars-template">
+    {{#each items}}
+    <div class='user-top-tracks'>
+      <div class='top-overlay'>
+        <div class='top-track-name'>{{name}}</div>
+      </div>
+      <img src="{{images.0.url}}" class="top-track-img"/>
+    </div>
+    {{/each}}
+  </script>
+
+
+
   <!-- Nick's workspace ends here -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>

@@ -56,6 +56,13 @@
       followingTemplate = Handlebars.compile(followingSource),
       followingPlaceholder = document.getElementById('following');
 
+  //top tracks template.
+  var topSource = document.getElementById('top-tracks-template').innerHTML, 
+      topTemplate = Handlebars.compile(topSource),
+      topPlaceholder = document.getElementById('top-tracks');
+
+  
+
 
   var params = getHashParams();
 
@@ -126,6 +133,18 @@
           followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
         }
       });
+
+      $.ajax({ // top tracks call
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=5', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          topPlaceholder.innerHTML = topTemplate(response); 
+        }
+      });
+
+
       //Nick's workspace ends here
 
       //Tracy's workspace
@@ -149,7 +168,7 @@
       var state = generateRandomString(16);
 
       localStorage.setItem(stateKey, state);
-      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read';
+      var scope = 'user-read-private user-read-email user-read-playback-state user-read-currently-playing user-modify-playback-state user-follow-read user-top-read';
 
       var url = 'https://accounts.spotify.com/authorize';
           url += '?response_type=token';
