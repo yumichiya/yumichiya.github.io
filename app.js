@@ -104,41 +104,8 @@
         }
       });
 
-      /*$.ajax({ // Get a User's Available Devices
-        url: 'https://api.spotify.com/v1/me/player/devices', 
-        headers: {
-          'Authorization': 'Bearer ' + access_token 
-        },
-        success: function(response) {
-          console.log(response);
-          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
-        }
-      });*/
-
-      $.ajax({ // Start/Resume a User's Playback
-        url: 'https://api.spotify.com/v1/me/player/play', 
-        method: 'PUT',
-        headers: {
-          'Authorization': 'Bearer ' + access_token 
-        },
-        success: function(response) {
-          console.log(response);
-        }
-      });
-
-      $.ajax({ // Transfer a User's Playback
-        url: 'https://api.spotify.com/v1/me/player', 
-        method: 'PUT',
-        headers: {
-          'Authorization': 'Bearer ' + access_token 
-        },
-        success: function(response) {
-          console.log(response);
-        }
-      });
-
       // Patrick's Workspace ----------------------------------------------------------------
-      /*setInterval(function(){*/
+      setInterval(function(){
       $.ajax({ // Music Player call
         url: 'https://api.spotify.com/v1/me/player/currently-playing', // endpoint for player
         headers: {
@@ -150,22 +117,20 @@
           let progress = response.progress_ms;
           progressDate = new Date(progress); 
           progressminutes = progressDate.getUTCMinutes(); 
-          progressseconds = progressDate.getSeconds(); 
-  
-            timeString = progressminutes.toString().padStart(2, '0') + ':' + progressseconds.toString().padStart(2, '0'); 
-            document.getElementById('progress-time').textContent = timeString; 
-            
-            let duration = response.item.duration_ms;
-            durationDate = new Date(duration); 
-            durationminutes = durationDate.getUTCMinutes(); 
-            durationseconds = durationDate.getSeconds(); 
-    
-            timeString = durationminutes.toString().padStart(2, '0') + ':' + durationseconds.toString().padStart(2, '0'); 
-    
-            document.getElementById('duration-time').textContent = timeString;
+          progressseconds = progressDate.getSeconds();
+          progressTime = progressminutes.toString().padStart(2, '0') + ':' + progressseconds.toString().padStart(2, '0'); 
+          document.getElementById('progress-time').textContent = progressTime; 
+          let duration = response.item.duration_ms;
+          durationDate = new Date(duration); 
+          durationminutes = durationDate.getUTCMinutes(); 
+          durationseconds = durationDate.getSeconds();
+          durationTime = durationminutes.toString().padStart(2, '0') + ':' + durationseconds.toString().padStart(2, '0'); 
+          document.getElementById('duration-time').textContent = durationTime; 
+          let progressBar = (progress/duration)*100;
+          document.getElementById('progress-bar').style.width = progressBar +'%';
         }
       });
-      /*}, 1000);*/
+      }, 1000);
 
       $.ajax({ // Library Playlist
         url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries

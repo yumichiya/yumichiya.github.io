@@ -32,7 +32,7 @@ body {
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none, #progress-time, #duration-time {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none {
 	font-family: 'Montserrat';
 	color:white;
 }
@@ -54,7 +54,7 @@ p {
 	height: 100%;
 	position: relative;
 	display: grid;
-	grid-template-rows: auto 300px;
+	grid-template-rows: auto 350px;
 	grid-template-columns: auto 1fr;
 	grid-template-areas:
 		"nav-bar main-view"
@@ -237,22 +237,63 @@ li {
 }
 
 /* Now Playing Section --------------------------------------------------------*/
+#progress-time, #duration-time, .now-playing-title {
+	font-family: 'Montserrat';
+	color:white;
+	letter-spacing: 2px;
+}
+
+#now-playing {
+	padding: 0 10px;
+}
+
 .now-playing {
 	grid-area: now-playing;
 	width: 250px;
 	background-color: #1E2124;
 }
 
+.now-playing-title {
+	text-align: center;
+	font-size: 18px;
+	padding-bottom: 4px;
+}
+
+.np-img-thumbnail {
+	position: relative;
+	overflow: hidden;
+	border-radius: 30px 30px 0 0;
+}
+
 .now-playing-img {
 	display: block;
-	width: 80%;
+	width: 100%;
 	margin: 10px auto;
-	border-radius: 30px;
+	transform: translate(0, -20px);
+}
+
+#progress-time, #duration-time {
+	font-size: 10px;
+}
+
+#timeline {
+	margin: 4px 0;
+	height: 2px;
+	background: white;
+	position: relative;
+}
+
+#progress-bar {
+	width: 100%;
+	position: absolute;
+	background: #7663f2;
+	height: 2px;
 }
 
 .np-artist-name, .np-song-name {
 	text-align: center;
-	padding: 5px 0;
+	padding: 2px 0;
+	letter-spacing: 2px;
 }
 
 .np-song-name {
@@ -263,24 +304,29 @@ li {
 	font-size: 16px;
 }
 
-.play {
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-left: 12px solid #000;
-    border-bottom: 8px solid transparent;
+.playback {
+	padding: 10px 0;
+	display: flex;
 }
 
-.pause {
-    width: 4px;
-    height: 16px;
-    border-right: 4px solid #000;
-    border-left: 4px solid #000;
+.backward, .forward, .play, .pause, .trash, .fire {
+	height: 18px;
+	display: inline;
+	margin: 0 auto;
+	cursor: pointer;
 }
 
-.now {
-	padding: 0 20px;
+.now-playing-info {
+	margin-top: -90px;
+	background: #383a3d;
+	position: relative;
+	padding: 10px;
+	border-radius: 20px;
 } 
+
+.np-song-desc {
+	padding-top: 4px;
+}
 
 #progress-time {
 	display: inline;
@@ -290,6 +336,15 @@ li {
 	display: inline;
 	float: right;
 }
+
+.trash {
+	padding-right: 20px;
+}
+
+.fire {
+	padding-left: 20px;
+}
+
 
 /* User button Section ----------------------------------------------------------*/
 

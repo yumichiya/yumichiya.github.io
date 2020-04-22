@@ -208,11 +208,45 @@ function following() {
     }
 }
 
-$(document).ready(function() {
-    var btn = $(".button");
-    btn.click(function() {
-      btn.toggleClass("paused");
-      return false;
-    });
-  });
+function trashHover(element) {
+    element.setAttribute('src', 'style/trash-gray.png');
+}
+function trashUnhover(element) {
+    element.setAttribute('src', 'style/trash-white.png');
+}
+
+function backwardHover(element) {
+    element.setAttribute('src', 'style/backward-purple.png');
+}
+function backwardUnhover(element) {
+    element.setAttribute('src', 'style/backward.png');
+}
+
+function playHover(element) {
+    element.setAttribute('src', 'style/play-purple.png');
+}
+function playUnhover(element) {
+    element.setAttribute('src', 'style/play.png');
+}
+
+function pauseHover(element) {
+    element.setAttribute('src', 'style/pause-purple.png');
+}
+function pauseUnhover(element) {
+    element.setAttribute('src', 'style/pause.png');
+}
+
+function forwardHover(element) {
+    element.setAttribute('src', 'style/forward-purple.png');
+}
+function forwardUnhover(element) {
+    element.setAttribute('src', 'style/forward.png');
+}
+
+function fireHover(element) {
+    element.setAttribute('src', 'style/fire-red.png');
+}  
+function fireUnhover(element) {
+    element.setAttribute('src', 'style/fire-white.png');
+}
 

@@ -6,7 +6,7 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
   <link rel='stylesheet' href='style/style.css'>
-  <link rel='icon' type='image/png' href='style/logo-pw.png'>
+  <link rel='icon' type='image/png' href='style/logo/logo-pw.png'>
 </head>
 <body>
   <div id="login">
@@ -26,7 +26,7 @@
       </div>
       <div class="nav-bar">
         <div class="logo-section">
-          <img src="style/logo-w.png" class="logoimg">
+          <img src="style/logo/logo-w.png" class="logoimg">
           <div class="logo">Avalanche</div>
         </div>
         <ul>
@@ -139,15 +139,27 @@
   <!-- Music Player -->
   <script id="now-playing-template" type="text/x-handlebars-template">
     <div class='now'>
+      <div class='np-img-thumbnail'>
       <img class="now-playing-img" src="{{item.album.images.0.url}}">
-      <div id="progress-time">{{progress_ms}}</div>
-      <div id="duration-time">{{item.duration_ms}}</div>
-      <div class='progress-bar'></div>
-      <div class='play' hidden></div>
-      <div class='pause' hidden></div>
-      <p class='np-song-name'>{{item.album.artists.0.name}}</p>
-      <p id="" class='np-artist-name'>{{item.name}}</p>
-      <div>{{devices.0.name}}</div>
+      </div>
+      <div class='now-playing-info'>
+        <div class='now-playing-title'>Now Playing</div>
+        <div class='np-song-desc'>
+          <p class='np-song-name'>{{item.album.artists.0.name}}</p>
+          <p class='np-artist-name'>{{item.name}}</p>
+        </div>
+        <div id="progress-time">{{progress_ms}}</div>
+        <div id="duration-time">{{item.duration_ms}}</div>
+        <div id='timeline'><div id="progress-bar"></div></div>
+        <div class='playback'>
+          <img src="style/trash-white.png" class="trash" onmouseover="trashHover(this);" onmouseout="trashUnhover(this);">
+          <img src="style/backward.png" class="backward" onmouseover="backwardHover(this);" onmouseout="backwardUnhover(this);">
+          <img src="style/play.png" class="play" onmouseover="playHover(this);" onmouseout="playUnhover(this);">
+          <img src="style/forward.png" class="forward" onmouseover="forwardHover(this);" onmouseout="forwardUnhover(this);">
+          <img src="style/fire-white.png" class="fire" onmouseover="fireHover(this);" onmouseout="fireUnhover(this);">
+        </div>
+        <div>{{devices.0.name}}</div>
+      </div>
     </div>
   </script>
   <!-- Music Player ends here -->
