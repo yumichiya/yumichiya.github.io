@@ -156,8 +156,10 @@
         <div id='timeline'><div id="progress-bar"></div></div>
         <div class='playback'>
           <img src="style/trash-white.png" class="trash" onmouseover="trashHover(this);" onmouseout="trashUnhover(this);">
+          
           <img src="style/backward.png" class="backward" onmouseover="backwardHover(this);" onmouseout="backwardUnhover(this);">
           <img src="style/play.png" class="play" onmouseover="playHover(this);" onmouseout="playUnhover(this);">
+          <img src="style/pause.png" class="pause" onmouseover="pauseHover(this);" onmouseout="pauseUnhover(this);">
           <img src="style/forward.png" class="forward" onmouseover="forwardHover(this);" onmouseout="forwardUnhover(this);">
           <img src="style/fire-white.png" class="fire" onmouseover="fireHover(this);" onmouseout="fireUnhover(this);">
         </div>
@@ -230,7 +232,7 @@
       <div class='top-overlay'>
         <div class='top-track-name'>{{name}}</div>
       </div>
-      <img src="{{images.0.url}}" class="top-track-img"/>
+      <img src="{{album.images.0.url}}" class="top-track-img"/>
     </div>
     {{/each}}
   </script>

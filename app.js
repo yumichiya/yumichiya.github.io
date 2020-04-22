@@ -109,7 +109,16 @@
           //console.log(response);
         }
       });
-
+      $.ajax({ 
+        url: 'https://api.spotify.com/v1/me/player',
+        headers: {
+          'Authorization': 'Bearer ' + access_token
+        },
+        success: function(response) {
+          console.log(response); 
+          response.actions.disallows.resuming = false;  
+        }
+      });
       // Patrick's Workspace ----------------------------------------------------------------
       setInterval(function(){
       $.ajax({ // Music Player call
@@ -134,62 +143,120 @@
           document.getElementById('duration-time').textContent = durationTime; 
           let progressBar = (progress/duration)*100;
           document.getElementById('progress-bar').style.width = progressBar +'%';
+          let ifPlaying = response.is_playing;
+          if(ifPlaying == true) {
+            $('.pause').show();
+          }else {
+            $('.play').show();
+          }
+          $('.forward').click(function () {
+            $.ajax({ 
+              url: 'https://api.spotify.com/v1/me/player/next', 
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + access_token
+              },
+              success: function(response) {
+                console.log(response); 
+              }
+            });
+          });
+          $('.backward').click(function () {
+            $.ajax({ 
+              url: 'https://api.spotify.com/v1/me/player/previous',
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + access_token
+              },
+              success: function(response) {
+                console.log(response); 
+              }
+            });
+          });
+          $('.pause').click(function () {
+            $.ajax({ 
+              url: 'https://api.spotify.com/v1/me/player/pause',
+              method: 'PUT',
+              headers: {
+                'Authorization': 'Bearer ' + access_token
+              },
+              success: function(response) {
+                console.log(response); 
+                $('.play').show();
+                $('.pause').hide();
+              }
+            });
+          });
+          $('.play').click(function () {
+            $.ajax({ 
+              url: 'https://api.spotify.com/v1/me/player/play',
+              method: 'PUT',
+              headers: {
+                'Authorization': 'Bearer ' + access_token
+              },
+              success: function(response) {
+                console.log(response); 
+                $('.pause').show();
+                $('.play').hide();
+              }
+            });
+          });
         }
       });
       }, 1000);
 
       $.ajax({ // Library Playlist
-        url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries
+        url: 'https://api.spotify.com/v1/me/playlists', 
         headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          libraryPlaceholder.innerHTML = libraryTemplate(response); //displays to the inner html of the library template
+          libraryPlaceholder.innerHTML = libraryTemplate(response); 
         }
       });
 
       //Patrick's workspace ends here -------------------------------------------------------
-      
+
       //Ethan's workspace -------------------------------------------------------------------
       //recently played
-      $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/player/recently-played?limit=5', // endpoint 
+      $.ajax({ 
+        url: 'https://api.spotify.com/v1/me/player/recently-played?limit=5',
         headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          recplayPlaceholder.innerHTML = recplayTemplate(response); //displays to the inner html of the following template
+          recplayPlaceholder.innerHTML = recplayTemplate(response); 
           //console.log(response);
         }
       });
       //featured playlists
-      $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/browse/featured-playlists?country=US&limit=6', // endpoint 
+      $.ajax({ 
+        url: 'https://api.spotify.com/v1/browse/featured-playlists?country=US&limit=6', 
         headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          featplaylistsPlaceholder.innerHTML = featplaylistsTemplate(response); //displays to the inner html of the following template
+          featplaylistsPlaceholder.innerHTML = featplaylistsTemplate(response); 
           //console.log(response);
         }
       });
       //Ethan's workspace ends here ---------------------------------------------------------
 
       //Nick's workspace --------------------------------------------------------------------
-      $.ajax({ // following artists call
-        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20', // endpoint 
+      $.ajax({
+        url: 'https://api.spotify.com/v1/me/following?type=artist&limit=20',
         headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          followingPlaceholder.innerHTML = followingTemplate(response); //displays to the inner html of the following template
+          followingPlaceholder.innerHTML = followingTemplate(response);
         }
       });
 
-      $.ajax({ // top tracks call
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=5', // endpoint 
+      $.ajax({ 
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=5',
         headers: {
-          'Authorization': 'Bearer ' + access_token //user access token (auth)
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
           topPlaceholder.innerHTML = topTemplate(response); 
