@@ -32,7 +32,7 @@ body {
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none, #progress-time {
+.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none, #progress-time, #duration-time {
 	font-family: 'Montserrat';
 	color:white;
 }
@@ -278,6 +278,19 @@ li {
     border-left: 4px solid #000;
 }
 
+.now {
+	padding: 0 20px;
+} 
+
+#progress-time {
+	display: inline;
+}
+
+#duration-time {
+	display: inline;
+	float: right;
+}
+
 /* User button Section ----------------------------------------------------------*/
 
 .user {
@@ -412,6 +425,9 @@ li {
 	text-align: center;
 	margin-top: 150px;
 }
+
+/*  ---------------------------------------------------------------------------- */
+
 
 /* Following Section (Peyton's Workspace)---------------------------------------------------------*/
 #following {

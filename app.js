@@ -100,18 +100,52 @@
         },
         success: function(response) {
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
+          //console.log(response);
+        }
+      });
+
+      /*$.ajax({ // Get a User's Available Devices
+        url: 'https://api.spotify.com/v1/me/player/devices', 
+        headers: {
+          'Authorization': 'Bearer ' + access_token 
+        },
+        success: function(response) {
+          console.log(response);
+          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
+        }
+      });*/
+
+      $.ajax({ // Start/Resume a User's Playback
+        url: 'https://api.spotify.com/v1/me/player/play', 
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + access_token 
+        },
+        success: function(response) {
+          console.log(response);
+        }
+      });
+
+      $.ajax({ // Transfer a User's Playback
+        url: 'https://api.spotify.com/v1/me/player', 
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + access_token 
+        },
+        success: function(response) {
           console.log(response);
         }
       });
 
       // Patrick's Workspace ----------------------------------------------------------------
-      setInterval(function(){
+      /*setInterval(function(){*/
       $.ajax({ // Music Player call
         url: 'https://api.spotify.com/v1/me/player/currently-playing', // endpoint for player
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
+          //console.log(response);
           nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
           let progress = response.progress_ms;
           progressDate = new Date(progress); 
@@ -131,9 +165,8 @@
             document.getElementById('duration-time').textContent = timeString;
         }
       });
-      }, 1000);
+      /*}, 1000);*/
 
-      
       $.ajax({ // Library Playlist
         url: 'https://api.spotify.com/v1/me/playlists', // endpoint of libraries
         headers: {
@@ -155,7 +188,7 @@
         },
         success: function(response) {
           recplayPlaceholder.innerHTML = recplayTemplate(response); //displays to the inner html of the following template
-          console.log(response);
+          //console.log(response);
         }
       });
       //featured playlists
@@ -166,7 +199,7 @@
         },
         success: function(response) {
           featplaylistsPlaceholder.innerHTML = featplaylistsTemplate(response); //displays to the inner html of the following template
-          console.log(response);
+          //console.log(response);
         }
       });
       //Ethan's workspace ends here ---------------------------------------------------------

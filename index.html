@@ -147,6 +147,7 @@
       <div class='pause' hidden></div>
       <p class='np-song-name'>{{item.album.artists.0.name}}</p>
       <p id="" class='np-artist-name'>{{item.name}}</p>
+      <div>{{devices.0.name}}</div>
     </div>
   </script>
   <!-- Music Player ends here -->
@@ -167,8 +168,9 @@
     <div id='featured-playlists-playlist'>
       {{#each playlists.items}}
       <div class='feat-play'>
-        <a href='{{external_urls.spotify}}'><img src="{{images.0.url}}" class="feat-play-img"/></a>
-        <div class='feat-play-desc'>{{description}}</div>
+        <a href='{{external_urls.spotify}}'>
+          <img src="{{images.0.url}}" class="feat-play-img"/>
+        </a>
       </div>
       {{/each}}
     </div>
