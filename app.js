@@ -141,6 +141,7 @@
         },
         success: function(response) {
           topPlaceholder.innerHTML = topTemplate(response); 
+          console.log(respose);
         }
       });
 
