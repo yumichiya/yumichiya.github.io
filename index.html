@@ -21,7 +21,7 @@
     <div class="container">
       <div class="top-container">
         <header class="topnav">
-          <div id="user-profile"></div>
+          <div id="user-profile-button" onclick='profile()'></div>
         </header>
       </div>
       <div class="nav-bar">
@@ -58,6 +58,9 @@
       <!-- Music Player ends here -->
       <div class="main-view" >
         <div class="spacer"></div>
+        <section id='profile-content'>
+          <div id='user-profile'></div>
+        </section>
         <section id='home-content'>
           <!-- Ethan's workspace -->
           <div class='feat-dj-section'>
@@ -82,13 +85,12 @@
         <br>
         <!-- Tracy's workspace -->
         <div class='rec-grid'>
-          <h2>Recommendation</h2>
+          <h2 class='rec-title'>Recommendation</h2>
           <div id='recommendation'></div>
         </div>
         <!-- Tracy's workspace ends here-->
         </section>
         <section id='browse-content'>
-              
         </section>
         <section id='library-content'>
         <!-- Patrick's workspace -->
@@ -121,11 +123,20 @@
     </div>
   </div>
   </div>
+  <script id="user-profile-button-template" type="text/x-handlebars-template">
+    <!-- This is getting the user's profile image --> 
+    <img class="profileimg-button" src="{{images.0.url}}" />
+    <!-- This is getting the user's name --> 
+    <div class='name-button'>{{display_name}}</div>
+  </script>
   <script id="user-profile-template" type="text/x-handlebars-template">
     <!-- This is getting the user's profile image --> 
     <img class="profileimg" src="{{images.0.url}}" />
     <!-- This is getting the user's name --> 
     <div class='name'>{{display_name}}</div>
+    <div class='role'>DJ</div>
+    <a href='{{external_urls.spotify}}' class='view-profile'>View Spotify Profile</a>
+    <div class='followers'>Followers: {{followers.total}}</div>
   </script>
   <script id="new-releases-template" type="text/x-handlebars-template">
     {{#each albums.items}}
@@ -194,7 +205,9 @@
   </script>
 
   <!-- Tracy's workspace -->
-
+  <script id= "recommendations-template" type="text/x-handlebars-template">
+  
+  </script>
   <!-- Patrick's workspace -->
   <script id="library-template" type="text/x-handlebars-template">
     <div id='library-playlist'>

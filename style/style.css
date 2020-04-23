@@ -32,7 +32,7 @@ body {
 	color: white;
 }
 
-.login-btn, #user-profile, .nav-bar-items, .nav-bar-items-active, h2, .none {
+.login-btn, #user-profile-button, .nav-bar-items, .nav-bar-items-active, h2, .none {
 	font-family: 'Montserrat';
 	color:white;
 }
@@ -359,7 +359,7 @@ li {
 	border: 0;
 }
 
-.profileimg {
+.profileimg-button {
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
@@ -369,14 +369,14 @@ li {
 	display: inline-block;
 }
 
-.name {
+.name-button {
 	position: relative;
 	letter-spacing: .5px;
 	font-size: 14px;
 	display: inline-block;
 }
 
-#user-profile {
+#user-profile-button {
 	float: right;
 	margin: 20px;
 	padding: 8px;
@@ -387,16 +387,34 @@ li {
 	cursor: pointer;
 }
 
-/* Sections ---------------------------------------------------------------------*/
-.spacer {
-  height: 60px;
+/* User Profile------------------------------------------------ */
+
+.name, .role, .followers, .view-profile {
+	font-family: 'Montserrat';
+	color:white;
+}
+.profileimg {
+	width: 200px;
 }
 
-#home-content, #discover-content, #browse-content, #library-content, #favorites-content, #following-content {
+.view-profile {
+	text-decoration: none;
+}
+
+.role {
+
+}
+
+/* Sections ---------------------------------------------------------------------*/
+.spacer {
+  height: 70px;
+}
+
+#home-content, #profile-content, #discover-content, #browse-content, #library-content, #favorites-content, #following-content {
 	padding: 0 24px;
 }
 
-#discover-content, #browse-content, #library-content, #favorites-content, #following-content {
+#profile-content, #discover-content, #browse-content, #library-content, #favorites-content, #following-content {
 	display: none;
 }
 

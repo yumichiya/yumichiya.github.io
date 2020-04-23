@@ -32,6 +32,10 @@
   };
 
   // user profile template
+  var userProfileButtonSource = document.getElementById('user-profile-button-template').innerHTML,
+      userProfileButtonTemplate = Handlebars.compile(userProfileButtonSource),
+      userProfileButtonPlaceholder = document.getElementById('user-profile-button');
+
   var userProfileSource = document.getElementById('user-profile-template').innerHTML,
       userProfileTemplate = Handlebars.compile(userProfileSource),
       userProfilePlaceholder = document.getElementById('user-profile');
@@ -72,7 +76,10 @@
       topTemplate = Handlebars.compile(topSource),
       topPlaceholder = document.getElementById('top-tracks');
 
-
+  // recommendations template
+  var recommendationsSource = document.getElementById('recommendations-template').innerHTML,
+      recommendationsTemplate = Handlebars.compile(recommendationsSource),
+      recommendationsPlaceholder = document.getElementById('recommendations');
 
   var params = getHashParams();
 
@@ -91,8 +98,9 @@
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) { //if successful, will display user profile
-          userProfilePlaceholder.innerHTML = userProfileTemplate(response); //displays to the inner html of the user profile template
-
+          userProfileButtonPlaceholder.innerHTML = userProfileButtonTemplate(response); //displays to the inner html of the user profile template
+          userProfilePlaceholder.innerHTML = userProfileTemplate(response);
+          console.log(response);
           $('#login').hide(); //hides login button 
           $('#loggedin').show(); //displays user profile button
           document.body.style.backgroundImage = 'none';
@@ -115,7 +123,7 @@
           'Authorization': 'Bearer ' + access_token
         },
         success: function(response) {
-          console.log(response); 
+          //console.log(response); 
           response.actions.disallows.resuming = false;  
         }
       });
@@ -266,7 +274,14 @@
       //Nick's workspace ends here ----------------------------------------------------------
 
       //Tracy's workspace
-
+      $.ajax({
+        url: 'https://api.spotify.com/v1/recommendations', 
+        headers: {'Authorization': 'Bearer ' + access_token },
+        success: function(response) {
+          console.log(response);
+          //recommendationsPlaceholder.innerHTML = recommendationsTemplate(response);
+        }
+      });
         
 
       
