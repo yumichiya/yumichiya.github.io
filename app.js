@@ -60,6 +60,10 @@
   var topSource = document.getElementById('top-tracks-template').innerHTML, 
       topTemplate = Handlebars.compile(topSource),
       topPlaceholder = document.getElementById('top-tracks');
+  //top Artists template.
+  var topArtistSource = document.getElementById('topArtist-template').innerHTML, 
+      topArtistTemplate = Handlebars.compile(topArtistSource),
+      topArtistPlaceholder = document.getElementById('topArtist-tracks');
 
   
 
@@ -141,9 +145,22 @@
         },
         success: function(response) {
           topPlaceholder.innerHTML = topTemplate(response); 
-          console.log(respose);
+          
         }
       });
+
+      $.ajax({ // top artists call
+        url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          topArtistPlaceholder.innerHTML = topArtistTemplate(response); 
+          
+        }
+      });
+      
+    
 
 
       //Nick's workspace ends here
