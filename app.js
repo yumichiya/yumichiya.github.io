@@ -195,8 +195,6 @@
             },
             success: function(response) {
               searchAlbumPlaceholder.innerHTML = searchAlbumTemplate(response);
-              
-              console.log(response);
               //console.log(response);
             }
           });
@@ -334,7 +332,7 @@
         },
         success: function(response) {
           recplayPlaceholder.innerHTML = recplayTemplate(response); 
-          console.log(response);
+          //console.log(response);
         }
       });
       //featured playlists
@@ -406,13 +404,11 @@
           'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          console.log(response);
           let userID = response.items[0].id;
           $.ajax({
             url: 'https://api.spotify.com/v1/recommendations' + '?seed_artists=' + userID + '&limit=10', 
             headers: {'Authorization': 'Bearer ' + access_token },
             success: function(response) {
-              console.log(response);
               recommendationsPlaceholder.innerHTML = recommendationsTemplate(response);
             }
           });
