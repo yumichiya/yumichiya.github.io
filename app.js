@@ -399,6 +399,25 @@
         }
       });*/
         
+      //My test shit
+      $.ajax({ 
+        url: 'https://api.spotify.com/v1/me/top/artists',
+        headers: {
+          'Authorization': 'Bearer ' + access_token 
+        },
+        success: function(response) {
+          console.log(response);
+          let userID = response.items[0].id;
+          $.ajax({
+            url: 'https://api.spotify.com/v1/recommendations' + '?seed_artists=' + userID + '&limit=10', 
+            headers: {'Authorization': 'Bearer ' + access_token },
+            success: function(response) {
+              console.log(response);
+              recommendationsPlaceholder.innerHTML = recommendationsTemplate(response);
+            }
+          });
+        }
+      });
 
       
 
