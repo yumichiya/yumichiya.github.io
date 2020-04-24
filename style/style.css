@@ -522,6 +522,58 @@ li {
 	padding: 0 20px 16px;
 }
 
+/* Recommendations Section ---------------------------------------------------------*/
+
+#recommendations {
+	margin-top: 16px;
+	padding-bottom: 12px;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 16px;
+	/*overflow-x: scroll;
+	scroll-snap-type: x proximity;*/
+}
+
+.recommend-img {
+	width: 100%;
+	margin-bottom: 6px;
+	border-radius: 20px 20px 0 0;
+}
+
+.recommendation {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.recommend-name, .recommend-album, .recommend-artist {
+	color: white;
+	font-family: 'Montserrat';
+	display: block;
+	text-align: center;
+}
+
+.recommend-name {
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+	font-size: 16px;
+	padding: 0 16px;
+}
+
+.recommend-artist, .recommend-album {
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+	padding: 0 20px;
+}
+
+.recommend-artist {
+	padding: 0 20px 16px;
+}
+
 /* Browse Section ---------------------------------------------------- */
 .options {
 	margin-left: 16px;

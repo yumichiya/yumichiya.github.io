@@ -331,9 +331,11 @@
   <!-- Tracy's workspace -->
   <script id= "recommendations-template" type="text/x-handlebars-template">
     {{#each tracks}}
-    <div id='recommendation-SHIIIIIT'>
-      <div class='recommendation-name'>{{name}}</div>
-      <img src="{{album.images.0.url}}" class="recommendshit-img"/>
+    <div class='recommendation'>
+      <img src="{{album.images.0.url}}" class="recommend-img"/>
+      <div class='recommend-name'>{{name}}</div>
+      <div class='recommend-album'>{{album.name}}</div>
+      <div class='recommend-artist'>{{artists.0.name}}</div>
     </div>
     {{/each}}
   </script>
