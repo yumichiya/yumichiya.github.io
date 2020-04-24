@@ -81,10 +81,20 @@
       recommendationsTemplate = Handlebars.compile(recommendationsSource),
       recommendationsPlaceholder = document.getElementById('recommendations');
 
-  //search template
-  var searchSource = document.getElementById('search-result-template').innerHTML, 
-      searchTemplate = Handlebars.compile(searchSource),
-      searchPlaceholder = document.getElementById('search-result');
+  //search for artist template
+  var searchArtistSource = document.getElementById('artist-result-template').innerHTML, 
+      searchArtistTemplate = Handlebars.compile(searchArtistSource),
+      searchArtistPlaceholder = document.getElementById('artist-result');
+
+  //search for album template
+  var searchAlbumSource = document.getElementById('album-result-template').innerHTML, 
+      searchAlbumTemplate = Handlebars.compile(searchAlbumSource),
+      searchAlbumPlaceholder = document.getElementById('album-result');
+  
+  //search for track template
+  var searchTrackSource = document.getElementById('track-result-template').innerHTML, 
+      searchTrackTemplate = Handlebars.compile(searchTrackSource),
+      searchTrackPlaceholder = document.getElementById('track-result');
 
   var params = getHashParams();
 
@@ -136,18 +146,66 @@
 
       // Search for an Item
       $('.search-button').click(function () {
-        let query = document.getElementById('search-item').value; //user input value in the text field
-      $.ajax({ 
-        url: 'https://api.spotify.com/v1/search' + '?q=' + query + '&type=artist', 
-        headers: {
-          'Authorization': 'Bearer ' + access_token 
-        },
-        success: function(response) {
-          searchPlaceholder.innerHTML = searchTemplate(response); 
-          console.log(response);
+        let searchItem = document.getElementById('search-text').value; //user input value in the text field
+        let artist = document.getElementById('search-artist').checked;
+        let album = document.getElementById('search-album').checked;
+        let track = document.getElementById('search-track').checked;
+        if(artist == true){
+          $.ajax({ 
+            url: 'https://api.spotify.com/v1/search' 
+                  + '?q=' + searchItem
+                  + '&type=artist'
+                  + '&include_external=audio'
+                  + '&limit=10', 
+            headers: {
+              'Authorization': 'Bearer ' + access_token 
+            },
+            success: function(response) {
+              //console.log(response);
+              searchArtistPlaceholder.innerHTML = searchArtistTemplate(response); 
+              console.log(response);
+            }
+          });
+          $('.search-artist-title').show();
+        }
+        if (album == true){
+          $.ajax({ 
+            url: 'https://api.spotify.com/v1/search' 
+                  + '?q=' + searchItem
+                  + '&type=album'
+                  + '&include_external=audio'
+                  + '&limit=10', 
+            headers: {
+              'Authorization': 'Bearer ' + access_token 
+            },
+            success: function(response) {
+              searchAlbumPlaceholder.innerHTML = searchAlbumTemplate(response);
+              
+              console.log(response);
+              //console.log(response);
+            }
+          });
+          $('.search-album-title').show();
+        }
+        if (track == true){
+          $.ajax({ 
+            url: 'https://api.spotify.com/v1/search' 
+                  + '?q=' + searchItem
+                  + '&type=track'
+                  + '&include_external=audio'
+                  + '&limit=10', 
+            headers: {
+              'Authorization': 'Bearer ' + access_token 
+            },
+            success: function(response) {
+              searchTrackPlaceholder.innerHTML = searchTrackTemplate(response); 
+              
+              console.log(response);
+            }
+          });
+          $('.search-track-title').show();
         }
       });
-    });
       // Patrick's Workspace ----------------------------------------------------------------
       setInterval(function(){
       $.ajax({ // Music Player call

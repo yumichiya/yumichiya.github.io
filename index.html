@@ -44,9 +44,6 @@
             <div class="nav-bar-items" id='library-tab' onclick='library()'><a class="nav-bar-link">Library</a></div>
           </li>
           <li>
-            <div class="nav-bar-items" id='favorites-tab' onclick='favorites()'><a class="nav-bar-link">Favorites</a></div>
-          </li>
-          <li>
             <div class="nav-bar-items" id='following-tab' onclick='following()'><a class="nav-bar-link">Following</a></div>
           </li>
         </ul>
@@ -93,10 +90,40 @@
         <section id='browse-content'>
           <div id='search'>
             <form id='search-form'>
-              <input type="text" id="search-item" name="search-item" value='' placeholder="Search"/>  <!-- the search text field -->
-              <button type="button" id="search-button" class="search-button">Search</button> <!-- the submit button to call the ajax call -->
+              <!-- the search text field -->
+              <input type="text" id="search-text" name="search-item" value='' placeholder="Search for Artists, Albums, or Tracks" autocomplete="off"/> 
+              <div class='options'>
+                <div class='label'>
+                  <input type="checkbox" id="search-artist" name="artist" value="Artist">
+                  <label>Artist</label>
+                </div>
+                <div class='label'>
+                  <input type="checkbox" id="search-album" name="album" value="Album">
+                  <label>Album</label>
+                </div>
+                <div class='label'>
+                  <input type="checkbox" id="search-track" name="track" value="Track">
+                  <label>Track</label>
+                </div>
+                <!-- the submit button to call the ajax call -->
+                <button type="button" id="search-button" class="search-button">Search</button> 
+            </div> 
             </form> 
-            <div id='search-result'></div>   <!-- the output of search results -->
+            <!-- the output of search results -->
+            <div class='search-grid'>
+              <div class='artist-result-grid'>
+                <h2 class='search-artist-title'>Artists</h2>
+                <div id='artist-result'></div>
+              </div> 
+              <div class='album-result-grid'>
+                <h2 class='search-album-title'>Albums</h2>
+                <div id='album-result'></div>
+              </div>
+              <div class='track-result-grid'>
+                <h2 class='search-track-title'>Tracks</h2>
+                <div id='track-result'></div>
+            </div>
+            </div>
           </div>
         </section>
         <section id='library-content'>
@@ -110,9 +137,6 @@
           </div>
         </section>
         <!-- Patrick's Workspace ends here -->
-        <section id='favorites-content'>
-          <h2>Favorites</h2>
-        </section>
         <!-- Nick's workspace -->
         <section id='following-content'>
           <div class='following-dj-grid'>
@@ -162,14 +186,42 @@
     {{/each}}
   </script>
 
-  <script id="search-result-template" type = "text/x-handlebars-template">
-
+  <script id="artist-result-template" type = "text/x-handlebars-template">
     {{#each artists.items}}
-    <div class='user-top-tracks'>
-      <div class='top-overlay'>
-        <div class='search-name'>{{name}}</div>
-      </div>
+    {{#if images.0.url}}
+    <div class='search-artist'>
       <img src="{{images.0.url}}" class="search-img"/>
+      <div class='search-artist-name'>{{name}}</div>
+      {{#if genres}}
+      <div class='search-artist-genres'>Genres: {{genres}}</div>
+      {{/if}}
+      <div class='search-artist-followers' id='followersNum' data-followers='{{followers.total}}'>{{followers.total}} Followers</div>
+    </div> 
+    {{/if}}
+    {{/each}}
+    
+  </script>
+
+  <script id="album-result-template" type = "text/x-handlebars-template">
+    {{#each albums.items}}
+    <div class='search-album'>
+      <img src="{{images.0.url}}" class="search-img"/>
+      <div class='search-album-name'>{{name}}</div>
+      <div class='search-album-artist'>{{artists.0.name}}</div>
+      <div class='search-album-date'>Release Date: {{release_date}}</div>
+      <div class='search-album-tracks'>{{total_tracks}} songs</div>
+      
+    </div>
+    {{/each}}
+  </script>
+
+  <script id="track-result-template" type = "text/x-handlebars-template">
+    {{#each tracks.items}}
+    <div class='search-track'>
+      <img src="{{album.images.0.url}}" class="search-img"/>
+      <div class='search-track-name'>{{name}}</div>
+      <div class='search-track-artist'>{{artists.0.name}}</div>
+      
     </div>
     {{/each}}
   </script>
@@ -183,15 +235,14 @@
       <div class='now-playing-info'>
         <div class='now-playing-title'>Now Playing</div>
         <div class='np-song-desc'>
-          <p class='np-song-name'>{{item.album.artists.0.name}}</p>
-          <p class='np-artist-name'>{{item.name}}</p>
+          <p class='np-artist-name'>{{item.album.artists.0.name}}</p>
+          <p class='np-song-name'>{{item.name}}</p>
         </div>
         <div id="progress-time">{{progress_ms}}</div>
         <div id="duration-time">{{item.duration_ms}}</div>
         <div id='timeline'><div id="progress-bar"></div></div>
         <div class='playback'>
           <img src="style/trash-white.png" class="trash" onmouseover="trashHover(this);" onmouseout="trashUnhover(this);">
-          
           <img src="style/backward.png" class="backward" onmouseover="backwardHover(this);" onmouseout="backwardUnhover(this);">
           <img src="style/play.png" class="play" onmouseover="playHover(this);" onmouseout="playUnhover(this);">
           <img src="style/pause.png" class="pause" onmouseover="pauseHover(this);" onmouseout="pauseUnhover(this);">

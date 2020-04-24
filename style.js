@@ -4,7 +4,6 @@ function home() {
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     let user_id = document.getElementById('profile-content');
     if(discover_id.className == 'nav-bar-items-active') {
@@ -22,11 +21,6 @@ function home() {
         home_id.classList.replace('nav-bar-items','nav-bar-items-active');
         document.getElementById('home-content').style.display = 'block';
         document.getElementById('library-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        home_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('home-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(following_id.className == 'nav-bar-items-active') {
         following_id.classList.replace('nav-bar-items-active','nav-bar-items');
         home_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -44,7 +38,6 @@ function discover() {
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     let user_id = document.getElementById('profile-content');
     if(home_id.className == 'nav-bar-items-active') {
@@ -62,11 +55,6 @@ function discover() {
         discover_id.classList.replace('nav-bar-items','nav-bar-items-active');
         document.getElementById('discover-content').style.display = 'block';
         document.getElementById('library-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        discover_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('discover-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(following_id.className == 'nav-bar-items-active') {
         following_id.classList.replace('nav-bar-items-active','nav-bar-items');
         discover_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -84,7 +72,6 @@ function browse() {
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     let user_id = document.getElementById('profile-content');
     if(home_id.className == 'nav-bar-items-active') {
@@ -102,11 +89,6 @@ function browse() {
         browse_id.classList.replace('nav-bar-items','nav-bar-items-active');
         document.getElementById('browse-content').style.display = 'block';
         document.getElementById('library-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        browse_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('browse-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(following_id.className == 'nav-bar-items-active') {
         following_id.classList.replace('nav-bar-items-active','nav-bar-items');
         browse_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -124,7 +106,6 @@ function library() {
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     let user_id = document.getElementById('profile-content');
     if(home_id.className == 'nav-bar-items-active') {
@@ -142,11 +123,6 @@ function library() {
         library_id.classList.replace('nav-bar-items','nav-bar-items-active');
         document.getElementById('library-content').style.display = 'block';
         document.getElementById('browse-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        library_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('library-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(following_id.className == 'nav-bar-items-active') {
         following_id.classList.replace('nav-bar-items-active','nav-bar-items');
         library_id.classList.replace('nav-bar-items','nav-bar-items-active');document.getElementById('library-content').style.display = 'block';
@@ -158,52 +134,12 @@ function library() {
     }
 }
 
-function favorites() {
-    let home_id = document.getElementById('home-tab');
-    let discover_id = document.getElementById('discover-tab');
-    let browse_id = document.getElementById('browse-tab');
-    let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
-    let following_id = document.getElementById('following-tab');
-    let user_id = document.getElementById('profile-content');
-    if(home_id.className == 'nav-bar-items-active') {
-        home_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-        document.getElementById('home-content').style.display = 'none';
-    }else if(discover_id.className == 'nav-bar-items-active') {
-        discover_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-        document.getElementById('discover-content').style.display = 'none';
-    }else if(browse_id.className == 'nav-bar-items-active') {
-        browse_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-        document.getElementById('browse-content').style.display = 'none';
-    }else if(library_id.className == 'nav-bar-items-active') {
-        library_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-        document.getElementById('library-content').style.display = 'none';
-    }else if(following_id.className == 'nav-bar-items-active') {
-        following_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-        document.getElementById('following-content').style.display = 'none';
-    }else if(user_id.style.display == 'block') {
-        user_id.style.display = 'none';
-        favorites_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('favorites-content').style.display = 'block';
-    }
-}
 
 function following() {
     let home_id = document.getElementById('home-tab');
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     let user_id = document.getElementById('profile-content');
     if(home_id.className == 'nav-bar-items-active') {
@@ -226,11 +162,6 @@ function following() {
         following_id.classList.replace('nav-bar-items','nav-bar-items-active');
         document.getElementById('following-content').style.display = 'block';
         document.getElementById('library-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        following_id.classList.replace('nav-bar-items','nav-bar-items-active');
-        document.getElementById('following-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(user_id.style.display == 'block') {
         user_id.style.display = 'none';
         following_id.classList.replace('nav-bar-items','nav-bar-items-active');
@@ -243,7 +174,6 @@ function profile() {
     let discover_id = document.getElementById('discover-tab');
     let browse_id = document.getElementById('browse-tab');
     let library_id = document.getElementById('library-tab');
-    let favorites_id = document.getElementById('favorites-tab');
     let following_id = document.getElementById('following-tab');
     if(home_id.className == 'nav-bar-items-active') {
         home_id.classList.replace('nav-bar-items-active','nav-bar-items');
@@ -261,10 +191,6 @@ function profile() {
         library_id.classList.replace('nav-bar-items-active','nav-bar-items');
         document.getElementById('profile-content').style.display = 'block';
         document.getElementById('library-content').style.display = 'none';
-    }else if(favorites_id.className == 'nav-bar-items-active') {
-        favorites_id.classList.replace('nav-bar-items-active','nav-bar-items');
-        document.getElementById('profile-content').style.display = 'block';
-        document.getElementById('favorites-content').style.display = 'none';
     }else if(following_id.className == 'nav-bar-items-active') {
         following_id.classList.replace('nav-bar-items-active','nav-bar-items');
         document.getElementById('profile-content').style.display = 'block';

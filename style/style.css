@@ -296,13 +296,20 @@ li {
 	letter-spacing: 2px;
 }
 
-.np-song-name {
+.np-artist-name {
 	font-size: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
-.np-artist-name {
+.np-song-name {
 	font-size: 16px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
+
 
 .playback {
 	padding: 10px 0;
@@ -385,6 +392,11 @@ li {
 	border: 0px;
 	align-items: center;
 	cursor: pointer;
+	transition: .35s ease-out;
+}
+
+#user-profile-button:hover {
+	background-color: #5D4EBF;
 }
 
 /* User Profile------------------------------------------------ */
@@ -410,10 +422,6 @@ li {
 	display: flex;
 	align-items: center;
 	margin: 0 auto;
-}
-
-.user-img {
-	
 }
 
 .user-info {
@@ -467,7 +475,7 @@ li {
 /* New Releases Section ---------------------------------------------------------*/
 
 #new-releases {
-	margin-top: 20px;
+	margin-top: 16px;
 	padding-bottom: 12px;
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
@@ -499,16 +507,198 @@ li {
 	font-weight: bold;
 	letter-spacing: 0.5px;
 	margin-bottom: 2px;
-	font-size: 14px;
+	font-size: 16px;
 	padding: 0 16px;
 }
 
 .artist-name {
 	color: #999999;
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: 0.4px;
 	padding: 0 20px 16px;
 }
+
+/* Browse Section ---------------------------------------------------- */
+.options {
+	margin-left: 16px;
+}
+
+input[type=text] {
+	width: 100%;
+	background-color: #1e2124;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 0;
+	border-radius: 18px;
+	box-sizing: border-box;
+	color: white;
+	font-family: 'Montserrat';
+	letter-spacing: 0.5px;
+	transition: .35s ease-out;
+}
+
+input[type=text]:focus {
+	background-color: #7663F2;
+	border: 0;
+	outline: 0;
+}
+  
+::placeholder {
+	color: white;
+}
+
+input[type=checkbox] {
+	height: 15px;
+	width: 15px;
+	border: 0;
+	background-color: #eee;
+	cursor: pointer;
+	padding: 0;
+	margin: 2px;
+	transition: .35s ease-out;
+}
+
+.label {
+	vertical-align: middle;
+	display: flex;
+	margin: 4px 0;
+}
+
+label {
+	font-family: 'Montserrat';
+	color:white;
+	margin: 0 2px;
+}
+
+#search-button {
+	margin-top: 4px;
+	border: 0;
+	padding: 8px 14px;
+	background-color: #7663F2;
+	color: white;
+	border-radius: 20px;
+	transition: .35s ease-out;
+}
+
+#search-button:hover {
+	background-color: #5D4EBF;
+}
+
+.search-grid {
+	margin-top: 16px;
+}
+
+#artist-result, #album-result, #track-result {
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 16px;
+	margin-top: 16px;
+	margin-bottom: 20px;
+}
+
+.search-artist-title, .search-album-title, .search-track-title {
+	display: none;
+}
+
+.search-artist-title, .search-artist-name, .search-artist-genres, .search-artist-followers {
+	font-family: 'Montserrat';
+	color:white;
+}
+
+.search-artist {
+	text-align: center;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.search-artist-name, .search-artist-genres, .search-artist-followers {
+	font-family: 'Abel';
+	color:white;
+	padding: 0 10px;
+}
+
+.search-artist-name { 
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.search-artist-genres, .search-artist-followers {
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+}
+
+.search-artist-followers {
+	padding-bottom: 10px;
+}
+
+.search-album-name, .search-album-artist, .search-album-date, .search-album-tracks {
+	font-family: 'Abel';
+	color:white;
+	padding: 0 10px;
+}
+
+.search-album {
+	text-align: center;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.search-album-name { 
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.search-album-artist, .search-album-date, .search-album-tracks {
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+}
+
+.search-album-tracks {
+	padding-bottom: 10px;
+}
+
+.search-track-name, .search-track-artist {
+	font-family: 'Abel';
+	color:white;
+	padding: 0 10px;
+}
+
+.search-track {
+	text-align: center;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.search-track-name { 
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.search-track-artist {
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+	padding-bottom: 2px;
+}
+
+
+.search-img {
+	width: 100%;
+	border-radius: 20px 20px 0 0;
+	margin-bottom: 10px;
+}
+
+
+
 
 /* Library Section ---------------------------------------------------------*/
 #library-playlist {
