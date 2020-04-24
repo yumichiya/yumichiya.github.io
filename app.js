@@ -179,7 +179,6 @@
             success: function(response) {
               //console.log(response);
               searchArtistPlaceholder.innerHTML = searchArtistTemplate(response); 
-              console.log(response);
             }
           });
           $('.search-artist-title').show();
@@ -216,7 +215,7 @@
             success: function(response) {
               searchTrackPlaceholder.innerHTML = searchTrackTemplate(response); 
               
-              console.log(response);
+              //console.log(response);
             }
           });
           $('.search-track-title').show();
@@ -335,7 +334,7 @@
         },
         success: function(response) {
           recplayPlaceholder.innerHTML = recplayTemplate(response); 
-          //console.log(response);
+          console.log(response);
         }
       });
       //featured playlists
@@ -370,7 +369,7 @@
         },
         success: function(response) {
           topPlaceholder.innerHTML = topTemplate(response); 
-          console.log(response);
+          //console.log(response);
         }
       });
 
@@ -381,7 +380,7 @@
         },
         success: function(response) {
           topArtistPlaceholder.innerHTML = topArtistTemplate(response); 
-          console.log(response);
+          //console.log(response);
         }
       });
       

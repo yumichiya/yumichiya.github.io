@@ -65,7 +65,55 @@
               <h2 class='featured-playlists-title'>Featured</h2>
               <div id='featured-playlists'></div>
             </div>
-            <div class='dj-status-section'></div>
+            <div class='dj-status-grid'>
+              <div class='dj-status-contain'>
+                <h2 class='dj-status-title'>DJ Status</h2>
+                <div class='dj-divider'></div>
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>Bob Bob</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status'></div>
+                </div>
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>John John</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status-live'></div>
+                </div>
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>Tom Tom</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status-live'></div>
+                </div>
+              
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>Joe Joe</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status'></div>
+                </div>
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>Poe Poe</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status-live'></div>
+                </div>
+                <div class='dj-grid'>
+                  <div class='dj-info'>
+                    <div class='dj-name'>Jane Jane</div>
+                    <div class='dj-now-play'>Now Playing: [Song]</div>
+                  </div>
+                  <div class='dj-status'></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class='rec-play-grid'>
@@ -261,7 +309,7 @@
       {{#each items}}
       <div class='rec-play'>
         <img src="{{track.album.images.0.url}}" class="rec-play-img"/>
-        <div class='rec-play-artist'>{{track.artists.name}}</div>
+        <div class='rec-play-artist'>{{track.artists.0.name}}</div>
         <div class='rec-play-name'>{{track.name}}</div>
       </div>
       {{/each}}
