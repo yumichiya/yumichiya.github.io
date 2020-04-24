@@ -86,7 +86,7 @@
         <!-- Tracy's workspace -->
         <div class='rec-grid'>
           <h2 class='rec-title'>Recommendation</h2>
-          <div id='recommendation'></div>
+          <div id='recommendations'></div>
         </div>
         <!-- Tracy's workspace ends here-->
         </section>
@@ -230,8 +230,14 @@
 
   <!-- Tracy's workspace -->
   <script id= "recommendations-template" type="text/x-handlebars-template">
-  
+    {{#each tracks}}
+    <div id='recommendation-SHIIIIIT'>
+      <div class='recommendation-name'>{{name}}</div>
+      <img src="{{album.images.0.url}}" class="recommendshit-img"/>
+    </div>
+    {{/each}}
   </script>
+
   <!-- Patrick's workspace -->
   <script id="library-template" type="text/x-handlebars-template">
     <div id='library-playlist'>
