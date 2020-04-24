@@ -91,6 +91,13 @@
         <!-- Tracy's workspace ends here-->
         </section>
         <section id='browse-content'>
+          <div id='search'>
+            <form id='search-form'>
+              <input type="text" id="search-item" name="search-item" value='' placeholder="Search"/>  <!-- the search text field -->
+              <button type="button" id="search-button" class="search-button">Search</button> <!-- the submit button to call the ajax call -->
+            </form> 
+            <div id='search-result'></div>   <!-- the output of search results -->
+          </div>
         </section>
         <section id='library-content'>
         <!-- Patrick's workspace -->
@@ -129,15 +136,19 @@
     <!-- This is getting the user's name --> 
     <div class='name-button'>{{display_name}}</div>
   </script>
+
   <script id="user-profile-template" type="text/x-handlebars-template">
-    <!-- This is getting the user's profile image --> 
-    <img class="profileimg" src="{{images.0.url}}" />
-    <!-- This is getting the user's name --> 
-    <div class='name'>{{display_name}}</div>
-    <div class='role'>DJ</div>
-    <a href='{{external_urls.spotify}}' class='view-profile'>View Spotify Profile</a>
-    <div class='followers'>Followers: {{followers.total}}</div>
+    <div class='user-grid'>
+      <div class='user-img'><img class="profileimg" src="{{images.0.url}}" /></div>
+      <div class='user-info'>
+        <div class='name'>{{display_name}}</div>
+        <div class='role'> | DJ</div>
+        <a href='{{external_urls.spotify}}' class='view-profile'>View Spotify Profile</a>
+        <div class='followers'>Followers: {{followers.total}}</div>
+    </div>
+  </div>
   </script>
+
   <script id="new-releases-template" type="text/x-handlebars-template">
     {{#each albums.items}}
     <div class='album'>
@@ -150,6 +161,19 @@
     </div>
     {{/each}}
   </script>
+
+  <script id="search-result-template" type = "text/x-handlebars-template">
+
+    {{#each artists.items}}
+    <div class='user-top-tracks'>
+      <div class='top-overlay'>
+        <div class='search-name'>{{name}}</div>
+      </div>
+      <img src="{{images.0.url}}" class="search-img"/>
+    </div>
+    {{/each}}
+  </script>
+
   <!-- Music Player -->
   <script id="now-playing-template" type="text/x-handlebars-template">
     <div class='now'>
@@ -237,8 +261,6 @@
     {{/each}}
   </script>
 
-
-
   <script id="top-tracks-template" type = "text/x-handlebars-template">
     {{#each items}}
     <div class='user-top-tracks'>
@@ -249,9 +271,6 @@
     </div>
     {{/each}}
   </script>
-
-
-
   <!-- Nick's workspace ends here -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>

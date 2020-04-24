@@ -71,7 +71,7 @@
       featplaylistsTemplate = Handlebars.compile(featplaylistsSource);
       featplaylistsPlaceholder = document.getElementById('featured-playlists');
 
-  //top tracks template.
+  //top tracks template
   var topSource = document.getElementById('top-tracks-template').innerHTML, 
       topTemplate = Handlebars.compile(topSource),
       topPlaceholder = document.getElementById('top-tracks');
@@ -80,6 +80,11 @@
   var recommendationsSource = document.getElementById('recommendations-template').innerHTML,
       recommendationsTemplate = Handlebars.compile(recommendationsSource),
       recommendationsPlaceholder = document.getElementById('recommendations');
+
+  //search template
+  var searchSource = document.getElementById('search-result-template').innerHTML, 
+      searchTemplate = Handlebars.compile(searchSource),
+      searchPlaceholder = document.getElementById('search-result');
 
   var params = getHashParams();
 
@@ -100,10 +105,21 @@
         success: function(response) { //if successful, will display user profile
           userProfileButtonPlaceholder.innerHTML = userProfileButtonTemplate(response); //displays to the inner html of the user profile template
           userProfilePlaceholder.innerHTML = userProfileTemplate(response);
-          console.log(response);
+          //console.log(response);
           $('#login').hide(); //hides login button 
           $('#loggedin').show(); //displays user profile button
           document.body.style.backgroundImage = 'none';
+        }
+      });
+
+      $.ajax({
+        url: 'https://api.spotify.com/v1/me/player', 
+        headers: {
+          'Authorization': 'Bearer ' + access_token 
+        },
+        success: function(response) {
+          
+          //console.log(response);
         }
       });
 
@@ -117,16 +133,21 @@
           //console.log(response);
         }
       });
+
+      // Search for an Item
+      $('.search-button').click(function () {
+        let query = document.getElementById('search-item').value; //user input value in the text field
       $.ajax({ 
-        url: 'https://api.spotify.com/v1/me/player',
+        url: 'https://api.spotify.com/v1/search' + '?q=' + query + '&type=artist', 
         headers: {
-          'Authorization': 'Bearer ' + access_token
+          'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          //console.log(response); 
-          response.actions.disallows.resuming = false;  
+          searchPlaceholder.innerHTML = searchTemplate(response); 
+          console.log(response);
         }
       });
+    });
       // Patrick's Workspace ----------------------------------------------------------------
       setInterval(function(){
       $.ajax({ // Music Player call
@@ -136,79 +157,85 @@
         },
         success: function(response) {
           //console.log(response);
-          nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
-          let progress = response.progress_ms;
-          progressDate = new Date(progress); 
-          progressminutes = progressDate.getUTCMinutes(); 
-          progressseconds = progressDate.getSeconds();
-          progressTime = progressminutes.toString().padStart(2, '0') + ':' + progressseconds.toString().padStart(2, '0'); 
-          document.getElementById('progress-time').textContent = progressTime; 
-          let duration = response.item.duration_ms;
-          durationDate = new Date(duration); 
-          durationminutes = durationDate.getUTCMinutes(); 
-          durationseconds = durationDate.getSeconds();
-          durationTime = durationminutes.toString().padStart(2, '0') + ':' + durationseconds.toString().padStart(2, '0'); 
-          document.getElementById('duration-time').textContent = durationTime; 
-          let progressBar = (progress/duration)*100;
-          document.getElementById('progress-bar').style.width = progressBar +'%';
-          let ifPlaying = response.is_playing;
-          if(ifPlaying == true) {
-            $('.pause').show();
+          if(response == null) {
+            document.getElementById('now-playing').style.display = 'none';
           }else {
-            $('.play').show();
+            document.getElementById('now-playing').style.display = 'block';
+            nowPlayingPlaceholder.innerHTML = nowPlayingTemplate(response);
+            let progress = response.progress_ms;
+            progressDate = new Date(progress); 
+            progressminutes = progressDate.getUTCMinutes(); 
+            progressseconds = progressDate.getSeconds();
+            progressTime = progressminutes.toString().padStart(2, '0') + ':' + progressseconds.toString().padStart(2, '0'); 
+            document.getElementById('progress-time').textContent = progressTime; 
+            let duration = response.item.duration_ms;
+            durationDate = new Date(duration); 
+            durationminutes = durationDate.getUTCMinutes(); 
+            durationseconds = durationDate.getSeconds();
+            durationTime = durationminutes.toString().padStart(2, '0') + ':' + durationseconds.toString().padStart(2, '0'); 
+            document.getElementById('duration-time').textContent = durationTime; 
+            let progressBar = (progress/duration)*100;
+            document.getElementById('progress-bar').style.width = progressBar +'%';
+
+            let ifPlaying = response.is_playing;
+            if(ifPlaying == true) {
+              $('.pause').show();
+            }else {
+              $('.play').show();
+            }
+            $('.forward').click(function () {
+              $.ajax({ 
+                url: 'https://api.spotify.com/v1/me/player/next', 
+                method: 'POST',
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  console.log(response); 
+                }
+              });
+            });
+            $('.backward').click(function () {
+              $.ajax({ 
+                url: 'https://api.spotify.com/v1/me/player/previous',
+                method: 'POST',
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  console.log(response); 
+                }
+              });
+            });
+            $('.pause').click(function () {
+              $.ajax({ 
+                url: 'https://api.spotify.com/v1/me/player/pause',
+                method: 'PUT',
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  console.log(response); 
+                  $('.play').show();
+                  $('.pause').hide();
+                }
+              });
+            });
+            $('.play').click(function () {
+              $.ajax({ 
+                url: 'https://api.spotify.com/v1/me/player/play',
+                method: 'PUT',
+                headers: {
+                  'Authorization': 'Bearer ' + access_token
+                },
+                success: function(response) {
+                  console.log(response); 
+                  $('.pause').show();
+                  $('.play').hide();
+                }
+              });
+            });
           }
-          $('.forward').click(function () {
-            $.ajax({ 
-              url: 'https://api.spotify.com/v1/me/player/next', 
-              method: 'POST',
-              headers: {
-                'Authorization': 'Bearer ' + access_token
-              },
-              success: function(response) {
-                console.log(response); 
-              }
-            });
-          });
-          $('.backward').click(function () {
-            $.ajax({ 
-              url: 'https://api.spotify.com/v1/me/player/previous',
-              method: 'POST',
-              headers: {
-                'Authorization': 'Bearer ' + access_token
-              },
-              success: function(response) {
-                console.log(response); 
-              }
-            });
-          });
-          $('.pause').click(function () {
-            $.ajax({ 
-              url: 'https://api.spotify.com/v1/me/player/pause',
-              method: 'PUT',
-              headers: {
-                'Authorization': 'Bearer ' + access_token
-              },
-              success: function(response) {
-                console.log(response); 
-                $('.play').show();
-                $('.pause').hide();
-              }
-            });
-          });
-          $('.play').click(function () {
-            $.ajax({ 
-              url: 'https://api.spotify.com/v1/me/player/play',
-              method: 'PUT',
-              headers: {
-                'Authorization': 'Bearer ' + access_token
-              },
-              success: function(response) {
-                console.log(response); 
-                $('.pause').show();
-                $('.play').hide();
-              }
-            });
-          });
         }
       });
       }, 1000);
@@ -274,14 +301,14 @@
       //Nick's workspace ends here ----------------------------------------------------------
 
       //Tracy's workspace
-      $.ajax({
+      /*$.ajax({
         url: 'https://api.spotify.com/v1/recommendations', 
         headers: {'Authorization': 'Bearer ' + access_token },
         success: function(response) {
           console.log(response);
           //recommendationsPlaceholder.innerHTML = recommendationsTemplate(response);
         }
-      });
+      });*/
         
 
       

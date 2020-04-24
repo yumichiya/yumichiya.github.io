@@ -194,9 +194,9 @@ li {
 }
 
 .nav-bar-link {
-  height: 40px;
-  display: flex;
-  align-items: center;
+	height: 40px;
+	display: flex;
+	align-items: center;
 } 
 
 .nav-bar-items-active {
@@ -389,20 +389,66 @@ li {
 
 /* User Profile------------------------------------------------ */
 
+#profile-content {
+	height: 80%;
+	display: flex;
+}
+
 .name, .role, .followers, .view-profile {
 	font-family: 'Montserrat';
 	color:white;
 }
+
+#user-profile {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.user-grid {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.user-img {
+	
+}
+
+.user-info {
+	padding-left: 16px;
+}
+
 .profileimg {
 	width: 200px;
+	border-radius: 50px;
+}
+
+.name {
+	font-size: 30px;
+	font-weight: bold;
+	display: inline;
 }
 
 .view-profile {
-	text-decoration: none;
+	display: block;
+	padding: 4px 0;
+}
+
+.view-profile:hover {
+	color: #7663F2;
 }
 
 .role {
+	display: inline;
+	font-size: 30px;
+	font-weight: bold;
+}
 
+.followers {
+	letter-spacing: 1px;
+	padding: 4px 0;
 }
 
 /* Sections ---------------------------------------------------------------------*/
