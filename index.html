@@ -21,14 +21,24 @@
     <div class="container">
       <div class="top-container">
         <header class="topnav">
+          <div class='go-live'>
+            <img id='disc-p' src='style/disc-purple.png' onclick='offline()' onmouseover="liveHover(this);" onmouseout="liveUnhover(this);">
+            <img id='disc' src='style/disc.png' onclick='live()' onmouseover="offlineHover(this);" onmouseout="offlineUnhover(this);">
+          </div>
+          <div class='private'>
+            <img id='unlock' src='style/unlock.png' onclick='unlock()' onmouseover="unlockHover(this);" onmouseout="unlockUnhover(this);">
+            <img id='lock' src='style/lock.png' onclick='lock()' onmouseover="lockHover(this);" onmouseout="lockUnhover(this);">
+          </div>
           <div id="user-profile-button" onclick='profile()'></div>
         </header>
       </div>
       <div class="nav-bar">
+        <a onclick='home()'>
         <div class="logo-section">
           <img src="style/logo/logo-w.png" class="logoimg">
           <div class="logo">Avalanche</div>
         </div>
+        </a>
         <ul>
           <li>
             <div class="nav-bar-items-active" id='home-tab' onclick='home()'><a class="nav-bar-link">Home</a></div>
@@ -90,7 +100,6 @@
                   </div>
                   <div class='dj-status-live'></div>
                 </div>
-              
                 <div class='dj-grid'>
                   <div class='dj-info'>
                     <div class='dj-name'>Joe Joe</div>
@@ -123,6 +132,20 @@
           <!-- Ethan's workspace ends here-->
         </section>
         <section id='discover-content'>
+        <div class='twitter-feed'>
+          <div class='feed1'>
+            <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/Adele">Tweets by Adele</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class='feed2'>
+            <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/PostMalone">Tweets by Posty</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <div class='feed3'>
+            <a class="twitter-timeline" data-height="500" data-theme="dark" href="https://twitter.com/ArianaGrande">Tweets by Ariana Grande</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
         <div class='new-rel-grid'>
           <h2 class='new-rel-title'>New Releases</h2>
           <div id='new-releases'></div>
@@ -190,7 +213,69 @@
         <section id='following-content'>
           <div class='following-dj-grid'>
             <h2 class='following-dj-title'>Following DJ</h2>
-            <div id='following-dj'></div>
+            <div id='following-dj'>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Bob Bob</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='offline-status'>Offline</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>John John</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Tom Tom</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Joe Joe</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='offline-status'>Offline</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Poe Poe</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Jane Jane</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='offline-status'>Offline</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Kim Kim</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Jan Jan</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Tam Tam</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='offline-status'>Offline</div></div>
+              </div>
+              <div class='follow-dj-grid'> 
+                <img src="style/user.png" class="djimg"/>
+                <div class='follow-dj-name'>Ari Ari</div>
+                <div class='dj-np'>Now Playing: [Song]</div>
+                <div class='dj-stat'>Status: <div class='live-status'>Live</div></div>
+              </div>
+
+            </div>
           </div>
           <div class='following-grid'>
             <h2 class='following-title'>Following Artists</h2>
@@ -205,14 +290,24 @@
   </div>
   <script id="user-profile-button-template" type="text/x-handlebars-template">
     <!-- This is getting the user's profile image --> 
+    {{#if images.0.url}}
     <img class="profileimg-button" src="{{images.0.url}}" />
+    {{else}}
+    <img src="style/user.png" class="profileimg-button"/>
+    {{/if}}
     <!-- This is getting the user's name --> 
     <div class='name-button'>{{display_name}}</div>
   </script>
 
   <script id="user-profile-template" type="text/x-handlebars-template">
     <div class='user-grid'>
-      <div class='user-img'><img class="profileimg" src="{{images.0.url}}" /></div>
+      <div class='user-img'>
+        {{#if images.0.url}}
+        <img class="profileimg" src="{{images.0.url}}" />
+        {{else}}
+        <img src="style/user.png" class="profileimg"/>
+        {{/if}}
+      </div>
       <div class='user-info'>
         <div class='name'>{{display_name}}</div>
         <div class='role'> | DJ</div>

@@ -225,6 +225,7 @@ li {
 .logo-section {
 	display: flex;
 	padding: 10px;
+	cursor: pointer;
 }
 
 .logo {
@@ -388,8 +389,8 @@ li {
 }
 
 #user-profile-button {
-	float: right;
-	margin: 20px;
+	display: inline-block;
+	margin: 0 20px;
 	padding: 8px;
 	border-radius: 10px;
 	background-color: #7663F2;
@@ -403,6 +404,43 @@ li {
 	background-color: #5D4EBF;
 }
 
+.go-live {
+	display: inline-flex;
+	vertical-align: middle;
+	margin: 0 16px;
+	cursor: pointer;
+}
+
+#disc-p {
+	display: none;
+}
+
+#disc, #disc-p {
+	width: 25px;
+	height: 25px;
+}
+
+.private {
+	display: inline-flex;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+#lock {
+	display: none;
+}
+
+#unlock, #lock {
+	width: 25px;
+	height: 25px;
+}
+
+.topnav {
+    text-align: end;
+    height: 40px;
+	padding: 12px 0;
+	background: #282b30;
+}
 /* User Profile------------------------------------------------ */
 
 #profile-content {
@@ -484,8 +522,6 @@ li {
 	display: grid;
 	grid-template-columns: repeat(5,1fr);
 	grid-gap: 16px;
-	/*overflow-x: scroll;
-	scroll-snap-type: x proximity;*/
 }
 
 .albumimg {
@@ -753,6 +789,27 @@ label {
 	margin-bottom: 10px;
 }
 
+.twitter-feed {
+	margin-top: 16px;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 'feed1 feed2 feed3';
+	grid-gap: 16px;
+}
+
+.feed1 {
+	grid-area: feed1;
+}
+
+.feed2 {
+	grid-area: feed2;
+}
+
+.feed3 {
+	grid-area: feed3;
+}
+
 /* Library Section ---------------------------------------------------------*/
 #library-playlist {
 	margin-top: 20px;
@@ -942,9 +999,90 @@ label {
 	opacity: 1;
 }
 
-/*.following-artists:hover {
-	transform: scale(1.2);
-}*/
+#following-dj {
+	margin-top: 16px;
+	padding-bottom: 12px;
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 16px;
+}
+
+.djimg {
+	width: 100%;
+	margin-bottom: 6px;
+	border-radius: 20px 20px 0 0;
+}
+
+.follow-dj-grid {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	background-color: #1E2124;
+	border-radius: 20px;
+}
+
+.follow-dj-name, .dj-np, .dj-stat {
+	display: block;
+	text-align: center;
+}
+
+
+.follow-dj-name {
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	margin-bottom: 2px;
+	font-size: 16px;
+	padding: 0 16px;
+	color: white;
+	font-family: 'Montserrat';
+}
+
+.dj-np, .dj-stat {
+	font-family: 'Abel';
+	color: #999999;
+	font-size: 14px;
+	letter-spacing: 0.4px;
+	padding: 0 12px;
+}
+
+.dj-stat {
+	padding-bottom: 12px;
+}
+
+.live-status, .offline-status {
+	display: inline;
+}
+
+.live-status {
+	-webkit-animation: live 3s infinite;
+	-moz-animation: live 3s infinite;
+	-o-animation: live 3s infinite;
+    animation: live 3s infinite;
+}
+
+@keyframes live {
+	0%   { color: #63f26f; }
+	50%  { color: green; }
+	100% { color: #63f26f; }
+}
+
+@-o-keyframes live{
+	0%   { color: #63f26f; }
+	50%  { color: green; }
+	100% { color: #63f26f; }
+}
+
+@-moz-keyframes live{
+	0%   { color: #63f26f; }
+	50%  { color: green; }
+	100% { color: #63f26f; }
+}
+
+@-webkit-keyframes live{
+	0%   { color: #63f26f; }
+	50%  { color: green; }
+	100% { color: #63f26f; }
+}
 
 /* Featured Section (Peyton's Workspace)------------------------------------------------------*/
 .feat-dj-section {
@@ -980,7 +1118,7 @@ label {
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-areas: 'info live';
-	padding: 10px 0;
+	padding: 8px 0;
 }
 
 .dj-info {
@@ -1010,10 +1148,37 @@ label {
 	grid-area: live;
 	height: 10px;
 	width: 10px;
-	background-color: #63f26f;
 	border-radius: 50%;
 	display: inline-block;
 	margin: auto 0;
+	-webkit-animation: live-dot 3s infinite;
+	-moz-animation: live-dot 3s infinite;
+	-o-animation: live-dot 3s infinite;
+    animation: live-dot 3s infinite;
+}
+
+@keyframes live-dot {
+	0%   { background-color: #63f26f; }
+	50%  { background-color: green; }
+	100% { background-color: #63f26f; }
+}
+
+@-o-keyframes live-dot {
+	0%   { background-color: #63f26f; }
+	50%  { background-color: green; }
+	100% { background-color: #63f26f; }
+}
+
+@-moz-keyframes live-dot {
+	0%   { background-color: #63f26f; }
+	50%  { background-color: green; }
+	100% { background-color: #63f26f; }
+}
+
+@-webkit-keyframes live-dot {
+	0%   { background-color: #63f26f; }
+	50%  { background-color: green; }
+	100% { background-color: #63f26f; }
 }
 
 .dj-name, .dj-now-play {

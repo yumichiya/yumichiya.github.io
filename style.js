@@ -240,3 +240,50 @@ function fireUnhover(element) {
     element.setAttribute('src', 'style/fire-white.png');
 }
 
+function unlockHover(element) {
+    element.setAttribute('src', 'style/unlock-purple.png');
+}  
+function unlockUnhover(element) {
+    element.setAttribute('src', 'style/unlock.png');
+}
+
+function lockHover(element) {
+    element.setAttribute('src', 'style/lock-purple.png');
+}  
+function lockUnhover(element) {
+    element.setAttribute('src', 'style/lock.png');
+}
+
+function lock() {
+    document.getElementById('lock').style.display='none';
+    document.getElementById('unlock').style.display='block';
+}
+
+function unlock() {
+    document.getElementById('lock').style.display='block';
+    document.getElementById('unlock').style.display='none';
+}
+
+function liveHover(element) {
+    element.setAttribute('src', 'style/disc-p-h.png');
+}  
+function liveUnhover(element) {
+    element.setAttribute('src', 'style/disc-purple.png');
+}
+
+function offlineHover(element) {
+    element.setAttribute('src', 'style/disc-g.png');
+}  
+function offlineUnhover(element) {
+    element.setAttribute('src', 'style/disc.png');
+}
+
+function live() {
+    document.getElementById('disc').style.display='none';
+    document.getElementById('disc-p').style.display='block';
+}
+
+function offline() {
+    document.getElementById('disc').style.display='block';
+    document.getElementById('disc-p').style.display='none';
+}
