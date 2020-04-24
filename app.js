@@ -351,6 +351,17 @@
         }
       });
 
+      $.ajax({ // top tracks call
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=5', // endpoint 
+        headers: {
+          'Authorization': 'Bearer ' + access_token //user access token (auth)
+        },
+        success: function(response) {
+          topPlaceholder.innerHTML = topTemplate(response); 
+          
+        }
+      });
+
       $.ajax({ // top artists call
         url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5', // endpoint 
         headers: {
