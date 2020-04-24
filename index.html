@@ -134,6 +134,8 @@
             
             <h2 class='tracks-title'>Top Tracks</h2>
             <div id = 'top-tracks'></div>
+            <h2 class='artist-title'>Top Artist</h2>
+            <div id = 'topArtist-tracks'></div>
           </div>
         </section>
         <!-- Patrick's Workspace ends here -->
@@ -318,7 +320,18 @@
       <div class='top-overlay'>
         <div class='top-track-name'>{{name}}</div>
       </div>
-      <img src="{{album.images.0.url}}" class="top-track-img"/>
+      <img src="{{albums.images.0.url}}" class="top-track-img"/>
+    </div>
+    {{/each}}
+  </script>
+
+  <script id="topArtist-template" type = "text/x-handlebars-template">
+    {{#each items}}
+    <div class='user-top-Artists'>
+      <div class='topArtist-overlay'>
+        <div class='topArtist-name'>{{name}}</div>
+      </div>
+      <img src="{{images.2.url}}" class="top-track-img"/>
     </div>
     {{/each}}
   </script>
