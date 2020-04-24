@@ -131,15 +131,14 @@
           <div class='library-grid'>
             <h2 class='library-title'>My Library</h2>
             <div id='lib-playlist'></div>
-            
+        <!-- Patrick's Workspace ends here -->
+        <!-- Nick's workspace -->
             <h2 class='tracks-title'>Top Tracks</h2>
             <div id = 'top-tracks'></div>
             <h2 class='artist-title'>Top Artist</h2>
-            <div id = 'topArtist-tracks'></div>
+            <div id = 'top-artist'></div>
           </div>
         </section>
-        <!-- Patrick's Workspace ends here -->
-        <!-- Nick's workspace -->
         <section id='following-content'>
           <div class='following-dj-grid'>
             <h2 class='following-dj-title'>Following DJ</h2>
@@ -314,26 +313,35 @@
     {{/each}}
   </script>
 
-  <script id="top-tracks-template" type = "text/x-handlebars-template">
+  <script id="top-tracks-template" type="text/x-handlebars-template">
+    {{#if items}}
     {{#each items}}
     <div class='user-top-tracks'>
       <div class='top-overlay'>
         <div class='top-track-name'>{{name}}</div>
+        <div class='top-track-name'>{{artists.0.name}}</div>
       </div>
-      <img src="{{albums.images.0.url}}" class="top-track-img"/>
+      <img src="{{album.images.0.url}}" class="top-track-img"/>
     </div>
     {{/each}}
+    {{else}}
+    <div class='none'>You haven't listened to any tracks recently. :(</div>
+    {{/if}}
   </script>
 
-  <script id="topArtist-template" type = "text/x-handlebars-template">
+  <script id="top-artist-template" type="text/x-handlebars-template">
+    {{#if items}}
     {{#each items}}
-    <div class='user-top-Artists'>
-      <div class='topArtist-overlay'>
-        <div class='topArtist-name'>{{name}}</div>
+    <div class='user-top-artists'>
+      <div class='top-artist-overlay'>
+        <div class='top-artist-name'>{{name}}</div>
       </div>
-      <img src="{{images.2.url}}" class="top-track-img"/>
+      <img src="{{images.0.url}}" class="top-artist-img"/>
     </div>
     {{/each}}
+    {{else}}
+    <div class='none'>You haven't listened to any artists recently. :(</div>
+    {{/if}}
   </script>
   <!-- Nick's workspace ends here -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>

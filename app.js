@@ -76,9 +76,9 @@
       topTemplate = Handlebars.compile(topSource),
       topPlaceholder = document.getElementById('top-tracks');
   //top Artists template.
-  var topArtistSource = document.getElementById('topArtist-template').innerHTML, 
+  var topArtistSource = document.getElementById('top-artist-template').innerHTML, 
       topArtistTemplate = Handlebars.compile(topArtistSource),
-      topArtistPlaceholder = document.getElementById('topArtist-tracks');
+      topArtistPlaceholder = document.getElementById('top-artist');
 
   // recommendations template
   var recommendationsSource = document.getElementById('recommendations-template').innerHTML,
@@ -94,6 +94,11 @@
   var searchAlbumSource = document.getElementById('album-result-template').innerHTML, 
       searchAlbumTemplate = Handlebars.compile(searchAlbumSource),
       searchAlbumPlaceholder = document.getElementById('album-result');
+
+  //top tracks template.
+  var topSource = document.getElementById('top-tracks-template').innerHTML, 
+      topTemplate = Handlebars.compile(topSource),
+      topPlaceholder = document.getElementById('top-tracks');
   
   //search for track template
   var searchTrackSource = document.getElementById('track-result-template').innerHTML, 
@@ -145,6 +150,13 @@
         success: function(response) {
           newReleasesPlaceholder.innerHTML = newReleasesTemplate(response); //displays to the inner html of the new releases template
           //console.log(response);
+        }
+      });
+
+      document.getElementById('search-text').addEventListener('keypress', function(event) {
+        if(event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("search-button").click();
         }
       });
 
@@ -346,30 +358,30 @@
           'Authorization': 'Bearer ' + access_token 
         },
         success: function(response) {
-          topPlaceholder.innerHTML = topTemplate(response); 
+          followingPlaceholder.innerHTML = followingTemplate(response); 
           
         }
       });
 
       $.ajax({ // top tracks call
-        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10&offset=5', // endpoint 
+        url: 'https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=10', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
           topPlaceholder.innerHTML = topTemplate(response); 
-          
+          console.log(response);
         }
       });
 
       $.ajax({ // top artists call
-        url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5', // endpoint 
+        url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10', // endpoint 
         headers: {
           'Authorization': 'Bearer ' + access_token //user access token (auth)
         },
         success: function(response) {
           topArtistPlaceholder.innerHTML = topArtistTemplate(response); 
-          
+          console.log(response);
         }
       });
       
