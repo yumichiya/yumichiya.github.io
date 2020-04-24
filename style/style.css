@@ -893,3 +893,69 @@ label {
 	transform: scale(1.2);
 }*/
 
+/* Featured Section (Peyton's Workspace)------------------------------------------------------*/
+#featured-playlists-playlist {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap: 16px;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.feat-play-desc {
+	color: white;
+	font-family: 'Montserrat';
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.feat-play-img {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	object-fit: fill;
+    display: block;
+}
+
+/* Recently Played Section (Peyton's Workspace)------------------------------------------------*/
+#recently-played-playlist {
+	margin-top: 16px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 16px;
+	
+}
+
+.rec-play-name, .rec-play-artist {
+	display: block;
+	text-align: center;
+}
+
+.rec-play-name {
+	font-family: 'Montserrat';
+	color: white;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	font-size: 14px;
+}
+
+.rec-play-artist {
+	font-family: 'Montserrat';
+	color: white;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+
+.rec-play-img {
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+
+
+
