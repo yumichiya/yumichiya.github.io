@@ -387,17 +387,6 @@
 
       //Nick's workspace ends here ----------------------------------------------------------
 
-      //Tracy's workspace
-      /*$.ajax({
-        url: 'https://api.spotify.com/v1/recommendations', 
-        headers: {'Authorization': 'Bearer ' + access_token },
-        success: function(response) {
-          console.log(response);
-          //recommendationsPlaceholder.innerHTML = recommendationsTemplate(response);
-        }
-      });*/
-        
-      //My test shit
       $.ajax({ 
         url: 'https://api.spotify.com/v1/me/top/artists',
         headers: {
