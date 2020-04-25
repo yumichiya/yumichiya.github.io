@@ -1019,6 +1019,7 @@ label {
 	position: relative;
 	background-color: #1E2124;
 	border-radius: 20px;
+	cursor: pointer;
 }
 
 .follow-dj-name, .dj-np, .dj-stat {
@@ -1215,6 +1216,14 @@ label {
 	border-radius: 20px;
 	object-fit: fill;
     display: block;
+}
+
+.discover-dj-name {
+	padding-bottom: 12px;
+	color: white;
+	font-family: 'Montserrat';
+	font-weight: bold;
+	text-align: center;
 }
 
 /* Recently Played Section (Peyton's Workspace)------------------------------------------------*/
