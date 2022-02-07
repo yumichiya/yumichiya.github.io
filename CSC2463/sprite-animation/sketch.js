@@ -9,7 +9,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1500, 1000); 
+    createCanvas(800, 800); 
     imageMode(CENTER);
     character1 = new Character(img1, 100, 300);
     character2 = new Character(img2, 245, 687);
