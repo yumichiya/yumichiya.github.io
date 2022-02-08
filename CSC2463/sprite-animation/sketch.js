@@ -9,12 +9,12 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(800, 800); 
+    createCanvas(1500, 1000); 
     imageMode(CENTER);
-    character1 = new Character(img1, 100, 300);
-    character2 = new Character(img2, 245, 687);
-    character3 = new Character(img3, 400, 200);
-    character4 = new Character(img4, 700, 533);
+    character1 = new Character(img1, random(100,1000), random(100,1000));
+    character2 = new Character(img2, random(100,1000), random(100,1000));
+    character3 = new Character(img3, random(100,1000), random(100,1000));
+    character4 = new Character(img4, random(100,1000), random(100,1000));
 }
 
 function keyPressed() {
