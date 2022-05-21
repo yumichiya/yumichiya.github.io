@@ -1,0 +1,248 @@
+@font-face {
+   font-family: Lemon Milk;
+   src: url(lemonmilk.otf);
+}
+
+html, body {
+   background-color: #F5F5F5;
+   /* background-color: #F4ECE1; */
+}
+
+.bar1, .bar2 {
+   /* background-color: #8C5C20; */
+   background-color: #7481BE;
+}
+
+#menu {
+   background-color: #F8F5F1;
+}
+
+#menu a, h1, .bio, .contact, .exp1, .exp2, .exp3, .wTitle, .works, .exp{
+   /* color: #BF665E; */
+   color: #EB9691;
+}
+
+.subpage, .link {
+   /* color: #8C5C20; */
+   color: #7481BE;
+}
+
+.title, .date, .dev{
+   color: #D9ADA9;
+}
+
+
+
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+#home {
+   height: 100%;
+   display: flex;
+}
+
+#about, #works {
+   display: none;
+}
+
+/* Navigation ---------------------------------------------------------------------------------------- */
+#menuIcon {
+   display: inline-block;
+   cursor: pointer;
+   z-index: 2;
+   position: absolute;
+   top: 14px;
+   right: 20px;
+ }
+ 
+.bar1, .bar2 {
+   width: 35px;
+   height: 5px;
+   margin: 6px 0;
+   transition: 0.4s;
+}
+
+.change .bar1 {
+   transform: rotate(-45deg) translate(0, 8px);
+}
+
+.change .bar2 {
+   transform: rotate(45deg) translate(0, -8px);
+}
+
+.showMenu {
+   visibility: visible !important;
+   opacity: 1 !important;
+   transition: visibility 0.4s, opacity 0.4s linear;
+}
+
+#menu {
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0.4s, opacity 0.4s linear;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   z-index: 1;
+   position: absolute;
+}
+
+#menu a {
+   font-family: Lemon Milk;
+   font-size: 5em;
+   text-decoration: none;
+   margin: auto;
+   padding: 30px 0;
+}
+
+/* Sidebar ---------------------------------------------------------------------------------------- */
+.sidebar {
+   display: flex;
+   flex-direction: column;
+   margin: 0 0 0 50px;
+}
+
+.top, .bot {
+   margin: 0 auto;
+   border: 3px solid #7481BE;
+   height: 30%;
+}
+
+.bot {
+   bottom: 0;
+}
+
+.subpage {
+   font-family: Lemon Milk;
+   margin: auto;
+   padding: 30px 0;
+   font-size: 30px;
+   writing-mode: vertical-lr;
+   text-orientation: upright;
+}
+
+
+/* Home Section ---------------------------------------------------------------------------------------- */
+.homebox {
+   display: flex;
+   flex-direction: column;
+   margin: auto;
+}
+
+h1 {
+   font-family: Lemon Milk;
+   font-size: 100px;
+   text-align: center;
+   margin: 10px 0;
+}
+
+#c1 {
+   margin: auto;
+}
+
+
+/* About Section ---------------------------------------------------------------------------------------- */
+#c2 {
+   margin: auto;
+}
+
+.aboutbox {
+   display: grid;
+   grid-template-columns: 1fr 3fr;
+   margin: auto 5%;
+}
+
+.biobox {
+   /* margin: auto 20%; */
+   /* border-left: 4px solid #BF665E; */
+}
+
+.bio {
+   font-family: 'Roboto', sans-serif;
+   font-size: 18px;
+   padding: 20px;
+}
+
+.contact {
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   padding: 0 20px;
+   margin: 20px auto;
+   text-align: center;
+}
+
+.timeline {
+   margin: 20px 0;
+   border-left: 4px solid #BF665E;
+}
+
+.exp {
+   font-family: Lemon Milk;
+   font-size: 40px;
+   padding: 0 20px;
+   letter-spacing: 2px;
+}
+
+.exp1, .exp2, .exp3 {
+   font-family: 'Roboto', sans-serif;
+   padding: 10px 20px;
+   font-size: 18px;
+}
+
+.company {
+   margin-block: 0;
+   font-size: 22px;
+}
+
+.title, .date {
+   margin-block: 6px;
+}
+
+.date {
+   font-size: 14px;
+}
+
+/* Works Section ---------------------------------------------------------------------------------------- */
+.wMain {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   grid-gap: 20px;
+   margin: 40px 100px;
+}
+
+.works1, .works2, .works3, .works4 {
+   border-top: 4px solid #BF665E;
+   border-bottom: 4px solid #BF665E;
+   text-align: center;
+   font-family: 'Roboto', sans-serif;
+}
+
+.works4 {
+   width: 50%;
+   height: 50%;
+}
+
+.wTitle {
+   display: inline-block;
+   font-size: 22px;
+   margin: 10px 4px 4px;
+}
+
+.dev {
+   display: inline-block;
+   margin: 6px;
+}
+
+.works4 .dev {
+   display: block;
+   margin: 10px auto;
+}
+
+img {
+   width: calc(100% - 80px);
+}

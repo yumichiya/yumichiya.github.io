@@ -1,71 +1,124 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Jasmine Nguyen</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/material.css">
-        <script src="js/scripts.js"></script>
-        <!-- Modal -->
-        
-    </head>
-    <body>
-        <div id="leftSide" class="fade-in">
-            <img id="bg" src="css/images/flower3.jpg">
-            <div id="containhead">
-            <div id="lefttitle">{}<br>Jasmine Nguyen<br><div id="invert">{}</div></div>
-            <nav id="mainNav">
-                <ul class="mainUl">
-                    <li id="festdis" onclick="aboutfade()"><div id="festone">[</div><a id="test">About</a><div id="festtwo">]</div>
-                    </li>
-                    <li id="festdis" onclick="expfade()"><div id="festone">[</div><a href="#">Experience</a><div id="festtwo">]</div>
-                    </li>
-                    <li id="festdis" onclick="edufade()"><div id="festone">[</div><a href="#">Education</a><div id="festtwo">]</div>
-                    </li>
-                    <li id="festdis" onclick="workfade()"><div id="festone">[</div><a href="#">My Work</a><div id="festtwo">]</div>
-                    </li>
-                    <li id="festdis" onclick="letfade()"><div id="festone">[</div><a href="#">Letter</a><div id="festtwo">]</div>
-                    </li>
-                </ul>
-            </nav>
-            </div>
-        </div>
-        <div id="rightSide">
-            <div id="rightfade">
-            <div id="container">
-                <div id="magic">
-                    <h1 id="mainhead">About</h1>
-                    <div id="line"></div>
-                    <p>I am Jasmine Nguyen from Baton Rouge, Louisiana. I am a junior attending Lee High School.</p><p>I wish to purse a career as a web developer and designer. Training myself every day and pushing my own limits to discover new ways of creating a great experience for the users. I focus on working on the scalability, performance, reusability, and user experience into a beautiful creation.</p><br><p>Contact: yumichiya@gmail.com</p>
-                </div>
-            </div>
-            </div>
-        </div>
-
-<!-- CIW Modal -->
-<div id="edumod" class="edumodal">
-  <span class="close" onclick="document.getElementById('edumod').style.display='none';document.getElementById('leftSide').style.visibility='visible';">&times;</span>
-  <img class="emodal-content" id="eduimgr">
-  <div id="educap"></div>
-</div>
-
-<!-- Georgann Mire Letter Modal -->
-<div id="letgmodal" class="letmod">
-  <div class="letcontent">
-    <span class="close" onclick="document.getElementById('letgmodal').style.display='none';document.getElementById('leftSide').style.visibility='visible';">&times;</span>
-    <div id="letter">
-        <p>February 21, 2017<br>Georgann Mire<br>3211 Morning Glory<br>Baton Rouge, LA  70808<br><br>To whom it may concern:<br><br>It is hard to believe that Jasmine Nguyen is a high school student.  Her maturity and capability transcends her age and I am so lucky to have her on my digital media team. <br><br>I am on the board of directors of the Greater Baton Rouge Learning Disabilities Coalition (GBRLDC) which is a volunteer group working to help students with learning disabilities in our community.  When funding ended for our professional digital media support, the Digital Media department at Lee High School stepped up to fill the gap - turning a bad luck into a blessing!  Jasmine&#39;s teacher, Jewell Simon, put together a team of his best students for our project with Jasmine as a key member.<br><br>Her keen analytical and problem solving skills were immediately put to the test as the team worked to understand the GBRLDC mission and importance to the community (1 in 5 children have learning disabilities).  She seamlessly worked with her team to expertly determine the strengths and weaknesses and tackled the job of closing the gap to increase connectivity and impact with precision.<br><br>The existing pedestrian website designed by professionals for the GBRLDC stood out as a problem and the team tapped into Jasmine&#39;s talent as a remedy.  She and her fellow students came up with a myriad of suggestions that resulted in a modern practical website that is a boon for the entire community.  She was instrumental in retrieving old site data. Changing the web address from www.gbrldc.org to www.ldhelp.org was a great start and the addition of bios and pictures of all our conference speakers is useful for attendees. We&#39;ve always dreamed of providing a community resource list to help parents and professionals and Jasmine and her team made this dream a reality.  Our website has the capacity now to change fonts so that dyslexic individuals can read the information better which is an innovation that I&#39;ve never seen available on a national LD website!<br><br>Jasmine&#39;s commitment to our project is so strong that she volunteered to help us at our annual conference.  She sacrificed her entire Saturday (even though she had already completed her service hours for the semester) to create a quality event for 200 people within our community.  Her work at the conference showcased her dependability and organizational skills as well as her kindness.<br><br>I wholeheartedly recommend Jasmine due to her positive attitude and creative talent which will be an asset in the college setting. The school she chooses will be very lucky to have her as a student.<br><br><br>Sincerely,<br>Georgann Mire<br>President, Greater Baton Rouge Learning Disabilities Coalition</p>
+   <head>
+      <title>Jasmine Nguyen</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+      <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+      <script src="sketch.js"></script>
+      <div id="menuIcon" onclick="menu()">
+         <div class="bar1"></div>
+         <div class="bar2"></div>
       </div>
-  </div>
-</div> 
-<!-- Courville Letter Modal -->
-        <div id="letcmodal" class="letmod">
-  <div class="letcontent">
-    <span class="close" onclick="document.getElementById('letcmodal').style.display='none';document.getElementById('leftSide').style.visibility='visible';">&times;</span>
-    <div id="letter">
-        <p id="rp">April 11, 2016<p><br>To Whom It May Concern:<br><br>I am writing on behalf of Jasmine Nguyen as her recommender. My name is Dr. Rosie Courville, and I teach English and French at Lee Magnet High School in Baton Rouge, LA. I have taught Jasmine in both French I and French II. Jasmine possesses a keen eye and a good work ethic.Whereas many students her age are not conscientious, Jasmine is consistent in completing her work for me, even when others are not. My class is not easy, and students often need to spend a significant amount of time studying to make the grade that they would like. Every time that she takes an exam, I can tell that Jasmine has gone above and beyond the work that has been requested of her in order to understand the more difficult concepts that I presented. She put significant work into memorizing verb conjugations and patterns and also put a good deal of work into doing the various projects assigned in class. She has a particular interest in our cultural discussions and made interesting contributions to our discussions centering on food culture throughout the Francophone world.<br><br>I especially appreciate Jasmine’s hard work knowing that I am presenting concepts to her in her second language even when i am presenting in English. Because Jasmine’s native language is Vietnamese, she has already had to put forth significant effort in learning English and is ambitious enough to do well when working on her third language. I believe that it speaks to her work ethic and quality as a student that she does as well as she does in my French class. I believe that Jasmine would be an asset to your program.<br><br>Sincerely,<br><br><br><br>Rosie Courville, PhD<br>English and French Teacher<br>English and World Languages Department Chair<br>Lee Magnet High School<br><br><br><br><br><br><br><br><br></p>
+      <div id="menu">
+         <a class="home" href="#home">Home</a>
+         <a class="about" href="#about">About</a>
+         <a class="works" href="#works">Works</a>
       </div>
-  </div>
-
-</div>
+      <section id="home">
+         <div class="sidebar">
+            <div class="top"></div>
+            <h2 class="subpage">Portfolio</h2>
+            <div class="bot"></div>
+         </div>
+         <div class="homebox">
+            <h1>Jasmine Nguyen</h1>
+            <div id="c1"></div>
+         </div>
+      </section>
+      <section id="about">
+         <div class="sidebar">
+            <div class="top"></div>
+            <h2 class="subpage">About</h2>
+            <div class="bot"></div>
+         </div>
+         <div class="aboutbox">
+            <div id="c2"></div>
+            <div class="biobox">
+               <p class="bio">I am currently pursing a Bachelor's Degree in Computer Science with a Software Engineering Concentration at Louisiana State University and graduate in May 2022. My plans after graduation is to move to Austin, Texas and search for a job in web design/development.</p>
+            </div>
+            <div class="contact">
+               <p>jasminenhi3@gmail.com</p>
+               <p><a class="works" href="https://github.com/yumichiya">GitHub</a></p>
+               <p><a class="works" href="https://www.linkedin.com/in/jasmine-nguyen-3a19b1151/">LinkedIn</a></p>
+            </div>
+            <div class="experience">
+               <h3 hidden class="exp">Experience</h3>
+               <div class="timeline">
+                  <div class="exp1">
+                     <h3 class="company">Greater Baton Rouge Learning Disabilities Coalition</h3>
+                     <h4 class="title">Web Developer & Graphic Designer</h4>
+                     <p class="date">October 2016 - April 2022 / Baton Rouge, LA</p>
+                  </div>
+                  <div class="exp2">
+                     <h3 class="company">School Times</h3>
+                     <h4 class="title">Salesperson</h4>
+                     <p class="date">June - August 2017; June - August 2018; July 2019 / Baton Rouge, LA</p>
+                  </div>
+                  <div class="exp3">
+                     <h3 class="company">Louisiana State University ITS</h3>
+                     <h4 class="title">Student Web Administrator</h4>
+                     <p class="date">July 2019 - Present / Baton Rouge, LA</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="works">
+         <div class="sidebar">
+            <div class="top"></div>
+            <h2 class="subpage">Works</h2>
+            <div class="bot"></div>
+         </div>
+         <div class="wMain">
+            <div class="works1">
+               <h3 class="wTitle">
+                  <a class="link" href="ldhelp.org">LDHelp.org</a>
+               </h3>
+               <br>
+               <p class="dev">WordPress</p>
+               <img src="/images/ldhelp.PNG">
+            </div>
+            <div class="works2">
+               <h3 class="wTitle">
+                  <a class="link" href="https://github.com/yumichiya/avalanche">Avalanche</a>
+               </h3>
+               <br>
+               <p class="dev">CSS</p>
+               <p class="dev">HTML</p>
+               <p class="dev">JavaScript</p>
+               <p class="dev">Spotify API</p>
+               <img src="/images/avalanche.PNG">
+            </div>
+            <div class="works3">
+               <h3 class="wTitle">
+                  <a class="link" href="https://github.com/yumichiya/courseplanner">Course Planner</a>
+               </h3>
+               <br>
+               <p class="dev">Apache</p>
+               <p class="dev">AWS</p>
+               <p class="dev">CSS</p>
+               <p class="dev">HTML</p>
+               <p class="dev">Java</p>
+               <p class="dev">JavaScript</p>
+               <p class="dev">Tomcat Server</p>
+               <img src="/images/courseplanner.PNG">
+            </div>
+            <div class="works4">
+               <h3 class="wTitle">
+                  <a class="link" href="https://github.com/yumichiya/yumichiya.github.io/tree/master/CSC2463">Digital Media Course</a>
+               </h3>
+               <br>
+               <p class="dev">Arduino</p>
+               <p class="dev">P5.js</p>
+               <p class="dev">Tone.js</p>
+            </div>
+         </div>
+      </section>
+      <script src="scripts.js"></script>
     </body>
 </html>
