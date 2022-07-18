@@ -5,9 +5,9 @@ let canv1 = function(c) {
       c.createCanvas(w, h);
    };
    c.draw = function () {
-      c.background(245);
+      c.background(238, 237, 235);
       c.translate(w/2, h/2);
-      c.fill(235,150,145);
+      c.fill(235, 150, 145);
       c.noStroke();
       c.angleMode(c.DEGREES);
 
@@ -37,9 +37,9 @@ let canv2 = function(c) {
       c.createCanvas(w, h);
    };
    c.draw = function () {
-      c.background(245);
+      c.background(238, 237, 235);
       c.translate(w/2, h/2);
-      c.fill(235,150,145);
+      c.fill(235, 150, 145);
       c.noStroke();
       c.angleMode(c.DEGREES);
 
@@ -61,3 +61,35 @@ let canv2 = function(c) {
    
 }
 new p5(canv2, 'c2');
+
+let canv3 = function(c) { 
+   let w = 40;
+   let h = w;
+   c.setup = function() {
+      c.createCanvas(w, h);
+   };
+   c.draw = function () {
+      c.background(238, 237, 235);
+      c.translate(w/2, h/2);
+      c.fill(235, 150, 145);
+      c.noStroke();
+      c.angleMode(c.DEGREES);
+      c.scale(0.2);
+      c.rotate(180);
+      c.ellipse(0, 30, 30, 60);
+
+      c.rotate(72);
+      c.ellipse(0, 30, 30, 60);
+
+      c.rotate(72);
+      c.ellipse(0, 30, 30, 60);
+      
+      c.rotate(72);
+      c.ellipse(0, 30, 30, 60);
+
+      c.rotate(72);
+      c.ellipse(0, 30, 30, 60);
+   };
+   
+}
+new p5(canv3, 'c3');

@@ -4,7 +4,7 @@
 }
 
 html, body {
-   background-color: #F5F5F5;
+   background-color: rgb(238, 237, 235);
    /* background-color: #F4ECE1; */
 }
 
@@ -17,17 +17,17 @@ html, body {
    background-color: #F8F5F1;
 }
 
-#menu a, h1, .bio, .contact, .exp1, .exp2, .exp3, .wTitle, .works, .exp{
+#menu a, h1, .bio, .contact, .exp1, .exp2, .exp3, .wTitle, .works, .exp , .edu, .edu1{
    /* color: #BF665E; */
-   color: #EB9691;
+   color: rgb(235, 150, 145);
 }
 
-.subpage, .link {
+.subpage, .link, .scrollText {
    /* color: #8C5C20; */
    color: #7481BE;
 }
 
-.title, .date, .dev{
+.company, .title, .date, .dev, .school, .major, .con{
    color: #D9ADA9;
 }
 
@@ -45,21 +45,30 @@ html, body {
 }
 
 #about, #works {
-   display: flex;
+   display: none;
 }
+ 
+#home, #about, #works {
+   animation: fadeIn 1s;
+} 
+
+@keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
 
 /* Navigation ---------------------------------------------------------------------------------------- */
 #menuIcon {
    display: inline-block;
    cursor: pointer;
-   z-index: 2;
+   z-index: 3;
    position: absolute;
    top: 14px;
    right: 20px;
- }
+}
  
 .bar1, .bar2 {
-   width: 35px;
+   width: 40px;
    height: 5px;
    margin: 6px 0;
    transition: 0.4s;
@@ -87,7 +96,7 @@ html, body {
    height: 100%;
    display: flex;
    flex-direction: column;
-   z-index: 1;
+   z-index: 2;
    position: absolute;
 }
 
@@ -97,6 +106,41 @@ html, body {
    text-decoration: none;
    margin: auto;
    padding: 30px 0;
+}
+
+
+/* Scroll Down ----------------------------------------------------------------- */
+.scrollDown {
+   display: flex;
+   flex-direction: column;
+   margin: 0 0 0 50px;
+   z-index: 1;
+   position: absolute;
+   bottom: 0;
+   right: 20px;
+   animation: MoveUpDown 1.2s ease-in-out infinite;
+}
+
+.scrollText {
+   font-family: Lemon Milk;
+   writing-mode: vertical-lr;
+   text-orientation: sideways;
+   margin-bottom: 10px;
+}
+
+.scrollLine {
+   margin: 0 auto;
+   border: 3px solid #7481BE;
+   height: 100px;
+}
+
+@keyframes MoveUpDown {
+   0%, 100% {
+     bottom: 0;
+   }
+   50% {
+     bottom: 10px;
+   }
 }
 
 /* Sidebar ---------------------------------------------------------------------------------------- */
@@ -156,11 +200,6 @@ h1 {
    margin: auto 5%;
 }
 
-.biobox {
-   /* margin: auto 20%; */
-   /* border-left: 4px solid #BF665E; */
-}
-
 .bio {
    font-family: 'Roboto', sans-serif;
    font-size: 18px;
@@ -170,39 +209,45 @@ h1 {
 .contact {
    font-family: 'Roboto', sans-serif;
    font-size: 16px;
-   padding: 0 20px;
-   margin: 20px auto;
+   padding: 0 30px;
+   margin: auto;
    text-align: center;
 }
 
-.timeline {
-   margin: 20px 0;
+#c3 {
+   margin: 0 -31px;
+}
+
+.line {
+   /* margin: 20px 0; */
+   padding: 0 10px;
    border-left: 4px solid #BF665E;
 }
 
-.exp {
+.exp, .edu {
    font-family: Lemon Milk;
    font-size: 40px;
    padding: 0 20px;
    letter-spacing: 2px;
+   margin: 0;
 }
 
-.exp1, .exp2, .exp3 {
+.exp1, .exp2, .exp3, .edu1 {
    font-family: 'Roboto', sans-serif;
    padding: 10px 20px;
    font-size: 18px;
 }
 
-.company {
+.company, .school {
    margin-block: 0;
    font-size: 22px;
 }
 
-.title, .date {
+.title, .date, .major, .con {
    margin-block: 6px;
 }
 
-.date {
+.date, .con {
    font-size: 14px;
 }
 
