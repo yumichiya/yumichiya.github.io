@@ -1,0 +1,39 @@
+#root {
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #efeef1;
+}
+
+.login-section {
+  margin-top: 10px;
+}
+
+.purple-button {
+  background-color: #300D38;
+  border-color: #300D38;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.purple-button:hover {
+  background-color: #890075;
+  border-color: #890075;
+}
+
+.dark-purple-button {
+  background-color: #150133;
+  border-color: #150133;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.dark-purple-button:hover {
+  background-color: #300D38;
+  border-color: #300D38;
+}
+

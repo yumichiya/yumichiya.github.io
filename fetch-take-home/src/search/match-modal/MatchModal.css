@@ -1,0 +1,17 @@
+.match-modal .modal-content {
+    background-color: #efeef1;
+}
+
+.match-modal .dog-container {
+    justify-content: center;
+}
+
+.match-modal .dog-description {
+    text-align: center;
+    background-color: #300D38;
+    color: #fff
+}
+
+.match-modal .dog-name {
+    color: #fff
+}

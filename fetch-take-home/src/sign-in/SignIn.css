@@ -1,0 +1,26 @@
+.main-signin-container {
+  display: flex;
+  height: 100%;
+}
+
+.signin-container {
+  width: 330px;
+  margin: auto;
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 4px 0px;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  font-size: 18px;
+  margin-bottom: 0;
+}
