@@ -19,7 +19,7 @@
     "react-bootstrap-multiselect": "^2.4.1",
     "react-dom": "^18.0.0",
     "react-query": "^3.39.3",
-    "react-router-dom": "^7.3.0",
+    "react-router-dom": "^7.5.2",
     "react-select": "^5.10.1"
   },
   "devDependencies": {
